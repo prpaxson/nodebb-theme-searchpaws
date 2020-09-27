@@ -1,5 +1,9 @@
 # SearchPaws NodeBB Theme
 
+Clone this into the /node_modules subfolder of your nodebb installation, and select it in the Admin Control Panel (ACP)! 
+
+You set the admin username and password when setting up nodebb, which unlocks the ACP in the navigation bar.
+
 ### Getting started with NodeBB
 * [Documentation home](https://docs.nodebb.org/)
 * [Installing a local instance of NodeBB](https://docs.nodebb.org/installing/os/)
