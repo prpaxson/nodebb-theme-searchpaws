@@ -1,0 +1,33 @@
+.question-btn {
+	font-family: Merriweather;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 15px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	text-transform: uppercase;
+	border-radius: 20px;
+	
+	height: 35px;
+	margin-top: 7.5px;
+
+	color: #FFFFFF;
+	background: #D63333;
+	
+	&:hover,
+	&:focus,
+	&.focus {
+		color: #FFFFFF;
+		background: #DE5B5B;
+		text-decoration: none;
+	}
+	  
+	&:active,
+	&.active {
+		outline: 0;
+		background-image: none;
+		.box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+	}
+}
