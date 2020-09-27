@@ -1,7 +1,7 @@
 {
-  "name": "nodebb-theme-quickstart",
-  "version": "0.0.0",
-  "description": "Enter a description here",
+  "name": "nodebb-theme-searchpaws",
+  "version": "1.0.0",
+  "description": "SearchPaws theme for NodeBB",
   "main": "theme.less",
   "keywords": [
 
