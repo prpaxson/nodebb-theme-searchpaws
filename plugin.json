@@ -8,6 +8,7 @@
 	],
 	"scripts": [
 		"lib/client.js",
+		"lib/search-bar.js",
 		"../nodebb-theme-persona/lib/persona.js",
 		"../nodebb-theme-persona/lib/modules/nprogress.js",
 		"../nodebb-theme-persona/lib/modules/autohidingnavbar.min.js",

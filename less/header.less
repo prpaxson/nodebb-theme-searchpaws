@@ -71,6 +71,14 @@
     }
   }
 
+  .navbar-search {
+  	width: 48%;
+  }
+
+  .li-search {
+ 	width: 100%;
+  }
+
   .chat-list {
     .notification-list;
 
@@ -138,7 +146,7 @@
 
   #user_dropdown {
     padding: 9px 15px;
-
+    margin-top: 10px;
     img, .user-icon {
       .user-icon-style(30px, 1.8rem, 50%);
       border: 0px none;
@@ -149,26 +157,36 @@
       }
     }
   }
+  
+  .notifications{
+	  margin-top: 10px;
+  }
+  
+  .navigation-link{
+	margin-top: 10px;
+  }
 
   .forum-title {
     font-family: Poppins;
-    font-size: 25px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 700;
     letter-spacing: 0em;
     text-align: center;
     text-transform: uppercase;
-
+    margin-top:10px;
     color: #000000;
+    margin-right: 32px;
   }
 
   .forum-logo {
     float: left;
-    max-height: 35px;
+    max-height: 39px;
     width: auto;
-    margin-top: 12.5px;
-    margin-right: 10px;
+    margin-top: 15px;
+    margin-right: 13px;
   }
+
 
   @media (max-width: @screen-xs-max) {
     .forum-logo {
@@ -423,33 +441,33 @@ label.dropdown-toggle {
 }
 
 .navbar-default {
-  .navbar-nav {
-    > li > label {
-      color: @navbar-default-link-color;
+	  .navbar-nav {
+	    > li > label {
+	      color: @navbar-default-link-color;
 
-      &:hover,
-      &:focus {
-        color: @navbar-default-link-hover-color;
-        background-color: @navbar-default-link-hover-bg;
-      }
-    }
-    > .active > label {
-      &,
-      &:hover,
-      &:focus {
-        color: @navbar-default-link-active-color;
-        background-color: @navbar-default-link-active-bg;
-      }
-    }
-    > .disabled > label {
-      &,
-      &:hover,
-      &:focus {
-        color: @navbar-default-link-disabled-color;
-        background-color: @navbar-default-link-disabled-bg;
-      }
-    }
-    > .open > label {
+	      &:hover,
+	      &:focus {
+		color: @navbar-default-link-hover-color;
+		background-color: @navbar-default-link-hover-bg;
+	      }
+	    }
+	    > .active > label {
+	      &,
+	      &:hover,
+	      &:focus {
+		color: @navbar-default-link-active-color;
+		background-color: @navbar-default-link-active-bg;
+	      }
+	    }
+	    > .disabled > label {
+	      &,
+	      &:hover,
+	      &:focus {
+		color: @navbar-default-link-disabled-color;
+		background-color: @navbar-default-link-disabled-bg;
+	      }
+	    }
+	    > .open > label {
       &,
       &:hover,
       &:focus {

@@ -137,34 +137,14 @@
 					</li>
 				</ul>
 				<!-- ENDIF config.loggedIn -->
-				<!-- IF config.searchEnabled -->
-				<ul class="nav navbar-nav navbar-right">
-					<li>
-						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET">
-							<button id="search-button" type="button" class="btn btn-link"><i class="fa fa-search fa-fw" title="[[global:header.search]]"></i></button>
-							<div class="hidden" id="search-fields">
-								<div class="form-group">
-									<input autocomplete="off" type="text" class="form-control" placeholder="[[global:search]]" name="query" value="">
-									<a href="#"><i class="fa fa-gears fa-fw advanced-search-link"></i></a>
-								</div>
-								<button type="submit" class="btn btn-default hide">[[global:search]]</button>
-							</div>
-						</form>
-						<div id="quick-search-container" class="quick-search-container hidden">
-							<div class="text-center loading-indicator"><i class="fa fa-spinner fa-spin"></i></div>
-							<div class="quick-search-results-container"></div>
-						</div>
-					</li>
-					<li class="visible-xs" id="search-menu">
-						<a href="{relative_path}/search">
-							<i class="fa fa-search fa-fw"></i> [[global:search]]
-						</a>
+				<ul class="nav navbar-nav navbar-search">
+					<li class="li-search">					
+					<!-- IMPORT search-bar.tpl -->
 					</li>
 				</ul>
-				<!-- ENDIF config.searchEnabled -->
 				
-				<ul class="nav navbar-nav navbar-right">
-					<label class="btn question-btn" id="new_question" role="button">Ask a new question</label>
+				<ul class="nav navbar-nav">
+					<label class="btn question-btn" id="new_question" role="button">Ask a question</label>
 				</ul>
 				
 				<ul class="nav navbar-nav navbar-right hidden-xs">
@@ -175,31 +155,7 @@
 					</li>
 				</ul>
 
-				<ul class="nav navbar-nav navbar-right pagination-block visible-lg visible-md">
-					<li class="dropdown">
-						<a><i class="fa fa-angle-double-up pointer fa-fw pagetop"></i></a>
-						<a><i class="fa fa-angle-up pointer fa-fw pageup"></i></a>
-
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							<span class="pagination-text"></span>
-						</a>
-
-						<a><i class="fa fa-angle-down pointer fa-fw pagedown"></i></a>
-						<a><i class="fa fa-angle-double-down pointer fa-fw pagebottom"></i></a>
-
-						<div class="progress-container">
-							<div class="progress-bar"></div>
-						</div>
-
-						<ul class="dropdown-menu" role="menu">
-							<li>
-  								<input type="text" class="form-control" id="indexInput" placeholder="[[global:pagination.enter_index]]">
-  							</li>
-						</ul>
-					</li>
-				</ul>
-
-				<ul id="main-nav" class="nav navbar-nav">
+				<ul id="main-nav" class="nav navbar-nav navbar-right">
 					{{{each navigation}}}
 					<!-- IF function.displayMenuItem, @index -->
 					<li class="{navigation.class}">
