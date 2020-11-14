@@ -144,7 +144,7 @@
 				</ul>
 				
 				<ul class="nav navbar-nav">
-					<label class="btn question-btn" id="new_question" role="button">Ask a question</label>
+					<a href="/compose?cid=1" class="btn question-btn" id="new_question" role="button">Ask a question</a>
 				</ul>
 				
 				<ul class="nav navbar-nav navbar-right hidden-xs">
