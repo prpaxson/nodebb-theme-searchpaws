@@ -1,30 +1,34 @@
 <ul component="category" class="topic-list" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}" data-set="{set}">
   <meta itemprop="itemListOrder" content="descending">
   {{{each topics}}}
+  <div class=topic_header>
+    <div class="avatar pull-left">
+      <!-- IF showSelect -->
+      <div class="select" component="topic/select">
+        <!-- IF topics.thumb -->
+        <img src="{topics.thumb}" class="user-img not-responsive" />
+        <!-- ELSE -->
+        {buildAvatar(topics.user, "46", true, "not-responsive")}
+        <!-- ENDIF topics.thumb -->
+        <i class="fa fa-check"></i>
+      </div>
+      <!-- ENDIF showSelect -->
 
-  <div class="avatar pull-left">
-    <!-- IF showSelect -->
-    <div class="select" component="topic/select">
-      <!-- IF topics.thumb -->
-      <img src="{topics.thumb}" class="user-img not-responsive" />
-      <!-- ELSE -->
-      {buildAvatar(topics.user, "46", true, "not-responsive")}
-      <!-- ENDIF topics.thumb -->
-      <i class="fa fa-check"></i>
+      <!-- IF !showSelect -->
+      <a href="<!-- IF topics.user.userslug -->{config.relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->" class="pull-left">
+        <!-- IF topics.thumb -->
+        <img src="{topics.thumb}" class="user-img not-responsive" />
+        <!-- ELSE -->
+        {buildAvatar(topics.user, "46", true, "not-responsive")}
+        <!-- ENDIF topics.thumb -->
+      </a>
+      <!-- ENDIF !showSelect -->
     </div>
-    <!-- ENDIF showSelect -->
+    <div>
+      <small class="hidden-xs"><span class="timeago" title="{topics.timestampISO}"></span> &bull; <a href="<!-- IF topics.user.userslug -->{config.relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">{topics.user.username}</a></small>
+    </div>
 
-    <!-- IF !showSelect -->
-    <a href="<!-- IF topics.user.userslug -->{config.relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->" class="pull-left">
-      <!-- IF topics.thumb -->
-      <img src="{topics.thumb}" class="user-img not-responsive" />
-      <!-- ELSE -->
-      {buildAvatar(topics.user, "46", true, "not-responsive")}
-      <!-- ENDIF topics.thumb -->
-    </a>
-    <!-- ENDIF !showSelect -->
   </div>
-
   <h2 component="topic/header" class="title">
     <i component="topic/pinned" class="fa fa-thumb-tack <!-- IF !topics.pinned -->hide<!-- ENDIF !topics.pinned -->" title="[[topic:pinned]]"></i>
     <i component="topic/locked" class="fa fa-lock <!-- IF !topics.locked -->hide<!-- ENDIF !topics.locked -->" title="[[topic:locked]]"></i>
@@ -51,8 +55,6 @@
       <small>&bull;</small>
     </span>
     <!-- ENDIF topics.tags.length -->
-
-    <small class="hidden-xs"><span class="timeago" title="{topics.timestampISO}"></span> &bull; <a href="<!-- IF topics.user.userslug -->{config.relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">{topics.user.username}</a></small>
     <small class="visible-xs-inline">
       <i class="fa fa-reply"></i> &nbsp;
       <!-- IF topics.teaser.timestamp -->
