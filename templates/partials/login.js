@@ -6,6 +6,7 @@ $(document).ready(function() {
     require(['benchpress'], function (benchpress) {
         benchpress.parse('partials/login', function (html) {
             login = html;
+            console.log("TEST!")
         });
       });
 
