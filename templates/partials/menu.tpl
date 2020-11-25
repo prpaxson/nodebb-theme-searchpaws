@@ -120,7 +120,7 @@
 
 				</ul>
 				<!-- ELSE -->
-				<ul id="logged-out-menu" class="nav navbar-nav navbar-right">
+				<ul id="logged-out-menu" class="nav navbar-nav navbar-right logged-out-menu">
 					<!-- IF allowRegistration -->
 					<li>
 						<a href="#" class="show-register">
