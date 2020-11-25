@@ -2,7 +2,7 @@
   <meta itemprop="itemListOrder" content="descending">
   {{{each topics}}}
   <div class=topic_header>
-    <div class="avatar avatar_topic pull-left">
+    <div id="avatar_topic" class="avatar avatar_topic pull-left">
       <!-- IF showSelect -->
       <div class="select" component="topic/select">
         <!-- IF topics.thumb -->
@@ -33,7 +33,7 @@
         </div>
       </div>
       <small style="float:right">
-        <a href="{config.relative_path}/category/{topics.category.slug}"><span class="fa-stack fa-lg" style="{function.generateCategoryBackground, topics.category}"><i style="color:{topics.category.color};" class="fa {topics.category.icon} fa-stack-1x"></i></span> {topics.category.name}</a>
+        <a id="topic_category" href="{config.relative_path}/category/{topics.category.slug}"><span class="fa-stack fa-lg" style="{function.generateCategoryBackground, topics.category}"><i style="color:{topics.category.color};" class="fa {topics.category.icon} fa-stack-1x"></i></span> {topics.category.name}</a>
       </small>
     </div>
   </div>
@@ -71,7 +71,9 @@
     </small>
   </h2>
 
-  <a href="{config.relative_path}/topic/{topics.slug}<!-- IF topics.bookmark -->/{topics.bookmark}<!-- ENDIF topics.bookmark -->" itemprop="url">{topics.content}</a>
+  <a href="{config.relative_path}/topic/{topics.slug}<!-- IF topics.bookmark -->/{topics.bookmark}<!-- ENDIF topics.bookmark -->" itemprop="url">{topics.posts.content}</a>
+
+
   <li component="category/topic" class="row clearfix category-item {function.generateTopicClass}" data-tid="{topics.tid}" data-index="{topics.index}" data-cid="{topics.cid}" itemprop="itemListElement">
     <meta itemprop="name" content="{function.stripTags, title}">
 
