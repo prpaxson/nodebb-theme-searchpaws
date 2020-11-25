@@ -19,7 +19,7 @@
         <!-- IF topics.thumb -->
         <img src="{topics.thumb}" class="user-img not-responsive" />
         <!-- ELSE -->
-        {buildAvatar(topics.user, "46", true, "not-responsive")}
+        {buildAvatar(topics.user, "46", true, "not-responsive avatar_topic")}
         <!-- ENDIF topics.thumb -->
       </a>
       <!-- ENDIF !showSelect -->
