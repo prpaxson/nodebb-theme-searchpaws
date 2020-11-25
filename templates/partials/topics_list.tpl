@@ -71,10 +71,11 @@
     </small>
   </h2>
 
-
+  {{{each @value}}}
   <div class="post-content">
-      {topics.posts.0.content}
+      {@value}
     </div>
+  {{{end}}}
 
   <li component="category/topic" class="row clearfix category-item {function.generateTopicClass}" data-tid="{topics.tid}" data-index="{topics.index}" data-cid="{topics.cid}" itemprop="itemListElement">
     <meta itemprop="name" content="{function.stripTags, title}">
