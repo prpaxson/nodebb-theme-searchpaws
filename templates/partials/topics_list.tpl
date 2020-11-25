@@ -71,7 +71,7 @@
     </small>
   </h2>
 
-  {{{each @value}}}
+  {{{each topics.posts}}}
   <div class="post-content">
       {@value}
     </div>
