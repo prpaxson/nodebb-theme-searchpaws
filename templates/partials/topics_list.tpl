@@ -130,8 +130,8 @@
     }).then((data) => {
         console.log("THE THING")
         console.log(data)
-        console.log(data[0].posts.content)
-        document.getElementById('main-post-content-{topics.tid}').innerHTML = data[0].posts.content;
+        console.log(data.posts[0].content)
+        document.getElementById('main-post-content-{topics.tid}').innerHTML = data.posts[0].content;
     }).catch((err) => {
       console.log(err)
     })
