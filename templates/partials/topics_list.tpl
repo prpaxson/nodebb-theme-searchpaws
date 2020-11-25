@@ -71,8 +71,10 @@
     </small>
   </h2>
 
-  <a href="{config.relative_path}/topic/{topics.slug}<!-- IF topics.bookmark -->/{topics.bookmark}<!-- ENDIF topics.bookmark -->" itemprop="url">{topics.posts.content}</a>
 
+  <div class="content" component="post/content" itemprop="text" data-pid="{posts.pid}" <!-- IMPORT partials/data/topic.tpl -->>
+    {posts.content}
+  </div>
 
   <li component="category/topic" class="row clearfix category-item {function.generateTopicClass}" data-tid="{topics.tid}" data-index="{topics.index}" data-cid="{topics.cid}" itemprop="itemListElement">
     <meta itemprop="name" content="{function.stripTags, title}">
