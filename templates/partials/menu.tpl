@@ -123,16 +123,16 @@
 				<ul id="logged-out-menu" class="nav navbar-nav navbar-right">
 					<!-- IF allowRegistration -->
 					<li>
-						<a href="{relative_path}/register">
-							<i class="fa fa-pencil fa-fw hidden-sm hidden-md hidden-lg"></i>
-							<span>[[global:register]]</span>
+						<a href="#" class="show-register">
+							<!--<i class="fa fa-pencil fa-fw hidden-sm hidden-md hidden-lg"></i>
+							<span>[[global:register]]</span>-->
 						</a>
 					</li>
 					<!-- ENDIF allowRegistration -->
 					<li>
-						<a href="{relative_path}/login">
-							<i class="fa fa-sign-in fa-fw hidden-sm hidden-md hidden-lg"></i>
-							<span>[[global:login]]</span>
+						<a href="#" class="show-login">
+							<!--<i class="fa fa-sign-in fa-fw hidden-sm hidden-md hidden-lg"></i>
+							<span>[[global:login]]</span>-->
 						</a>
 					</li>
 				</ul>
