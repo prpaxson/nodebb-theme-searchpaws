@@ -128,8 +128,8 @@
     fetch("https://www.searchpaws.com/api/topic/{topics.slug}").then((response) => {
       return response.json()
     }).then((data) => {
-        console.log(data.posts.0)
-        document.getElementById('main-post-content').innerHTML = data.posts.0;
+        console.log(data.posts.0.content)
+        document.getElementById('main-post-content-{topics.tid}').innerHTML = data.posts.0.content;
     }).catch((err) => {
       console.log(err)
     })
