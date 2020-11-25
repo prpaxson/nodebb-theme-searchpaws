@@ -41,7 +41,7 @@
     <i component="topic/pinned" class="fa fa-thumb-tack <!-- IF !topics.pinned -->hide<!-- ENDIF !topics.pinned -->" title="[[topic:pinned]]"></i>
     <i component="topic/locked" class="fa fa-lock <!-- IF !topics.locked -->hide<!-- ENDIF !topics.locked -->" title="[[topic:locked]]"></i>
     <i component="topic/moved" class="fa fa-arrow-circle-right <!-- IF !topics.oldCid -->hide<!-- ENDIF !topics.oldCid -->" title="[[topic:moved]]"></i>
-    {{{each icons}}}@value{{{end}}}
+    {{{each icons}}}{@value}{{{end}}}
 
     <!-- IF !topics.noAnchor -->
     <a id=topic_title href="{config.relative_path}/topic/{topics.slug}<!-- IF topics.bookmark -->/{topics.bookmark}<!-- ENDIF topics.bookmark -->" itemprop="url">{topics.title}</a><br />
@@ -71,24 +71,7 @@
     </small>
   </h2>
 
-  <div id="main-post-content">
-      <script>
-        $(document).ready(function() {
-          fetch('https://www.searchpaws.com/api/topic/{topics.slug}')
-          .then((response) => {
-            return response.json()
-          })
-          .then((data) => {
-              console.log(data)
-              document.getElementById('main-post-content').innerHTML = data.posts.0;
-          })
-          .catch((err) => {
-            console.log(err)
-          })
-
-    });
-});
-    </script>
+  <div id="main-post-content-{topics.tid}">
   </div>
 
   <li component="category/topic" class="row clearfix category-item {function.generateTopicClass}" data-tid="{topics.tid}" data-index="{topics.index}" data-cid="{topics.cid}" itemprop="itemListElement">
@@ -140,3 +123,16 @@
   </div>
   {{{end}}}
 </ul>
+{{{ each topics }}}
+<script>
+    fetch("https://www.searchpaws.com/api/topic/{topics.slug}").then((response) => {
+      return response.json()
+    }).then((data) => {
+        console.log(data.posts.0.content)
+        document.getElementById('main-post-content-{topics.tid}').innerHTML = data.posts.0.content;
+    }).catch((err) => {
+      console.log(err)
+    })
+  });
+</script>
+{{{end}}}
