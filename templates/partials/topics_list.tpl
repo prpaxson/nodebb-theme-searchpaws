@@ -71,11 +71,25 @@
     </small>
   </h2>
 
-  {{{each topics.posts}}}
-  <div class="post-content">
-      {@value}
-    </div>
-  {{{end}}}
+  <div id="main-post-content">
+      <script>
+        $(document).ready(function() {
+          fetch('https://www.searchpaws.com/api/topic/{topics.slug}')
+          .then((response) => {
+            return response.json()
+          })
+          .then((data) => {
+              console.log(data)
+              document.getElementById('main-post-content').innerHTML = data.posts.0;
+          })
+          .catch((err) => {
+            console.log(err)
+          })
+
+    });
+});
+    </script>
+  </div>
 
   <li component="category/topic" class="row clearfix category-item {function.generateTopicClass}" data-tid="{topics.tid}" data-index="{topics.index}" data-cid="{topics.cid}" itemprop="itemListElement">
     <meta itemprop="name" content="{function.stripTags, title}">
