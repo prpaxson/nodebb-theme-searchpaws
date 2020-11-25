@@ -144,7 +144,7 @@
 				</ul>
 				
 				<ul class="nav navbar-nav">
-					<a href="/compose?cid=1" class="btn question-btn" id="new_question" role="button">Ask a question</a>
+					<a href="/compose?cid=1" component="category/post" data-ajaxify="false" role="button" id="new_topic" class="btn question-btn">Ask a Question</a>
 				</ul>
 				
 				<ul class="nav navbar-nav navbar-right hidden-xs">
