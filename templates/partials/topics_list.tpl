@@ -44,7 +44,7 @@
     {{{each icons}}}@value{{{end}}}
 
     <!-- IF !topics.noAnchor -->
-    <a href="{config.relative_path}/topic/{topics.slug}<!-- IF topics.bookmark -->/{topics.bookmark}<!-- ENDIF topics.bookmark -->" itemprop="url">{topics.title}</a><br />
+    <a id=topic_title href="{config.relative_path}/topic/{topics.slug}<!-- IF topics.bookmark -->/{topics.bookmark}<!-- ENDIF topics.bookmark -->" itemprop="url">{topics.title}</a><br />
     <!-- ELSE -->
     <span>{topics.title}</span><br />
     <!-- ENDIF !topics.noAnchor -->
@@ -70,12 +70,10 @@
       <!-- ENDIF topics.teaser.timestamp -->
     </small>
   </h2>
+
+  <a href="{config.relative_path}/topic/{topics.slug}<!-- IF topics.bookmark -->/{topics.bookmark}<!-- ENDIF topics.bookmark -->" itemprop="url">{topics.content}</a>
   <li component="category/topic" class="row clearfix category-item {function.generateTopicClass}" data-tid="{topics.tid}" data-index="{topics.index}" data-cid="{topics.cid}" itemprop="itemListElement">
     <meta itemprop="name" content="{function.stripTags, title}">
-
-    <div class="col-md-6 col-sm-9 col-xs-10 content">
-
-    </div>
 
     <div class="mobile-stat col-xs-2 visible-xs text-right">
       <span class="human-readable-number">{topics.postcount}</span> <a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}"><i class="fa fa-arrow-circle-right"></i></a>
