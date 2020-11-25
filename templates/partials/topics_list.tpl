@@ -74,10 +74,6 @@
   <div id="main-post-content-{topics.tid}">
   </div>
 
-  <div class="memes">
-    {topics.posts[0].content}
-  </div>
-
   <li component="category/topic" class="row clearfix category-item {function.generateTopicClass}" data-tid="{topics.tid}" data-index="{topics.index}" data-cid="{topics.cid}" itemprop="itemListElement">
     <meta itemprop="name" content="{function.stripTags, title}">
 
