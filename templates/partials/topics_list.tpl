@@ -72,8 +72,8 @@
   </h2>
 
 
-  <div class="content" component="post/content" itemprop="text">
-    {topics.posts.0}
+  <div class="content" itemprop="text">
+    {topics.posts.0.content}
   </div>
 
   <li component="category/topic" class="row clearfix category-item {function.generateTopicClass}" data-tid="{topics.tid}" data-index="{topics.index}" data-cid="{topics.cid}" itemprop="itemListElement">
