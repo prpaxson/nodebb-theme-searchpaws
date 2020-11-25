@@ -1,11 +1,12 @@
 var login = undefined;
-var bootbbbox = undefined;
+var bb = undefined;
 
 $(document).ready(function() {
 
     require(['benchpress'], function (benchpress) {
-        benchpress.parse('partials/login', function (html) {
+        benchpress.parse('partials/login', {}, function (html) {
             login = html;
+            console.log("TEST!")
         });
       });
 
