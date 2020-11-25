@@ -1,5 +1,5 @@
 var login = undefined;
-var bootbbbox = undefined;
+var bb = undefined;
 
 $(document).ready(function() {
 
