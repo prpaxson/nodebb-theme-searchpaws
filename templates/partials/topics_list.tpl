@@ -73,7 +73,7 @@
 
 
   <div class="content" component="post/content" itemprop="text" data-pid="{posts.pid}" <!-- IMPORT partials/data/topic.tpl -->>
-    {topic.posts.0}
+    {topics.posts.0}
   </div>
 
   <li component="category/topic" class="row clearfix category-item {function.generateTopicClass}" data-tid="{topics.tid}" data-index="{topics.index}" data-cid="{topics.cid}" itemprop="itemListElement">
