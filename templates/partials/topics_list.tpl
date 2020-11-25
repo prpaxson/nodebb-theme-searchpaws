@@ -71,23 +71,17 @@
     </small>
   </h2>
 
-  <div id="main-post-content">
+  <div id="main-post-content-{topics.tid}">
       <script>
-        $(document).ready(function() {
-          fetch('https://www.searchpaws.com/api/topic/{topics.slug}')
-          .then((response) => {
+          fetch("https://www.searchpaws.com/api/topic/{topics.slug}").then((response) => {
             return response.json()
-          })
-          .then((data) => {
+          }).then((data) => {
               console.log(data)
               document.getElementById('main-post-content').innerHTML = data.posts.0;
-          })
-          .catch((err) => {
+          }).catch((err) => {
             console.log(err)
           })
-
-    });
-});
+        });
     </script>
   </div>
 
