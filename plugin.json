@@ -10,6 +10,7 @@
 		"lib/client.js",
 		"lib/search-bar.js",
 		"lib/login.js",
+		"lib/signup.js",
 		"../nodebb-theme-persona/lib/persona.js",
 		"../nodebb-theme-persona/lib/modules/nprogress.js",
 		"../nodebb-theme-persona/lib/modules/autohidingnavbar.min.js",
