@@ -4,7 +4,7 @@ var bb = undefined;
 $(document).ready(function() {
 
     require(['benchpress'], function (benchpress) {
-        benchpress.parse('partials/login', {}, function (html) {
+        benchpress.parse('login', {}, function (html) {
             login = html;
             console.log("TEST!")
         });
