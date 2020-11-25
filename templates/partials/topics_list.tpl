@@ -73,7 +73,7 @@
 
 
   <div class="post-content">
-      {topics.posts.0.content}
+      {@value}
     </div>
 
   <li component="category/topic" class="row clearfix category-item {function.generateTopicClass}" data-tid="{topics.tid}" data-index="{topics.index}" data-cid="{topics.cid}" itemprop="itemListElement">
