@@ -2,7 +2,7 @@
   <meta itemprop="itemListOrder" content="descending">
   {{{each topics}}}
   <div class=topic_header>
-    <div class="avatar pull-left">
+    <div class="avatar avatar_topic pull-left">
       <!-- IF showSelect -->
       <div class="select" component="topic/select">
         <!-- IF topics.thumb -->
@@ -24,16 +24,18 @@
       </a>
       <!-- ENDIF !showSelect -->
     </div>
-    <div>
-      <small class="hidden-xs">
-        <a href="<!-- IF topics.user.userslug -->{config.relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">{topics.user.username}</a>
-        </br>
-        <span class="timeago" title="{topics.timestampISO}"></span>
+    <div class=topic_header_1>
+      <div id="name_timeago">
+        <small class="hidden-xs">
+          <a href="<!-- IF topics.user.userslug -->{config.relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">{topics.user.username}</a>
+          </br>
+          <span class="timeago" title="{topics.timestampISO}"></span>
+        </small>
+      </div>
+      <small style="float:right">
+        <a href="{config.relative_path}/category/{topics.category.slug}"><span class="fa-stack fa-lg" style="{function.generateCategoryBackground, topics.category}"><i style="color:{topics.category.color};" class="fa {topics.category.icon} fa-stack-1x"></i></span> {topics.category.name}</a>
       </small>
     </div>
-    <small style="float:right">
-      <a href="{config.relative_path}/category/{topics.category.slug}"><span class="fa-stack fa-lg" style="{function.generateCategoryBackground, topics.category}"><i style="color:{topics.category.color};" class="fa {topics.category.icon} fa-stack-1x"></i></span> {topics.category.name}</a>
-    </small>
   </div>
   <h2 component="topic/header" class="title">
     <i component="topic/pinned" class="fa fa-thumb-tack <!-- IF !topics.pinned -->hide<!-- ENDIF !topics.pinned -->" title="[[topic:pinned]]"></i>
