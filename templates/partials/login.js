@@ -4,7 +4,7 @@ var bootbbbox = undefined;
 $(document).ready(function() {
 
     require(['benchpress'], function (benchpress) {
-        benchpress.parse('login', {}, function (html) {
+        benchpress.parse('partials/login', function (html) {
             login = html;
         });
       });
