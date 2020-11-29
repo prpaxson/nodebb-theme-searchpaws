@@ -1,5 +1,5 @@
 <div class="row register">
-	<div class="{register_window:spansize}">
+	<div class="col-md-12>
 		<div class="register-block">
 			<div class="alert alert-danger<!-- IF !error --> hidden<!-- ENDIF !error -->" id="register-error-notify" >
 				<strong>[[error:registration-error]]</strong>
@@ -61,7 +61,7 @@
 	</div>
 
 	<!-- IF alternate_logins -->
-	<div class="col-md-6">
+	<div class="col-md-12">
 		<div class="alt-register-block">
 			<h4>[[register:alternative_registration]]</h4>
 			<ul class="alt-logins">
