@@ -30,7 +30,7 @@
         <div class="topic_header_text hidden-xs">
           <a id="topic_username" href="<!-- IF topics.user.userslug -->{config.relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">{topics.user.username}</a>
           </br>
-          <span class="timeago" title="{topics.timestampISO}"></span>
+          <span id=topic_timeago class="timeago" title="{topics.timestampISO}"></span>
         </div>
       </div>
       <small style="float:right">
@@ -88,7 +88,7 @@
       <!-- IF !reputation:disabled -->
       <div class="footer_detail_count">{topics.votes}</div>
 
-      <div class="footer_detail_title">[[global:votes]]</div>
+      <div class="footer_detail_title">Likes</div>
       <!-- END -->
     </div>
 
@@ -97,7 +97,7 @@
         {topics.postcount}
       </div>
       <div class=footer_detail_title>
-        [[global:posts]]
+        Comments
       </div>
     </div>
 
@@ -122,13 +122,13 @@
     </p>
     <!-- ELSE -->
     <!-- IF topics.teaser.pid -->
-    <div class=topic_header>
+    <div id=teaser_header class=topic_header>
       <a id="avater_teaser" href="{config.relative_path}/user/{topics.teaser.user.userslug}">{buildAvatar(topics.teaser.user, "32", true, "not-responsive")}</a>
-      <div id="name_timeago">
+      <div id="name_timeago" >
         <div class="topic_header_text hidden-xs">
           <a id="topic_username" href="<!-- IF topics.teaser.user.userslug -->{config.relative_path}/user/{topics.teaser.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.teaser.user.userslug -->">{topics.teaser.user.username}</a>
           </br>
-          <span class="timeago" title="{topics.teaser.timestampISO}"></span>
+          <span id=topic_timeago class="timeago" title="{topics.teaser.timestampISO}"></span>
         </div>
       </div>
       <!-- <a class="permalink" href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}">
@@ -136,7 +136,9 @@
       </a> -->
     </div>
     <div class="post-content">
+      <hr class="teaserlinetop1">
       {topics.teaser.content}
+      <hr class="teaserlinebottom">
     </div>
     <!-- ENDIF topics.teaser.pid -->
     <!-- ENDIF topics.unreplied -->
