@@ -1,6 +1,7 @@
 <ul component="category" class="topic-list" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}" data-set="{set}">
   <meta itemprop="itemListOrder" content="descending">
   {{{each topics}}}
+  <div class=topic_container>
   <div class=topic_header>
     <div id="avatar_topic" class="avatar avatar_topic pull-left">
       <!-- IF showSelect -->
@@ -81,19 +82,23 @@
       <span class="human-readable-number">{topics.postcount}</span> <a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}"><i class="fa fa-arrow-circle-right"></i></a>
     </div>
 
-    <div class="col-md-1 hidden-sm hidden-xs stats stats-votes">
+    <div class="col-md-2 hidden-sm hidden-xs stats stats-votes">
       <!-- IF !reputation:disabled -->
       <span class="human-readable-number" title="{topics.votes}">{topics.votes}</span><br />
       <small>[[global:votes]]</small>
       <!-- END -->
     </div>
 
-    <div class="col-md-1 hidden-sm hidden-xs stats stats-postcount">
-      <span class="human-readable-number" title="{topics.postcount}">{topics.postcount}</span><br />
-      <small>[[global:posts]]</small>
+    <div class="col-md-8 hidden-sm hidden-xs stats stats-postcount">
+      <div class=footer_detail_count>
+        {topics.postcount}
+      </div>
+      <div class=footer_detail_title>
+        [[global:posts]]
+      </div>
     </div>
 
-    <div class="col-md-1 hidden-sm hidden-xs stats stats-viewcount">
+    <div class="col-md-2 hidden-sm hidden-xs stats stats-viewcount">
       <span class="human-readable-number" title="{topics.viewcount}">{topics.viewcount}</span><br />
       <small>[[global:views]]</small>
     </div>
@@ -120,6 +125,7 @@
     </div>
     <!-- ENDIF topics.teaser.pid -->
     <!-- ENDIF topics.unreplied -->
+  </div>
   </div>
   {{{end}}}
 </ul>
