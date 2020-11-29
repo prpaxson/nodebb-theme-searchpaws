@@ -1,5 +1,3 @@
-<!-- IMPORT partials/breadcrumbs.tpl -->
-
 <div class="row register">
 	<div class="{register_window:spansize}">
 		<div class="register-block">
