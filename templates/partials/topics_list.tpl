@@ -86,8 +86,9 @@
 
     <div class="col-md-2 hidden-sm hidden-xs stats stats-votes">
       <!-- IF !reputation:disabled -->
-      <span class="human-readable-number" title="{topics.votes}">{topics.votes}</span><br />
-      <small>[[global:votes]]</small>
+      <div class="footer_detail_count">{topics.votes}</div>
+
+      <div class="footer_detail_title">[[global:votes]]</div>
       <!-- END -->
     </div>
 
@@ -101,8 +102,8 @@
     </div>
 
     <div class="col-md-2 hidden-sm hidden-xs stats stats-viewcount">
-      <span class="human-readable-number" title="{topics.viewcount}">{topics.viewcount}</span><br />
-      <small>[[global:views]]</small>
+      <div class="footer_detail_count">{topics.viewcount}</div>
+      <div class="footer_detail_title">[[global:views]]</div>
     </div>
 
     <div class="col-md-3 col-sm-3 teaser hidden-xs" component="topic/teaser">
@@ -123,9 +124,16 @@
     <!-- IF topics.teaser.pid -->
     <p>
       <a href="{config.relative_path}/user/{topics.teaser.user.userslug}">{buildAvatar(topics.teaser.user, "24", true, "not-responsive")}</a>
-      <a class="permalink" href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}">
+      <div id="name_timeago">
+        <div class="topic_header_text hidden-xs">
+          <a id="topic_username" href="<!-- IF topics.teaser.user.userslug -->{config.relative_path}/user/{topics.teaser.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.teaser.user.userslug -->">{topics.teaser.user.username}</a>
+          </br>
+          <span class="timeago" title="{topics.teaser.timestampISO}"></span>
+        </div>
+      </div>
+      <!-- <a class="permalink" href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}">
         <span class="timeago" title="{topics.teaser.timestampISO}"></span>
-      </a>
+      </a> -->
     </p>
     <div class="post-content">
       {topics.teaser.content}
