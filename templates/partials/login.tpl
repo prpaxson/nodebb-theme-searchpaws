@@ -44,10 +44,7 @@
 				<div class="form-group">
 					<div class="col-lg-8">
 						<button class="btn btn-primary btn-lg btn-block btn-login" id="login" type="submit">[[global:login]]</button>
-						<!-- IF allowRegistration -->
-						<span>[[login:dont_have_account]] <a href="{config.relative_path}/register">[[register:register]]</a></span>
-						<!-- ENDIF allowRegistration -->
-						
+						<span>[[login:dont_have_account]] <a href="{config.relative_path}/register">[[register:register]]</a></span>						
 					</div>
 				</div>
 			</form>
