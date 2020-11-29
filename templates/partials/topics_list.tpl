@@ -72,8 +72,10 @@
     </small>
   </h2>
 
-  <div id="main-post-content-{topics.tid}">
+  <div id="main-post-content-{topics.tid}" class="mainpost_content">
   </div>
+
+  <hr class="postlinestop">
 
   <li component="category/topic" class="row clearfix category-item {function.generateTopicClass}" data-tid="{topics.tid}" data-index="{topics.index}" data-cid="{topics.cid}" itemprop="itemListElement">
     <meta itemprop="name" content="{function.stripTags, title}">
@@ -107,6 +109,11 @@
 
     </div>
   </li>
+
+  <hr class="postlinebottom">
+
+  <div class="topanswers"> Top Answers </div>
+
   <div class="card" style="border-color: {topics.category.bgColor}">
     <!-- IF topics.unreplied -->
     <p>
