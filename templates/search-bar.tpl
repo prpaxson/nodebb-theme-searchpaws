@@ -6,7 +6,7 @@
                 <i class="fa fa-search fa-fw"></i>
             </a>
 
-	    <input id="searchBarWidgetInput" type="text" class="form-control" placeholder="Search the site" name="query" value="" autocomplete="off"> 
+	    <input id="searchBarWidgetInput" onfocus="this.value=''" type="text" class="form-control" placeholder="Search the site" name="query" value="" autocomplete="off"> 
 	    	    
         </div>
     </div>
