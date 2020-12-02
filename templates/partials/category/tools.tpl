@@ -1,6 +1,6 @@
 <!-- IF showTopicTools -->
-<div class="btn-group thread-tools bottom-sheet category-btn">
-	<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
+<div class="btn-group thread-tools bottom-sheet">
+	<button class="category-btn btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
 		<span class="visible-sm-inline visible-md-inline visible-lg-inline">[[topic:thread_tools.title]]</span>
 		<span class="visible-xs-inline"><i class="fa fa-fw fa-gear"></i></span>
 		<span class="caret"></span>
