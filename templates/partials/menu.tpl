@@ -1,4 +1,4 @@
-			<div class="navbar-header">
+			<div class="navbar-header col-md-3">
 				<button type="button" class="navbar-toggle pull-left" id="mobile-menu">
 					<span component="notifications/icon" class="notification-icon fa fa-fw fa-bell-o unread-count" data-content="{unreadCount.notification}"></span>
 					<i class="fa fa-lg fa-fw fa-bars"></i>
@@ -22,7 +22,7 @@
 				</div>
 			</div>
 
-			<div id="nav-dropdown" class="hidden-xs">
+			<div id="nav-dropdown col-md-9" class="hidden-xs">
 				<!-- IF !maintenanceHeader -->
 				<!-- IF config.loggedIn -->
 
@@ -137,7 +137,7 @@
 					</li>
 				</ul>
 				<!-- ENDIF config.loggedIn -->
-				<ul class="nav navbar-nav navbar-search">
+				<ul class="nav navbar-nav navbar-search col-md-6">
 					<li class="li-search">					
 					<!-- IMPORT search-bar.tpl -->
 					</li>
