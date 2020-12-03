@@ -5,6 +5,11 @@
 	{{{end}}}
 </div>
 <div class="row">
+	<div data-widget-area="lsidebar" class="col-lg-3 col-sm-12 <!-- IF !widgets.lsidebar.length -->hidden<!-- ENDIF !widgets.lsidebar.length -->">
+		{{{each widgets.lsidebar}}}
+		{{widgets.lsidebar.html}}
+		{{{end}}}
+	</div>
 	<div class="category <!-- IF widgets.sidebar.length -->col-lg-9 col-sm-12<!-- ELSE -->col-lg-12<!-- ENDIF widgets.sidebar.length -->">
 		<!-- IMPORT partials/category/subcategory.tpl -->
 
