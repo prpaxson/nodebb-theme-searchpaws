@@ -5,12 +5,12 @@
 	{{{end}}}
 </div>
 <div class="row">
-	<div data-widget-area="lsidebar" class="col-lg-3 col-sm-12 <!-- IF !widgets.lsidebar.length -->hidden<!-- ENDIF !widgets.lsidebar.length -->">
-		{{{each widgets.lsidebar}}}
-		{{widgets.lsidebar.html}}
-		{{{end}}}
-	</div>
 	<div class="category <!-- IF widgets.sidebar.length -->col-lg-9 col-sm-12<!-- ELSE -->col-lg-12<!-- ENDIF widgets.sidebar.length -->">
+		<div data-widget-area="lsidebar" class="col-lg-3 col-sm-12 <!-- IF !widgets.lsidebar.length -->hidden<!-- ENDIF !widgets.lsidebar.length -->">
+			{{{each widgets.lsidebar}}}
+			{{widgets.lsidebar.html}}
+			{{{end}}}
+		</div>
 		<!-- IMPORT partials/category/subcategory.tpl -->
 
 		<!-- IF children.length --><hr class="hidden-xs"/><!-- ENDIF children.length -->
