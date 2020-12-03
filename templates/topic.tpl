@@ -10,7 +10,7 @@
 		{{widgets.lsidebar.html}}
 		{{{end}}}
 	</div>
-	<div class="topic <!-- IF widgets.sidebar.length --> <!-- IF widgets.lsidebar.length --> col-lg-6 col-sm-12 <!-- ELSE --> col-lg-9 col-sm-12 <!-- ENDIF --> <!-- ELSE -->col-lg-12<!-- ENDIF widgets.sidebar.length -->">
+	<div class="topic_container topic <!-- IF widgets.sidebar.length --> <!-- IF widgets.lsidebar.length --> col-lg-6 col-sm-12 <!-- ELSE --> col-lg-9 col-sm-12 <!-- ENDIF --> <!-- ELSE -->col-lg-12<!-- ENDIF widgets.sidebar.length -->">
 		<div class="topic-header">
 			<h1 component="post/header" class="" itemprop="name">
 				<i component="topic/pinned" class="pull-left fa fa-thumb-tack <!-- IF !pinned -->hidden<!-- ENDIF !pinned -->" title="[[topic:pinned]]"></i>
