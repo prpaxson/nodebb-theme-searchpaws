@@ -16,19 +16,19 @@
         <!-- IF showSelect -->
         <div class="select" component="topic/select">
           <!-- IF topics.thumb -->
-          <img src="{topics.thumb}" class="user-img not-responsive" />
+          <img src="{thumb}" class="user-img not-responsive" />
           <!-- ELSE -->
-          {buildAvatar(topics.user, "46", true, "not-responsive avatar_topic")}
+          {buildAvatar(user, "46", true, "not-responsive avatar_topic")}
           <!-- ENDIF topics.thumb -->
         </div>
         <!-- ENDIF showSelect -->
 
         <!-- IF !showSelect -->
-        <a href="<!-- IF topics.user.userslug -->{config.relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->" class="pull-left">
+        <a href="<!-- IF user.userslug -->{config.relative_path}/user/{user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->" class="pull-left">
           <!-- IF topics.thumb -->
-          <img src="{topics.thumb}" class="user-img not-responsive" />
+          <img src="{thumb}" class="user-img not-responsive" />
           <!-- ELSE -->
-          {buildAvatar(topics.user, "46", true, "not-responsive avatar_topic")}
+          {buildAvatar(user, "46", true, "not-responsive avatar_topic")}
           <!-- ENDIF topics.thumb -->
         </a>
         <!-- ENDIF !showSelect -->
@@ -36,13 +36,13 @@
       <div class=topic_header_1>
         <div id="name_timeago">
           <div class="topic_header_text hidden-xs">
-            <a id="topic_username" href="<!-- IF topics.user.userslug -->{config.relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">{topics.user.username}</a>
+            <a id="topic_username" href="<!-- IF user.userslug -->{config.relative_path}/user/{user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">{user.username}</a>
             </br>
-            <span id=topic_timeago class="timeago" title="{topics.timestampISO}"></span>
+            <span id=topic_timeago class="timeago" title="{timestampISO}"></span>
           </div>
         </div>
         <small style="float:right">
-          <a id="topic_category" href="{config.relative_path}/category/{topics.category.slug}"><span class="fa-stack fa-lg" style="{function.generateCategoryBackground, topics.category}"><i style="color:{topics.category.color};" class="fa {topics.category.icon} fa-stack-1x"></i></span> {topics.category.name}</a>
+          <a id="topic_category" href="{config.relative_path}/category/{category.slug}"><span class="fa-stack fa-lg" style="{function.generateCategoryBackground, category}"><i style="color:{category.color};" class="fa {topics.category.icon} fa-stack-1x"></i></span> {topics.category.name}</a>
         </small>
       </div>
     </div>
@@ -53,9 +53,9 @@
       {{{each icons}}}{@value}{{{end}}}
 
       <!-- IF !topics.noAnchor -->
-      <a id=topic_title href="{config.relative_path}/topic/{topics.slug}<!-- IF topics.bookmark -->/{topics.bookmark}<!-- ENDIF topics.bookmark -->" itemprop="url">{topics.title}</a><br />
+      <a id=topic_title href="{config.relative_path}/topic/{slug}<!-- IF topics.bookmark -->/{bookmark}<!-- ENDIF topics.bookmark -->" itemprop="url">{title}</a><br />
       <!-- ELSE -->
-      <span>{topics.title}</span><br />
+      <span>{title}</span><br />
       <!-- ENDIF !topics.noAnchor -->
 
       <!-- IF !template.category -->
@@ -64,17 +64,17 @@
 
       <!-- IF topics.tags.length -->
       <span class="tag-list hidden-xs">
-        {{{each topics.tags}}}
-        <a href="{config.relative_path}/tags/{topics.tags.valueEscaped}"><span class="tag" style="<!-- IF topics.tags.color -->color: {topics.tags.color};<!-- ENDIF topics.tags.color --><!-- IF topics.tags.bgColor -->background-color: {topics.tags.bgColor};<!-- ENDIF topics.tags.bgColor -->">{topics.tags.valueEscaped}</span></a>
+        {{{each tags}}}
+        <a href="{config.relative_path}/tags/{tags.valueEscaped}"><span class="tag" style="<!-- IF tags.color -->color: {tags.color};<!-- ENDIF tags.color --><!-- IF tags.bgColor -->background-color: {tags.bgColor};<!-- ENDIF tags.bgColor -->">{tags.valueEscaped}</span></a>
         {{{end}}}
       </span>
       <!-- ENDIF topics.tags.length -->
       <small class="visible-xs-inline">
         <i class="fa fa-reply"></i> &nbsp;
         <!-- IF topics.teaser.timestamp -->
-        <span class="timeago" title="{topics.teaser.timestampISO}"></span>
+        <span class="timeago" title="{teaser.timestampISO}"></span>
         <!-- ELSE -->
-        <span class="timeago" title="{topics.timestampISO}"></span>
+        <span class="timeago" title="{timestampISO}"></span>
         <!-- ENDIF topics.teaser.timestamp -->
       </small>
     </h2>
