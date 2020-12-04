@@ -15,8 +15,12 @@
 
     <!-- IF children.length --><hr class="hidden-xs"/><!-- ENDIF children.length -->
     <div class="categoryheader">
-      <i style="color:{color};" class="fa {icon} fa-stack-1x"></i>
-      <p class="hidden-xs">{name}</p>
+      <a id="topic_category" href="{config.relative_path}/category/{slug}">
+        <span class="fa-stack fa-lg" style="{function.generateCategoryBackground, category}">
+          <i style="color:{color};" class="fa {icon} fa-stack-1x"></i>
+        </span>
+        {name}
+      </a>
     </div>
 
     <hr class="hidden-xs" />
