@@ -44,9 +44,11 @@
           <!-- ENDIF topics.teaser.timestamp -->
         </small>
       </h2>
-      <small style="float:right">
-        <a id="topic_category" href="{config.relative_path}/category/{category.slug}"><span class="fa-stack fa-lg" style="{function.generateCategoryBackground, category}"><i style="color:{category.color};" class="fa {category.icon} fa-stack-1x"></i></span> {category.name}</a>
-      </small>
+      <div class=topic_header_1>
+        <small style="float:right">
+          <a id="topic_category" href="{config.relative_path}/category/{category.slug}"><span class="fa-stack fa-lg" style="{function.generateCategoryBackground, category}"><i style="color:{category.color};" class="fa {category.icon} fa-stack-1x"></i></span> {category.name}</a>
+        </small>
+      </div>
     </div>
 
     <!-- IF merger -->
