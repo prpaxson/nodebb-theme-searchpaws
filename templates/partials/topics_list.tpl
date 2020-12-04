@@ -92,7 +92,7 @@
 
     <div class="col-md-8 hidden-sm hidden-xs stats stats-postcount">
       <div class=footer_detail_count>
-        {topics.postcount}
+        {topics.postcount - 1}
       </div>
       <div class=footer_detail_title>
         Comments
