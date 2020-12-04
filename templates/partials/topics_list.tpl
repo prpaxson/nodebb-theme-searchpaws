@@ -11,7 +11,6 @@
         <!-- ELSE -->
         {buildAvatar(topics.user, "46", true, "not-responsive avatar_topic")}
         <!-- ENDIF topics.thumb -->
-        <i class="fa fa-check"></i>
       </div>
       <!-- ENDIF showSelect -->
 
