@@ -44,18 +44,9 @@
           <!-- ENDIF topics.teaser.timestamp -->
         </small>
       </h2>
-      <div class=topic_header_1>
-        <div id="name_timeago">
-          <div class="topic_header_text hidden-xs">
-            <a id="topic_username" href="<!-- IF user.userslug -->{config.relative_path}/user/{user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">{user.username}</a>
-            </br>
-            <span id=topic_timeago class="timeago" title="{timestampISO}"></span>
-          </div>
-        </div>
-        <small style="float:right">
-          <a id="topic_category" href="{config.relative_path}/category/{category.slug}"><span class="fa-stack fa-lg" style="{function.generateCategoryBackground, category}"><i style="color:{category.color};" class="fa {category.icon} fa-stack-1x"></i></span> {category.name}</a>
-        </small>
-      </div>
+      <small style="float:right">
+        <a id="topic_category" href="{config.relative_path}/category/{category.slug}"><span class="fa-stack fa-lg" style="{function.generateCategoryBackground, category}"><i style="color:{category.color};" class="fa {category.icon} fa-stack-1x"></i></span> {category.name}</a>
+      </small>
     </div>
 
     <!-- IF merger -->
