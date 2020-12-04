@@ -12,27 +12,38 @@
   </div>
   <div class="topic_container topic <!-- IF widgets.sidebar.length --> <!-- IF widgets.lsidebar.length --> col-lg-6 col-sm-12 <!-- ELSE --> col-lg-9 col-sm-12 <!-- ENDIF --> <!-- ELSE -->col-lg-12<!-- ENDIF widgets.sidebar.length -->">
     <div class=topic_header>
-      <div id="avatar_topic" class="avatar avatar_topic pull-left">
-        <!-- IF showSelect -->
-        <div class="select" component="topic/select">
-          <!-- IF topics.thumb -->
-          <img src="{thumb}" class="user-img not-responsive" />
-          <!-- ELSE -->
-          {buildAvatar(user, "46", true, "not-responsive avatar_topic")}
-          <!-- ENDIF topics.thumb -->
-        </div>
-        <!-- ENDIF showSelect -->
+      <h2 component="topic/header" class="title">
+        <i component="topic/pinned" class="fa fa-thumb-tack <!-- IF !topics.pinned -->hide<!-- ENDIF !topics.pinned -->" title="[[topic:pinned]]"></i>
+        <i component="topic/locked" class="fa fa-lock <!-- IF !topics.locked -->hide<!-- ENDIF !topics.locked -->" title="[[topic:locked]]"></i>
+        <i component="topic/moved" class="fa fa-arrow-circle-right <!-- IF !topics.oldCid -->hide<!-- ENDIF !topics.oldCid -->" title="[[topic:moved]]"></i>
+        {{{each icons}}}{@value}{{{end}}}
 
-        <!-- IF !showSelect -->
-        <a href="<!-- IF user.userslug -->{config.relative_path}/user/{user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->" class="pull-left">
-          <!-- IF topics.thumb -->
-          <img src="{thumb}" class="user-img not-responsive" />
+        <!-- IF !topics.noAnchor -->
+        <a id=topic_title href="{config.relative_path}/topic/{slug}<!-- IF topics.bookmark -->/{bookmark}<!-- ENDIF topics.bookmark -->" itemprop="url">{title}</a><br />
+        <!-- ELSE -->
+        <span>{title}</span><br />
+        <!-- ENDIF !topics.noAnchor -->
+
+        <!-- IF !template.category -->
+
+        <!-- ENDIF !template.category -->
+
+        <!-- IF topics.tags.length -->
+        <span class="tag-list hidden-xs">
+          {{{each tags}}}
+          <a href="{config.relative_path}/tags/{tags.valueEscaped}"><span class="tag" style="<!-- IF tags.color -->color: {tags.color};<!-- ENDIF tags.color --><!-- IF tags.bgColor -->background-color: {tags.bgColor};<!-- ENDIF tags.bgColor -->">{tags.valueEscaped}</span></a>
+          {{{end}}}
+        </span>
+        <!-- ENDIF topics.tags.length -->
+        <small class="visible-xs-inline">
+          <i class="fa fa-reply"></i> &nbsp;
+          <!-- IF topics.teaser.timestamp -->
+          <span class="timeago" title="{teaser.timestampISO}"></span>
           <!-- ELSE -->
-          {buildAvatar(user, "46", true, "not-responsive avatar_topic")}
-          <!-- ENDIF topics.thumb -->
-        </a>
-        <!-- ENDIF !showSelect -->
-      </div>
+          <span class="timeago" title="{timestampISO}"></span>
+          <!-- ENDIF topics.teaser.timestamp -->
+        </small>
+      </h2>
       <div class=topic_header_1>
         <div id="name_timeago">
           <div class="topic_header_text hidden-xs">
@@ -46,38 +57,7 @@
         </small>
       </div>
     </div>
-    <h2 component="topic/header" class="title">
-      <i component="topic/pinned" class="fa fa-thumb-tack <!-- IF !topics.pinned -->hide<!-- ENDIF !topics.pinned -->" title="[[topic:pinned]]"></i>
-      <i component="topic/locked" class="fa fa-lock <!-- IF !topics.locked -->hide<!-- ENDIF !topics.locked -->" title="[[topic:locked]]"></i>
-      <i component="topic/moved" class="fa fa-arrow-circle-right <!-- IF !topics.oldCid -->hide<!-- ENDIF !topics.oldCid -->" title="[[topic:moved]]"></i>
-      {{{each icons}}}{@value}{{{end}}}
 
-      <!-- IF !topics.noAnchor -->
-      <a id=topic_title href="{config.relative_path}/topic/{slug}<!-- IF topics.bookmark -->/{bookmark}<!-- ENDIF topics.bookmark -->" itemprop="url">{title}</a><br />
-      <!-- ELSE -->
-      <span>{title}</span><br />
-      <!-- ENDIF !topics.noAnchor -->
-
-      <!-- IF !template.category -->
-
-      <!-- ENDIF !template.category -->
-
-      <!-- IF topics.tags.length -->
-      <span class="tag-list hidden-xs">
-        {{{each tags}}}
-        <a href="{config.relative_path}/tags/{tags.valueEscaped}"><span class="tag" style="<!-- IF tags.color -->color: {tags.color};<!-- ENDIF tags.color --><!-- IF tags.bgColor -->background-color: {tags.bgColor};<!-- ENDIF tags.bgColor -->">{tags.valueEscaped}</span></a>
-        {{{end}}}
-      </span>
-      <!-- ENDIF topics.tags.length -->
-      <small class="visible-xs-inline">
-        <i class="fa fa-reply"></i> &nbsp;
-        <!-- IF topics.teaser.timestamp -->
-        <span class="timeago" title="{teaser.timestampISO}"></span>
-        <!-- ELSE -->
-        <span class="timeago" title="{timestampISO}"></span>
-        <!-- ENDIF topics.teaser.timestamp -->
-      </small>
-    </h2>
     <!-- IF merger -->
     <div component="topic/merged/message" class="alert alert-warning clearfix">
       <span class="pull-left">[[topic:merged_message, {config.relative_path}/topic/{mergeIntoTid}, {merger.mergedIntoTitle}]]</span>
