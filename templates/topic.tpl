@@ -42,7 +42,7 @@
           </div>
         </div>
         <small style="float:right">
-          <a id="topic_category" href="{config.relative_path}/category/{category.slug}"><span class="fa-stack fa-lg" style="{function.generateCategoryBackground, category}"><i style="color:{category.color};" class="fa {topics.category.icon} fa-stack-1x"></i></span> {topics.category.name}</a>
+          <a id="topic_category" href="{config.relative_path}/category/{category.slug}"><span class="fa-stack fa-lg" style="{function.generateCategoryBackground, category}"><i style="color:{category.color};" class="fa {category.icon} fa-stack-1x"></i></span> {category.name}</a>
         </small>
       </div>
     </div>
