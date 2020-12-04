@@ -149,7 +149,7 @@
     }).then((data) => {
         document.getElementById('main-post-content-{topics.tid}').innerHTML = data.posts[0].content;
         var count = {topics.postcount}-1
-        document.getElementById('main-post-content-{topics.tid}').innerHTML = count;
+        document.getElementById('comments-{topics.tid}').innerHTML = count;
         if (count == 1) {
           document.getElementById('comments-label-{topics.tid}').innerHTML = "Comment";
         }
