@@ -91,11 +91,10 @@
     </div>
 
     <div class="col-md-8 hidden-sm hidden-xs stats stats-postcount">
-      <div class=footer_detail_count>
-        {topics.postcount - 1}
+      <div class=footer_detail_count id="comments-{topics.tid}">
       </div>
-      <div class=footer_detail_title>
-        Comments
+      <div class=footer_detail_title id="comments-label-{topics.tid}">
+      Comments
       </div>
     </div>
 
@@ -149,6 +148,11 @@
       return response.json()
     }).then((data) => {
         document.getElementById('main-post-content-{topics.tid}').innerHTML = data.posts[0].content;
+        var count = {topics.postcount}-1
+        document.getElementById('main-post-content-{topics.tid}').innerHTML = count;
+        if (count == 1) {
+          document.getElementById('comments-label-{topics.tid}').innerHTML = "Comment";
+        }
     }).catch((err) => {
       console.log(err)
     })
