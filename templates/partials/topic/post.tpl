@@ -101,4 +101,4 @@
 
 <hr class="postlinesbottom"/>
 
-<div class="replies_title"></div>
+<div class="replies_title topanswers"></div>
