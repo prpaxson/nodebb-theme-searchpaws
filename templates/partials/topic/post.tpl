@@ -47,29 +47,31 @@
   {posts.content}
 </div>
 
-<div class="clearfix post-footer">
+<div id="post-footer_topic" class="clearfix post-footer">
   <!-- IF posts.user.signature -->
   <div component="post/signature" data-uid="{posts.user.uid}" class="post-signature">{posts.user.signature}</div>
   <!-- ENDIF posts.user.signature -->
 
-  <small class="pull-right">
+  <small class="pull-right pull-right_footer">
     <span class="post-tools">
-      <a component="post/reply" href="#" class="no-select <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->">[[topic:reply]]</a>
-      <a component="post/quote" href="#" class="no-select <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->">[[topic:quote]]</a>
+      <a id=footer_reply component="post/reply" href="#" class="reply_topic no-select <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->"><div class=reply_txt>[[topic:reply]]</div></a>
+      <a component="post/quote" href="#" class="quote_topic no-select <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->">[[topic:quote]]</a>
     </span>
 
     <!-- IF !reputation:disabled -->
     <span class="votes">
-      <a component="post/upvote" href="#" class="<!-- IF posts.upvoted -->upvoted<!-- ENDIF posts.upvoted -->">
+      <a component="post/upvote" href="#" class="upvote_topic <!-- IF posts.upvoted -->upvoted<!-- ENDIF posts.upvoted -->">
         <i class="fa fa-chevron-up"></i>
       </a>
 
-      <span component="post/vote-count" data-votes="{posts.votes}">{posts.votes}</span>
+      <span component="post/vote-count" data-votes="{posts.votes}" class="votes_topic">{posts.votes}</span>
 
       <!-- IF !downvote:disabled -->
-      <a component="post/downvote" href="#" class="<!-- IF posts.downvoted -->downvoted<!-- ENDIF posts.downvoted -->">
+      <a component="post/downvote" href="#" class="downvote_topic<!-- IF posts.downvoted -->downvoted<!-- ENDIF posts.downvoted -->">
         <i class="fa fa-chevron-down"></i>
       </a>
+
+      Likes
       <!-- ENDIF !downvote:disabled -->
     </span>
     <!-- ENDIF !reputation:disabled -->
@@ -95,4 +97,4 @@
   <!-- ENDIF !hideReplies -->
 </div>
 
-<hr />
+<hr class="postlinesbottom"/>

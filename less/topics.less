@@ -1,12 +1,84 @@
+.threaded-replies{
+  display:none;
+}
+
 .pid_0{
-  .threaded-replies{
-    display:none;
+  #content_topic{
+    margin-top: -20px;
+    margin-left: 0;
+  }
+  #post-footer_topic{
+    margin-bottom: 12px;
+    .pull-right_footer{
+      flex-direction: row;
+      .post-tools{
+        .reply_topic{
+          border: 2px solid #fc913a;
+          border-radius: 6px;
+          padding: 3px 10px;
+          background: rgba(252,145,58,.1);
+          .reply_txt{
+            display: none;
+          }
+          .reply_txt:after{
+            content:"answer";
+          }
+        }
+        .reply_topic:hover{
+          background: #fc913a;
+          color: #FFF;
+        }
+      }
+    }
   }
 }
 
 #content_topic{
   margin-top: -20px;
-  margin-left: 0;
+}
+
+#post-footer_topic{
+  font-family: Roboto Slab;
+  margin-bottom: 6px;
+  .pull-right_footer{
+    font-size: 14px;
+    width:100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-content: center;
+    justify-content: space-between;
+    .post-tools{
+      .reply_topic{
+
+      }
+      .quote_topic{
+        display: none;
+      }
+    }
+    .votes{
+      .upvote_topic{
+        padding-top: 0;
+        padding-left: 0;
+        padding-bottom: 0;
+      }
+      .votes_topic{
+        padding: 0;
+        padding-bottom: 0;
+      }
+      .downvote_topic{
+        padding-top: 0;
+        padding-right: 0.5rem;
+        padding-bottom: 0;
+      }
+    }
+    .dropdown{
+      display: none;
+    }
+  }
+}
+
+.post_outercontainer{
+  border:none;
 }
 
 .topic_container{
@@ -90,6 +162,7 @@
   font-weight: 600;
   font-size: 14px;
   font-family: Poppins;
+  margin-bottom: 10px;
 }
 
 .topic_header_text{
