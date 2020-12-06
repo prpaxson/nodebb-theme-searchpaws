@@ -65,13 +65,15 @@
 
     <ul component="topic" class="posts" data-tid="{tid}" data-cid="{cid}">
       {{{each posts}}}
-        <li component="post" class="<!-- IF posts.deleted -->deleted<!-- ENDIF posts.deleted -->" <!-- IMPORT partials/data/topic.tpl -->>
+        <li component="post" class="<!-- IF posts.deleted -->deleted<!-- ENDIF posts.deleted --> data_{posts.index} post_outercontainer" <!-- IMPORT partials/data/topic.tpl -->>
           <a component="post/anchor" data-index="{posts.index}" id="{posts.index}"></a>
 
           <meta itemprop="datePublished" content="{posts.timestampISO}">
           <meta itemprop="dateModified" content="{posts.editedISO}">
 
-          <!-- IMPORT partials/topic/post.tpl -->
+          <div class="post_container pid_{posts.index}">
+            <!-- IMPORT partials/topic/post.tpl -->
+          </div>
         </li>
       {{{end}}}
     </ul>

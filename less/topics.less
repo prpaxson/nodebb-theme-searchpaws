@@ -1,12 +1,98 @@
-[data-tid='0']{
-  .threaded-replies{
-    display:none;
+.threaded-replies{
+  display:none;
+}
+
+.pid_0{
+  .postlinestop{
+    display: none;
+  }
+  .replies_title{
+    margin-bottom: 0px;
+    margin-top: 30px;
+  }
+  .replies_title:after{
+    content:"Recent Replies";
+  }
+  #content_topic{
+    margin-left: 0;
+    min-height: 100px;
+  }
+  #post-footer_topic{
+    margin-top: 40px;
+    margin-bottom:24px;
+    .pull-right_footer{
+      flex-direction: row;
+      .post-tools{
+        .reply_topic{
+          border: 2px solid #fc913a;
+          border-radius: 6px;
+          padding: 5px 25px;
+          background: rgba(252,145,58,.1);
+          .reply_txt{
+            display: none;
+          }
+        }
+        .reply_topic:after{
+          content:"Answer";
+        }
+        .reply_topic:hover{
+          background: #fc913a;
+          color: #FFF;
+        }
+      }
+    }
   }
 }
 
-.content_topic{
+#content_topic{
+  min-height: 0;
   margin-top: -20px;
-  margin-left: 0;
+}
+
+#post-footer_topic{
+  font-family: Roboto Slab;
+  margin-bottom: 12px;
+  margin-top: 12px;
+  .pull-right_footer{
+    font-size: 14px;
+    height: 20px;
+    width:100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-content: center;
+    justify-content: space-between;
+    .post-tools{
+      .reply_topic{
+
+      }
+      .quote_topic{
+        display: none;
+      }
+    }
+    .votes{
+      .upvote_topic{
+        padding-top: 0;
+        padding-left: 0;
+        padding-bottom: 0;
+      }
+      .votes_topic{
+        padding: 0;
+        padding-bottom: 0;
+      }
+      .downvote_topic{
+        padding-top: 0;
+        padding-right: 0.5rem;
+        padding-bottom: 0;
+      }
+    }
+    .dropdown{
+      display: none;
+    }
+  }
+}
+
+.post_outercontainer{
+  border:none !important;
 }
 
 .topic_container{
@@ -39,7 +125,7 @@
     .avatar{
       width:32px;
       height:32px;
-      line-height:48px;
+      line-height:32px;
       font-size:1.5rem;
     }
   }
@@ -90,6 +176,7 @@
   font-weight: 600;
   font-size: 14px;
   font-family: Poppins;
+  margin-bottom: 10px;
 }
 
 .topic_header_text{
@@ -196,7 +283,7 @@
 }
 
 .title_topic{
-  margin:0 !important;
+  margin:40px 0 0 0 !important;
 }
 
 .content{
