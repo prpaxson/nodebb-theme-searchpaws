@@ -43,7 +43,7 @@
 
 <br />
 
-<div class="content_topic" component="post/content" itemprop="text">
+<div id="content_topic" class="content" component="post/content" itemprop="text">
   {posts.content}
 </div>
 
