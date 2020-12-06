@@ -47,6 +47,8 @@
   {posts.content}
 </div>
 
+<hr class="postlinestop"/>
+
 <div id="post-footer_topic" class="clearfix post-footer">
   <!-- IF posts.user.signature -->
   <div component="post/signature" data-uid="{posts.user.uid}" class="post-signature">{posts.user.signature}</div>
@@ -54,7 +56,7 @@
 
   <small class="pull-right pull-right_footer">
     <span class="post-tools">
-      <a id=footer_reply component="post/reply" href="#" class="reply_topic no-select <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->"><div class=reply_txt>[[topic:reply]]</div></a>
+      <a id=footer_reply component="post/reply" href="#" class="reply_topic no-select <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->"><div class=reply_txt>[[topic:reply]]</div><span class=reply_txt></span></a>
       <a component="post/quote" href="#" class="quote_topic no-select <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->">[[topic:quote]]</a>
     </span>
 

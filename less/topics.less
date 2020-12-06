@@ -8,7 +8,7 @@
     margin-left: 0;
   }
   #post-footer_topic{
-    margin-bottom: 12px;
+    margin-bottom: 0px;
     .pull-right_footer{
       flex-direction: row;
       .post-tools{
@@ -20,9 +20,9 @@
           .reply_txt{
             display: none;
           }
-          .reply_txt:after{
-            content:"answer";
-          }
+        }
+        .reply_topic:after{
+          content:"Answer";
         }
         .reply_topic:hover{
           background: #fc913a;
@@ -39,7 +39,7 @@
 
 #post-footer_topic{
   font-family: Roboto Slab;
-  margin-bottom: 6px;
+  margin-bottom: -17px;
   .pull-right_footer{
     font-size: 14px;
     width:100%;
@@ -78,7 +78,7 @@
 }
 
 .post_outercontainer{
-  border:none;
+  border:none !important;
 }
 
 .topic_container{
@@ -269,7 +269,7 @@
 }
 
 .title_topic{
-  margin:0 !important;
+  margin:40px 0 0 0 !important;
 }
 
 .content{
