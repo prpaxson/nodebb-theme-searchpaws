@@ -1,36 +1,35 @@
 			<div class="col-md-9">
-			<div class="navbar-header col-md-3">
-				<button type="button" class="navbar-toggle pull-left" id="mobile-menu">
-					<span component="notifications/icon" class="notification-icon fa fa-fw fa-bell-o unread-count" data-content="{unreadCount.notification}"></span>
-					<i class="fa fa-lg fa-fw fa-bars"></i>
-				</button>
-				<button type="button" class="navbar-toggle hidden" id="mobile-chats">
-					<span component="chat/icon" class="notification-icon fa fa-fw fa-comments unread-count" data-content="{unreadCount.chat}"></span>
-					<i class="fa fa-lg fa-comment-o"></i>
-				</button>
+				<div class="navbar-header col-md-3">
+					<button type="button" class="navbar-toggle pull-left" id="mobile-menu">
+						<span component="notifications/icon" class="notification-icon fa fa-fw fa-bell-o unread-count" data-content="{unreadCount.notification}"></span>
+						<i class="fa fa-lg fa-fw fa-bars"></i>
+					</button>
+					<button type="button" class="navbar-toggle hidden" id="mobile-chats">
+						<span component="chat/icon" class="notification-icon fa fa-fw fa-comments unread-count" data-content="{unreadCount.chat}"></span>
+						<i class="fa fa-lg fa-comment-o"></i>
+					</button>
 
-				<a href="<!-- IF title:url -->{title:url}<!-- ELSE -->{relative_path}/<!-- ENDIF title:url -->">
-					<!-- IF brand:logo -->
-					<img alt="{brand:logo:alt}" class="{brand:logo:display} forum-logo" src="{brand:logo}?{config.cache-buster}" />
-					<!-- ENDIF brand:logo -->
-					<!-- IF config.showSiteTitle -->
-					<h1 class="navbar-brand forum-title">{config.siteTitle}</h1>
-					<!-- ENDIF config.showSiteTitle -->
-				</a>
+					<a href="<!-- IF title:url -->{title:url}<!-- ELSE -->{relative_path}/<!-- ENDIF title:url -->">
+						<!-- IF brand:logo -->
+						<img alt="{brand:logo:alt}" class="{brand:logo:display} forum-logo" src="{brand:logo}?{config.cache-buster}" />
+						<!-- ENDIF brand:logo -->
+						<!-- IF config.showSiteTitle -->
+						<h1 class="navbar-brand forum-title">{config.siteTitle}</h1>
+						<!-- ENDIF config.showSiteTitle -->
+					</a>
 
-				<div component="navbar/title" class="visible-xs hidden">
-					<span></span>
+					<div component="navbar/title" class="visible-xs hidden">
+						<span></span>
+					</div>
 				</div>
+				<ul class="nav navbar-nav col-md-9 hidden-xs">
+						<li class="li-search">					
+						<!-- IMPORT search-bar.tpl -->
+						</li>
+				</ul>
 			</div>
 
-			<ul class="nav navbar-nav navbar-search col-md-9">
-					<li class="li-search">					
-					<!-- IMPORT search-bar.tpl -->
-					</li>
-			</ul>
-			</div>
-
-			<div id="nav-dropdown col-md-3" class="hidden-xs">
+			<div id="nav-dropdown" class=" col-md-3 hidden-xs">
 				<!-- IF !maintenanceHeader -->
 				<!-- IF config.loggedIn -->
 
