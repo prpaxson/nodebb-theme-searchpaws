@@ -1,8 +1,7 @@
 <div class="clearfix post-header topic_post_header">
   <div class="icon pull-left">
     <a href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
-      {buildAvatar(posts.user, "topic_post", true, "", "user/picture")}
-      <i component="user/status" class="fa fa-circle status {posts.user.status}" title="[[global:{posts.user.status}]]"></i>
+      {buildAvatar(posts.user, "sm2x", true, "", "user/picture")}
     </a>
   </div>
 
@@ -44,7 +43,7 @@
 
 <br />
 
-<div class="content" component="post/content" itemprop="text">
+<div class="content_topic" component="post/content" itemprop="text">
   {posts.content}
 </div>
 
