@@ -12,6 +12,9 @@
   </div>
   <div class="topic_container topic <!-- IF widgets.sidebar.length --> <!-- IF widgets.lsidebar.length --> col-lg-6 col-sm-12 <!-- ELSE --> col-lg-9 col-sm-12 <!-- ENDIF --> <!-- ELSE -->col-lg-12<!-- ENDIF widgets.sidebar.length -->">
     <div class=topic_header_topics>
+      <small style="margin-bottom:10px;" class="category_topic">
+        <a id="topic_category" href="{config.relative_path}/category/{category.slug}"><span class="fa-stack fa-lg" style="{function.generateCategoryBackground, category}"><i style="color:{category.color};" class="fa {category.icon} fa-stack-1x"></i></span> {category.name}</a>
+      </small>
       <h2 component="topic/header" class="title_topic">
         <i component="topic/pinned" class="fa fa-thumb-tack <!-- IF !topics.pinned -->hide<!-- ENDIF !topics.pinned -->" title="[[topic:pinned]]"></i>
         <i component="topic/locked" class="fa fa-lock <!-- IF !topics.locked -->hide<!-- ENDIF !topics.locked -->" title="[[topic:locked]]"></i>
@@ -44,9 +47,6 @@
           <!-- ENDIF topics.teaser.timestamp -->
         </small>
       </h2>
-      <small style="float:right" class="category_topic">
-        <a id="topic_category" href="{config.relative_path}/category/{category.slug}"><span class="fa-stack fa-lg" style="{function.generateCategoryBackground, category}"><i style="color:{category.color};" class="fa {category.icon} fa-stack-1x"></i></span> {category.name}</a>
-      </small>
     </div>
 
     <!-- IF merger -->
