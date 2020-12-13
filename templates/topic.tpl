@@ -126,10 +126,7 @@
       return response.json()
     }).then((data) => {
         var mypid = data.posts[0].pid;
-        console.log(mypid)
-        console.log({posts.pid})
-        console.log({posts.pid} != mypid)
-        if ({posts.pid} != mypid) {
+        if ({posts.toPid} != mypid) {
           console.log("RESULT")
           var spacer = document.getElementById('checkReply_{posts.pid}');
           var post = document.getElementById('isReply_{posts.pid}');
