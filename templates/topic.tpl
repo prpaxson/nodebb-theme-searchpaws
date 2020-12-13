@@ -127,8 +127,10 @@
     }).then((data) => {
         var pid = data.posts[0].pid;
         if ({posts.pid} != pid) {
-          document.getElementById('checkReply_{posts.pid}').classList.add("col-lg-3");
-          document.getElementById('isReply_{posts.pid}').classList.add("col-lg-9");
+          var spacer = document.getElementById('checkReply_{posts.pid}');
+          var post = document.getElementById('isReply_{posts.pid}');
+          spacer.classList.add("col-lg-3");
+          post.classList.add("col-lg-9");
         }
     }).catch((err) => {
       console.log(err)
