@@ -141,7 +141,6 @@
           }
           console.log(threads);
           console.log(direct_replies);
-        }
     }).catch((err) => {
       console.log(err)
     })
