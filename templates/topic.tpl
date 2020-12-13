@@ -122,7 +122,7 @@
 <!-- ENDIF !config.usePagination -->
 {{{ each posts }}}
 <script>
-    fetch("https://www.searchpaws.com/api/topic/{../slug}").then((response) => {
+    fetch("https://www.searchpaws.com/api/topic/{slug}").then((response) => {
       return response.json()
     }).then((data) => {
         var mypid = data.posts[0].pid;
