@@ -129,14 +129,14 @@
           var direct_replies = [];
           for (i=1; i < data.posts.length; i++) {
             if (data.posts[i].toPid == root_pid || !data.posts[i].toPid) {
-              direct_replies_idx.append(i);
-              direct_replies.append(data.posts[i]);
+              direct_replies_idx.push(i);
+              direct_replies.push(data.posts[i]);
             }
           }
           let threads = Array(direct_replies.length).fill().map(() => []);
           for (i=1; i < data.posts.length; i++) {
             if (!direct_replies_idx.includes(i)) {
-              threads[direct_replies.indexOf(data.posts[i].toPid)].append(i);
+              threads[direct_replies.indexOf(data.posts[i].toPid)].push(i);
             }
           }
           console.log(threads);
