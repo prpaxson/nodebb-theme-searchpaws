@@ -128,7 +128,7 @@
         var mypid = data.posts[0].pid;
         console.log(mypid)
         console.log({posts.pid})
-        console.log({posts.pid} != mypid))
+        console.log({posts.pid} != mypid)
         if ({posts.pid} != mypid) {
           console.log("RESULT")
           var spacer = document.getElementById('checkReply_{posts.pid}');
