@@ -71,8 +71,8 @@
           <meta itemprop="datePublished" content="{posts.timestampISO}">
           <meta itemprop="dateModified" content="{posts.editedISO}">
 
-          <div class="<!-- IF posts.toPid && (posts.toPid != posts.0.pid) --> col-lg-3 <!-- ENDIF -->"></div>
-          <div class="post_container pid_{posts.index} <!-- IF posts.toPid && (posts.toPid != posts.0.pid) --> col-lg-9 <!-- ENDIF -->">
+          <div id="<!-- IF posts.toPid -->checkReply_{posts.pid}<!-- ENDIF -->"></div>
+          <div class="post_container pid_{posts.index}" id="<!-- IF posts.toPid -->isReply_{posts.pid}<!-- ENDIF -->">
             <!-- IMPORT partials/topic/post.tpl -->
           </div>
         </li>
@@ -120,3 +120,18 @@
   <!-- IMPORT partials/paginator.tpl -->
 </noscript>
 <!-- ENDIF !config.usePagination -->
+{{{ each posts }}}
+<script>
+    fetch("https://www.searchpaws.com/api/topic/{topics.slug}").then((response) => {
+      return response.json()
+    }).then((data) => {
+        var pid = data.posts[0].pid;
+        if ({posts.pid} != pid) {
+          document.getElementById('checkReply_{posts.pid}').classList.add("col-lg-3");
+          document.getElementById('isReply_{posts.pid}').classList.add("col-lg-9");
+        }
+    }).catch((err) => {
+      console.log(err)
+    })
+</script>
+{{{end}}}
