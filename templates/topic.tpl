@@ -71,7 +71,10 @@
           <meta itemprop="datePublished" content="{posts.timestampISO}">
           <meta itemprop="dateModified" content="{posts.editedISO}">
 
-          <div class="post_container pid_{posts.index}">
+          <!-- IF posts.toPid -->
+            <div class="col-lg-3"></div>
+          <!-- ENDIF posts.toPid -->
+          <div class="post_container pid_{posts.index} <!-- IF posts.toPid -->col-lg-9 <!-- ELSE --> col-lg-12<!-- ENDIF -->">
             <!-- IMPORT partials/topic/post.tpl -->
           </div>
         </li>
