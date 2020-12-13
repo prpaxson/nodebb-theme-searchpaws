@@ -71,8 +71,8 @@
           <meta itemprop="datePublished" content="{posts.timestampISO}">
           <meta itemprop="dateModified" content="{posts.editedISO}">
 
-          <div class="{{{ if posts.toPid && (posts.toPid != posts.0.pid) }}} col-lg-3 {{{end}}}"></div>
-          <div class="post_container pid_{posts.index} {{{ if posts.toPid && (posts.toPid != posts.0.pid) }}} col-lg-9 {{{end}}}">
+          <div class="{{{ if posts.toPid && (posts.toPid != posts.0.pid) }}} col-lg-3 {{{ end }}}"></div>
+          <div class="post_container pid_{posts.index} {{{ if posts.toPid && (posts.toPid != posts.0.pid) }}} col-lg-9 {{{ end }}}">
             <!-- IMPORT partials/topic/post.tpl -->
           </div>
         </li>
