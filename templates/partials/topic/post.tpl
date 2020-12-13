@@ -81,7 +81,6 @@
     <!-- IMPORT partials/topic/post-menu.tpl -->
   </small>
 
-  <!-- IF !hideReplies -->
   <a component="post/reply-count" href="#" class="threaded-replies no-select <!-- IF !posts.replies.count -->hidden<!-- ENDIF !posts.replies.count -->">
     <span component="post/reply-count/avatars" class="avatars <!-- IF posts.replies.hasMore -->hasMore<!-- ENDIF posts.replies.hasMore -->">
       {{{each posts.replies.users}}}
@@ -96,7 +95,6 @@
     <i class="fa fa-fw fa-chevron-down hidden" component="post/replies/close"></i>
     <i class="fa fa-fw fa-spin fa-spinner hidden" component="post/replies/loading"></i>
   </a>
-  <!-- ENDIF !hideReplies -->
 </div>
 
 <hr class="postlinesbottom"/>

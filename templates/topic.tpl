@@ -120,14 +120,13 @@
   <!-- IMPORT partials/paginator.tpl -->
 </noscript>
 <!-- ENDIF !config.usePagination -->
-{{{ each posts }}}
+<!--{{{ each posts }}}
 <script>
     fetch("https://www.searchpaws.com/api/topic/{slug}").then((response) => {
       return response.json()
     }).then((data) => {
         var mypid = data.posts[0].pid;
         if ({posts.toPid} != mypid) {
-          console.log("RESULT")
           var spacer = document.getElementById('checkReply_{posts.pid}');
           var post = document.getElementById('isReply_{posts.pid}');
           spacer.classList.add("col-lg-3");
@@ -137,4 +136,4 @@
       console.log(err)
     })
 </script>
-{{{end}}}
+{{{end}}}-->
