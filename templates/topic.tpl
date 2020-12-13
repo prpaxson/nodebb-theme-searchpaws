@@ -120,20 +120,29 @@
   <!-- IMPORT partials/paginator.tpl -->
 </noscript>
 <!-- ENDIF !config.usePagination -->
-<!--{{{ each posts }}}
 <script>
     fetch("https://www.searchpaws.com/api/topic/{slug}").then((response) => {
       return response.json()
     }).then((data) => {
-        var mypid = data.posts[0].pid;
-        if ({posts.toPid} != mypid) {
-          var spacer = document.getElementById('checkReply_{posts.pid}');
-          var post = document.getElementById('isReply_{posts.pid}');
-          spacer.classList.add("col-lg-3");
-          post.classList.add("col-lg-9");
+          var root_pid = data.posts[0].pid;
+          var direct_replies_idx = [];
+          var direct_replies = [];
+          for (i=1; i < data.posts.length; i++) {
+            if (data.posts[i].toPid == root_pid || !data.posts[i].toPid) {
+              direct_replies_idx.append(i);
+              direct_replies.append(data.posts[i]);
+            }
+          }
+          let threads = Array(direct_replies.length).fill().map(() => []);
+          for (i=1; i < data.posts.length; i++) {
+            if (!direct_replies_idx.includes(i)) {
+              threads[direct_replies.indexOf(data.posts[i].toPid)].append(i);
+            }
+          }
+          console.log(threads);
+          console.log(direct_replies);
         }
     }).catch((err) => {
       console.log(err)
     })
 </script>
-{{{end}}}-->
