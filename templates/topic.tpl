@@ -126,7 +126,11 @@
       return response.json()
     }).then((data) => {
         var pid = data.posts[0].pid;
+        console.log(pid);
+        console.log({posts.pid});
+        console.log({posts.pid} != pid));
         if ({posts.pid} != pid) {
+          console.log("RESULT")
           var spacer = document.getElementById('checkReply_{posts.pid}');
           var post = document.getElementById('isReply_{posts.pid}');
           spacer.classList.add("col-lg-3");
