@@ -137,7 +137,7 @@
           for (i=1; i<data.posts.length; i++)
           {
             if (direct_replies_idx.indexOf(i) == -1) {
-              document.getElementById('data_'+i.toString()).remove();
+              document.getElementById('data_'+i.toString()).style.setProperty('display', 'none');
               console.log(i);
             }
           }
