@@ -133,11 +133,14 @@
               direct_replies.push(data.posts[i].pid);
             }
           }
-          {{{ each posts }}}
-          if (direct_replies_idx.indexOf({posts.index}) == -1) {
-            document.getElementById('data_{posts.index}').remove();
+          console.log(direct_replies_idx);
+          for (i=1; i<data.posts.length; i++)
+          {
+            if (direct_replies_idx.indexOf(i) == -1) {
+              document.getElementById('data_'+=i.toString()).remove();
+              console.log(i);
+            }
           }
-          {{{ end }}}
     }).catch((err) => {
       console.log(err)
     })
