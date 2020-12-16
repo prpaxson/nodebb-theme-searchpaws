@@ -70,7 +70,7 @@
       }
     }
   }
-  
+
   .li-search {
    width: 100%;
   }
@@ -127,7 +127,44 @@
 }
 
 .header {
-
+  .container{
+    .col-md-9{
+      .navbar-header{
+        .navbar-brand{
+          padding-right: 0;
+        }
+      }
+      @media (min-width:1600px) .col-md-3{
+        width: 30%;
+      }
+      @media (min-width: 1600px) .col-md-9{
+        width:70%;
+      }
+      @media (min-width:1250px) .col-md-3{
+        width: 35%;
+      }
+      @media (min-width: 1250px) .col-md-9{
+        width:65%;
+      }
+      @media (min-width:1070px) .col-md-3{
+        width: 40%;
+      }
+      @media (min-width: 1070px) .col-md-9{
+        width:60%;
+      }
+      @media (min-width:770px) .col-md-3{
+        width: 100%;
+      }
+    }
+    .col-md-3{
+      .navigation-link{
+        @media (min-width: 1400) a{
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+    }
+  }
   [component="navbar/title"] {
     display: none !important; //temp
   }
@@ -176,6 +213,7 @@
     text-transform: uppercase;
     margin-top:10px;
     color: #000000;
+    padding-right: 0;
   }
 
   .forum-logo {
@@ -441,6 +479,7 @@ label.dropdown-toggle {
 }
 
 .navbar-default {
+  border-color: none;
     .navbar-nav {
       > li > label {
         color: @navbar-default-link-color;
