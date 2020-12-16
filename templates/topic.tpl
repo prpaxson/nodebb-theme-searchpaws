@@ -133,20 +133,11 @@
               direct_replies.push(data.posts[i].pid);
             }
           }
-          var order = [];
-          for (i = 0; i < direct_replies.length; i++) {
-          	order.push(i);
-          	for (j = 0; j < data.posts.length; j++) {
-          		var k = j;
-          		while (data.posts[k].toPid) {
-          			k = data.posts[k].
-          		}
-          		if (direct_replies[i] == data.posts[j].toPid) {
-          			order.push(j);
-          		}
-          	}
+          {{{ each posts }}}
+          if (direct_replies_idx.indexOf({posts.index}) == -1) {
+            document.getElementById('data_{posts.index}').remove();
           }
-          console.log(order);
+          {{{ end }}}
     }).catch((err) => {
       console.log(err)
     })
