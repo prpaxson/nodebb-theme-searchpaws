@@ -135,7 +135,7 @@
           }
           {{{ each posts }}}
           if (direct_replies_idx.indexOf({posts.index}) == -1) {
-            document.getElementById('data_{posts.index}').deleteObject();
+            document.getElementById('data_{posts.index}').remove();
           }
           {{{ end }}}
     }).catch((err) => {
