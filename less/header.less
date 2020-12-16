@@ -165,10 +165,21 @@
       }
     }
     .col-md-3{
-      @media (max-width: 1400) {
-        a{
-          padding-left: 0;
-          padding-right: 0;
+      .navigation-link{
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      #notif_dropdown{
+        padding-right: 0;
+      }
+      @media (max-width:1200px){
+        .navigation-link{
+          display: none;
+        }
+      }
+      @media (max-width:1040px){
+        #notif_dropdown{
+          display: none;
         }
       }
     }
