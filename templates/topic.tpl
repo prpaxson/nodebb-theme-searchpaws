@@ -63,9 +63,9 @@
 
     <!-- IMPORT partials/topic/deleted-message.tpl -->
 
-    <ul component="topic" class="posts" data-tid="{tid}" data-cid="{cid}">
+    <ul id="post_list" component="topic" class="posts" data-tid="{tid}" data-cid="{cid}">
       {{{each posts}}}
-        <li component="post" class="<!-- IF posts.deleted -->deleted<!-- ENDIF posts.deleted --> data_{posts.index} post_outercontainer" <!-- IMPORT partials/data/topic.tpl -->>
+        <li id="data_{posts.index}" component="post" class="<!-- IF posts.deleted -->deleted<!-- ENDIF posts.deleted --> data_{posts.index} post_outercontainer" <!-- IMPORT partials/data/topic.tpl -->>
           <a component="post/anchor" data-index="{posts.timestampISO}" id="{posts.timestampISO}"></a>
 
           <meta itemprop="datePublished" content="{posts.timestampISO}">
@@ -130,17 +130,23 @@
           for (i=1; i < data.posts.length; i++) {
             if (data.posts[i].toPid == root_pid || !data.posts[i].toPid) {
               direct_replies_idx.push(i);
-              direct_replies.push(data.posts[i]);
+              direct_replies.push(data.posts[i].pid);
             }
           }
-          let threads = Array(direct_replies.length).fill().map(() => []);
-          for (i=1; i < data.posts.length; i++) {
-            if (!direct_replies_idx.includes(i)) {
-              threads[direct_replies.indexOf(data.posts[i].toPid)].push(i);
-            }
+          var order = [];
+          for (i = 0; i < direct_replies.length; i++) {
+          	order.push(i);
+          	for (j = 0; j < data.posts.length; j++) {
+          		var k = j;
+          		while (data.posts[k].toPid) {
+          			k = data.posts[k].
+          		}
+          		if (direct_replies[i] == data.posts[j].toPid) {
+          			order.push(j);
+          		}
+          	}
           }
-          console.log(threads);
-          console.log(direct_replies);
+          console.log(order);
     }).catch((err) => {
       console.log(err)
     })
