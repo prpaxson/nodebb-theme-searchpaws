@@ -71,8 +71,7 @@
           <meta itemprop="datePublished" content="{posts.timestampISO}">
           <meta itemprop="dateModified" content="{posts.editedISO}">
 
-          <div id="<!-- IF posts.toPid -->checkReply_{posts.pid}<!-- ENDIF -->"></div>
-          <div class="post_container pid_{posts.index}" id="<!-- IF posts.toPid -->isReply_{posts.pid}<!-- ENDIF -->">
+          <div class="post_container pid_{posts.index}">
             <!-- IMPORT partials/topic/post.tpl -->
           </div>
         </li>
@@ -133,12 +132,10 @@
               direct_replies.push(data.posts[i].pid);
             }
           }
-          console.log(direct_replies_idx);
           for (i=1; i<data.posts.length; i++)
           {
             if (direct_replies_idx.indexOf(i) == -1) {
               document.getElementById('data_'+i.toString()).style.setProperty('display', 'none');
-              console.log(i);
             }
           }
     }).catch((err) => {

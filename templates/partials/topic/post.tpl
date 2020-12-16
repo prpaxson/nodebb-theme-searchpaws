@@ -84,7 +84,6 @@
 
 <hr class="postlinesbottom"/>
 
-<!-- IF !hideReplies -->
 <!-- IF (posts.index != 0) -->
 <a component="post/reply-count" href="#" class="threaded-replies no-select <!-- IF !posts.replies.count -->hidden<!-- ENDIF !posts.replies.count -->">
   <span component="post/reply-count/avatars" class="avatars <!-- IF posts.replies.hasMore -->hasMore<!-- ENDIF posts.replies.hasMore -->">
@@ -101,6 +100,5 @@
   <i class="fa fa-fw fa-spin fa-spinner hidden" component="post/replies/loading"></i>
 </a>
 <!-- ENDIF -->
-<!-- ENDIF !hideReplies -->
 
 <div class="replies_title topanswers"></div>
