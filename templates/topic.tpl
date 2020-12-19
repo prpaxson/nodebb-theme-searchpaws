@@ -126,10 +126,12 @@
           var root_pid = data.posts[0].pid;
           var direct_replies_idx = [];
           var direct_replies = [];
+          console.log(data.mainPid);
           for (i=1; i < data.posts.length; i++) {
             if (data.posts[i].toPid == root_pid || !data.posts[i].toPid) {
               direct_replies_idx.push(i);
               direct_replies.push(data.posts[i].pid);
+              console.log(data.mainPid == data.posts[i].pid)
             }
           }
           for (i=1; i<data.posts.length; i++)
