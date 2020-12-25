@@ -78,8 +78,8 @@
   <li component="category/topic" class="row clearfix category-item {function.generateTopicClass}" data-tid="{topics.tid}" data-index="{topics.index}" data-cid="{topics.cid}" itemprop="itemListElement">
     <meta itemprop="name" content="{function.stripTags, title}">
 
-    <div class="mobile-stat col-xs-2 visible-sm visible-xs text-right">
-      <span class="human-readable-number">{topics.postcount}</span> <a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}"><i class="fa fa-arrow-circle-right"></i></a>
+    <div class="mobile-stat col-xs-4 visible-sm visible-xs text-left">
+      <span class="human-readable-number">{topics.postcount-1}</span> <a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}"><i class="fa fa-arrow-circle-right"></i></a>
     </div>
 
     <div class="col-md-2 hidden-sm hidden-xs stats stats-votes">
@@ -98,7 +98,7 @@
       </div>
     </div>
 
-    <div class="col-md-2 hidden-sm hidden-xs stats stats-viewcount">
+    <div class="col-md-2 stats stats-viewcount">
       <a href="{config.relative_path}/topic/{topics.slug}<!-- IF topics.bookmark -->/{topics.bookmark}<!-- ENDIF topics.bookmark -->" itemprop="url" id=footer_reply class="footer_detail_title">Reply</a>
     </div>
 
