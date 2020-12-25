@@ -78,7 +78,7 @@
   <li component="category/topic" class="row clearfix category-item {function.generateTopicClass}" data-tid="{topics.tid}" data-index="{topics.index}" data-cid="{topics.cid}" itemprop="itemListElement">
     <meta itemprop="name" content="{function.stripTags, title}">
 
-    <div class="mobile-stat col-xs-2 visible-xs text-right">
+    <div class="mobile-stat col-xs-2 visible-sm visible-xs text-right">
       <span class="human-readable-number">{topics.postcount}</span> <a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}"><i class="fa fa-arrow-circle-right"></i></a>
     </div>
 
