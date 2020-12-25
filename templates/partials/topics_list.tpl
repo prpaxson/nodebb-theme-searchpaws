@@ -121,7 +121,7 @@
     <div id=teaser_header class=topic_header>
       <a id="avater_teaser" href="{config.relative_path}/user/{topics.teaser.user.userslug}">{buildAvatar(topics.teaser.user, "32", true, "not-responsive")}</a>
       <div id="name_timeago" class = teaser_header_text>
-        <div class="topic_header_text hidden-xs">
+        <div class="topic_header_text">
           <a id="topic_username" href="<!-- IF topics.teaser.user.userslug -->{config.relative_path}/user/{topics.teaser.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.teaser.user.userslug -->">{topics.teaser.user.username}</a>
           </br>
           <span id=topic_timeago class="timeago" title="{topics.teaser.timestampISO}"></span>
