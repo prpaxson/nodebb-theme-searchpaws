@@ -34,7 +34,6 @@
         
 
         function handleSearch(event) {
-            event.preventDefault();
             // Do not search if someone has selected a suggestion
             // with arrow keys
             if (selected) {
