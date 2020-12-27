@@ -84,22 +84,10 @@
 
     <div class="col-md-2 hidden-sm hidden-xs stats stats-votes">
       <!-- IF !reputation:disabled -->
-      <span class="votes">
-        <a component="topic/upvote" href="#" class="upvote_topic <!-- IF topics.upvoted -->upvoted<!-- ENDIF topics.upvoted -->">
-          <i class="fa fa-chevron-up"></i>
-        </a>
+      <div class="footer_detail_count">{topics.votes}</div>
 
-        <span component="topic/vote-count" data-votes="{topics.votes}" class="votes_topic">{topics.votes}</span>
-
-        <!-- IF !downvote:disabled -->
-        <a component="topic/downvote" href="#" class="downvote_topic<!-- IF topics.downvoted -->downvoted<!-- ENDIF topics.downvoted -->">
-          <i class="fa fa-chevron-down"></i>
-        </a>
-
-        Likes
-        <!-- ENDIF !downvote:disabled -->
-      </span>
-      <!-- ENDIF !reputation:disabled -->
+      <div class="footer_detail_title">Likes</div>
+      <!-- END -->
     </div>
 
     <div class="col-md-8 hidden-sm hidden-xs stats stats-postcount">
