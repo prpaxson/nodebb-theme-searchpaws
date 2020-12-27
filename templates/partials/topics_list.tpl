@@ -85,14 +85,14 @@
     <div class="col-md-2 hidden-sm hidden-xs stats stats-votes">
       <!-- IF !reputation:disabled -->
       <span class="votes">
-        <a component="post/upvote" href="#" class="upvote_topic <!-- IF posts.upvoted -->upvoted<!-- ENDIF posts.upvoted -->">
+        <a component="topic/upvote" href="#" class="upvote_topic <!-- IF topics.upvoted -->upvoted<!-- ENDIF topics.upvoted -->">
           <i class="fa fa-chevron-up"></i>
         </a>
 
-        <span component="post/vote-count" data-votes="{topics.votes}" class="votes_topic">{topics.votes}</span>
+        <span component="topic/vote-count" data-votes="{topics.votes}" class="votes_topic">{topics.votes}</span>
 
         <!-- IF !downvote:disabled -->
-        <a component="post/downvote" href="#" class="downvote_topic<!-- IF posts.downvoted -->downvoted<!-- ENDIF posts.downvoted -->">
+        <a component="topic/downvote" href="#" class="downvote_topic<!-- IF topics.downvoted -->downvoted<!-- ENDIF topics.downvoted -->">
           <i class="fa fa-chevron-down"></i>
         </a>
 
@@ -111,8 +111,7 @@
     </div>
 
     <div class="col-md-2 stats stats-viewcount">
-      <a id=footer_reply component="post/reply" href="#" class="reply_topic no-select <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->"><div class=reply_txt>[[topic:reply]]</div><span class=reply_txt></span></a>
-      <a component="post/quote" href="#" class="quote_topic no-select <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->">[[topic:quote]]</a>
+      <a href="{config.relative_path}/topic/{topics.slug}<!-- IF topics.bookmark -->/{topics.bookmark}<!-- ENDIF topics.bookmark -->" itemprop="url" id=footer_reply class="footer_detail_title">Reply</a>
     </div>
 
     <div class="col-md-3 col-sm-3 teaser hidden-xs" component="topic/teaser">
