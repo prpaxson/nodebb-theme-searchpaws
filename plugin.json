@@ -11,8 +11,7 @@
 		"public/search-bar.js",
 		"public/login-register.js",
 		"../nodebb-theme-persona/public/persona.js",
-		"../nodebb-theme-persona/public/modules/nprogress.js",
-		"../nodebb-theme-persona/public/modules/autohidingnavbar.min.js",
+		"../nodebb-theme-persona/public/modules/autohidingnavbar.js",
 		"../nodebb-theme-persona/public/modules/quickreply.js"
 	],
 	"modules": {
