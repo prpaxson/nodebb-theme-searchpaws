@@ -9,8 +9,7 @@
 	"scripts": [
 		"public/client.js",
 		"public/search-bar.js",
-		"public/login.js",
-		"public/register.js",
+		"public/login-register.js",
 		"../nodebb-theme-persona/public/persona.js",
 		"../nodebb-theme-persona/public/modules/nprogress.js",
 		"../nodebb-theme-persona/public/modules/autohidingnavbar.min.js",
