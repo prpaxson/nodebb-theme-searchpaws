@@ -26,7 +26,7 @@ $(document).on("click", ".show-register", function(e) {
   var path = window.location.pathname;
   window.history.pushState({}, "Register", "/register");
 	var dialog = bb.alert({
-		title: 'Register',
+		title: 'Join our community!',
     message: register,
     centerVertical: true,
     closeButton: false,
@@ -36,4 +36,8 @@ $(document).on("click", ".show-register", function(e) {
     },
     callback: function () {window.history.pushState({}, "", path);}
   });
+});
+
+$(document).on('click', '.terms', function (e) {
+  bb.hideAll()
 });

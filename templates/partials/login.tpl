@@ -44,7 +44,7 @@
 				<div class="form-group">
 					<div class="col-lg-8">
 						<button class="btn btn-primary btn-lg btn-block btn-login" id="login" type="submit">[[global:login]]</button>
-						<span>[[login:dont_have_account]] <a href="{config.relative_path}/register">[[register:register]]</a></span>						
+						<span class="help-block">[[login:dont_have_account]] <a href="#" class="show-register">[[register:register]]</a></span>						
 					</div>
 				</div>
 			</form>
@@ -54,9 +54,9 @@
 	<!-- ENDIF allowLocalLogin -->
 
 	<!-- IF alternate_logins -->
-	<div class="col-md-12">
+	<div class="col-md-12 text-center">
 		<div class="alt-login-block">
-			<h4>[[login:alternative_logins]]</h4>
+			<h4 style="display: inline;">Or sign in with:</h4>
 			<ul class="alt-logins">
 				{{{each authentication}}}
 				<li class="{authentication.name}"><a rel="nofollow noopener noreferrer" target="_top" href="{config.relative_path}{authentication.url}"><i class="fa {authentication.icon} fa-3x"></i></a></li>

@@ -48,13 +48,13 @@
 				{{{end}}}
 
 				<div class="form-group">
-					<div class="col-md-10">
-						<button class="btn btn-primary btn-lg btn-block" id="register" type="submit">[[register:register_now_button]]</button>
+					<div class="col-md-8">
+						<button class="btn btn-primary btn-lg btn-block btn-register" id="register" type="submit">[[register:register_now_button]]</button>
 					</div>
 				</div>
 				<div class="form-group">
-					<p class="col-md-10 help-block" style="text-align: center;">By continuing you indicate that you agree to SearchPaws’ 
-					<a href="{config.relative_path}/terms-of-service">Terms of Service</a> and <a href="{config.relative_path}/privacy-policy">Privacy Policy</a>.</p>
+					<p class="col-md-8 help-block" style="text-align: center;">By continuing you indicate that you agree to SearchPaws’ 
+					<a href="{config.relative_path}/terms-of-service" class="terms">Terms of Service</a> and <a href="{config.relative_path}/privacy-policy" class="terms">Privacy Policy</a>.</p>
 				</div>
 				<input id="referrer" type="hidden" name="referrer" value="" />
 				<input id="token" type="hidden" name="token" value="" />
@@ -67,7 +67,7 @@
 	<!-- IF alternate_logins -->
 	<div class="col-md-12 text-center" style="margin-top: 30px;">
 		<div class="alt-register-block">
-			<h4 style="display: inline;">[[register:alternative_registration]]</h4>
+			<h4 style="display: inline;">Or sign in with:</h4>
 			<ul class="alt-logins">
 				{{{each authentication}}}
 				<li class="{authentication.name}"><a rel="nofollow noopener noreferrer" target="_top" href="{config.relative_path}{authentication.url}"><i class="fa {authentication.icon} fa-3x"></i></i></a></li>
