@@ -44,7 +44,7 @@
 				<div class="form-group">
 					<div class="col-lg-8">
 						<button class="btn btn-primary btn-lg btn-block btn-login" id="login" type="submit">[[global:login]]</button>
-						<span class="help-block" style="text-align: center;">[[login:dont_have_account]] <a href="#" class="show-register">[[register:register]]</a></span>						
+						<span class="help-block" style="text-align: center;">[[login:dont_have_account]] <a href="#" class="collapse-modal show-register">[[register:register]]</a></span>						
 					</div>
 				</div>
 			</form>

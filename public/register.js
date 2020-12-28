@@ -38,6 +38,6 @@ $(document).on("click", ".show-register", function(e) {
   });
 });
 
-$(document).on('click', '.terms', function (e) {
+$(document).on('click', '.collapse-modal', function (e) {
   bb.hideAll()
 });
