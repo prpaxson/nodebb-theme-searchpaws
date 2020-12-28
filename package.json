@@ -2,7 +2,7 @@
   "name": "nodebb-theme-searchpaws",
   "version": "1.0.0",
   "description": "SearchPaws theme for NodeBB",
-  "main": "theme.less",
+  "main": "library.js",
   "keywords": [
 
   ],

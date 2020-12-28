@@ -1,6 +1,5 @@
 {
 	"id": "nodebb-theme-searchpaws",
-	"library": "library.js",
 	"hooks": [
 		{
 			"hook": "filter:widgets.getAreas", "method": "defineWidgetAreas"
