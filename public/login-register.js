@@ -37,16 +37,13 @@ $(document).ready(function() {
     require(["bootbox"], function (boot) {
         bb = boot;
     });
-
-    
 });
 
 $(document).on("click", ".show-register", function(e) {
-  bb.hideAll()
+  bb.hideAll();
   if (typeof(path) == "undefined") {
     path = window.location.pathname;
   }
-
   window.history.pushState({}, "Register", "/register");
 	var dialog = bb.alert({
 		title: 'Join our community!',
@@ -65,7 +62,7 @@ $(document).on("click", ".show-register", function(e) {
 });
 
 $(document).on("click", ".show-login", function(e) {
-    bb.hideAll()
+    bb.hideAll();
     if (typeof(path) == "undefined") {
       path = window.location.pathname;
     }
@@ -87,7 +84,7 @@ $(document).on("click", ".show-login", function(e) {
 });
 
 $(document).on('click', '.collapse-modal', function (e) {
-  bb.hideAll()
+  bb.hideAll();
   window.history.pushState({}, "", path);
   path = undefined;
 });

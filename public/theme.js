@@ -6,16 +6,6 @@
 	Theme.defineWidgetAreas = function(areas, callback) {
 		areas = areas.concat([
 			{
-				'name': 'MOTD',
-				'template': 'home.tpl',
-				'location': 'motd'
-			},
-			{
-				'name': 'Homepage Footer',
-				'template': 'home.tpl',
-				'location': 'footer'
-			},
-			{
 				'name': 'Category Left Sidebar',
 				'template': 'category.tpl',
 				'location': 'lsidebar'
