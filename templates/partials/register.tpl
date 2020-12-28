@@ -54,7 +54,7 @@
 				</div>
 				<div class="form-group">
 					<p class="col-md-8 help-block" style="text-align: center;">By continuing you indicate that you agree to SearchPaws’ 
-					<a href="{config.relative_path}/terms-of-service" class="collapse-modal">Terms of Service</a> and <a href="{config.relative_path}/privacy-policy" class="collapse-modal">Privacy Policy</a>.</p>
+					<a href="{config.relative_path}/terms-of-service" class="collapse-modal text-link">Terms of Service</a> and <a href="{config.relative_path}/privacy-policy" class="collapse-modal text-link">Privacy Policy</a>.</p>
 				</div>
 				<input id="referrer" type="hidden" name="referrer" value="" />
 				<input id="token" type="hidden" name="token" value="" />
