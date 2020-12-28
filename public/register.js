@@ -23,6 +23,7 @@ $(document).ready(function() {
 });
 
 $(document).on("click", ".show-register", function(e) {
+  bb.hideAll()
   var path = window.location.pathname;
   window.history.pushState({}, "Register", "/register");
 	var dialog = bb.alert({

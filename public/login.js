@@ -23,6 +23,7 @@ $(document).ready(function() {
 });
 
 $(document).on("click", ".show-login", function(e) {
+    bb.hideAll()
     var path = window.location.pathname;
     window.history.pushState({}, "Login", "/login");
 	var dialog = bb.alert({

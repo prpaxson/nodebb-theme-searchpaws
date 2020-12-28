@@ -29,7 +29,7 @@
 					</div>
 					<div class="col-md-6">
 						<!-- IF allowPasswordReset -->
-						<a id="reset-link" href="{config.relative_path}/reset">[[login:forgot_password]]</a>
+						<a id="reset-link" href="{config.relative_path}/reset" class="collapse-modal">[[login:forgot_password]]</a>
 						<!-- ENDIF allowPasswordReset -->
 					</div>
 				</div>
@@ -44,7 +44,7 @@
 				<div class="form-group">
 					<div class="col-lg-8">
 						<button class="btn btn-primary btn-lg btn-block btn-login" id="login" type="submit">[[global:login]]</button>
-						<span class="help-block" style="text-align: center;">[[login:dont_have_account]] <a href="#" class="collapse-modal show-register">[[register:register]]</a></span>						
+						<span class="help-block" style="text-align: center;">[[login:dont_have_account]] <a href="#" class="show-register">[[register:register]]</a></span>						
 					</div>
 				</div>
 			</form>
