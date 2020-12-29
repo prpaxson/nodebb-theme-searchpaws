@@ -6,12 +6,12 @@
 </div>
 <div class="<!-- IF widgets.sidebar.length -->col-lg-9 col-sm-12 <!-- ELSE -->col-lg-12<!-- ENDIF widgets.sidebar.length -->">
   <div class="row">
-    <div data-widget-area="lsidebar" class="col-lg-3 col-sm-12 <!-- IF !widgets.lsidebar.length -->hidden<!-- ENDIF !widgets.lsidebar.length -->">
+    <div data-widget-area="lsidebar" class="lsidebar col-lg-3 col-sm-12 <!-- IF !widgets.lsidebar.length -->hidden<!-- ENDIF !widgets.lsidebar.length -->">
       {{{each widgets.lsidebar}}}
       {{widgets.lsidebar.html}}
       {{{end}}}
     </div>
-    <div class="topic_container topic <!-- IF widgets.lsidebar.length --> col-lg-9 col-sm-12 <!-- ELSE --> col-lg-12 col-sm-12 <!-- ENDIF -->">
+    <div class="maincontent topic_container topic <!-- IF widgets.lsidebar.length --> col-lg-9 col-sm-12 <!-- ELSE --> col-lg-12 col-sm-12 <!-- ENDIF -->">
       <div class=topic_header_topics>
         <small style="margin-bottom:10px;" class="category_topic">
           <a id="topic_category" href="{config.relative_path}/category/{category.slug}"><span class="fa-stack fa-lg" style="{function.generateCategoryBackground, category}"><i style="color:{category.color};" class="fa {category.icon} fa-stack-1x"></i></span> {category.name}</a>
@@ -104,7 +104,7 @@
     </div>
   </div>
 </div>
-<div data-widget-area="sidebar" class="col-lg-3 col-sm-12 <!-- IF !widgets.sidebar.length -->hidden<!-- ENDIF !widgets.sidebar.length -->">
+<div data-widget-area="sidebar" class="sidebar col-lg-3 col-sm-12 <!-- IF !widgets.sidebar.length -->hidden<!-- ENDIF !widgets.sidebar.length -->">
   {{{each widgets.sidebar}}}
   {{widgets.sidebar.html}}
   {{{end}}}

@@ -1,11 +1,11 @@
 <!-- IMPORT partials/breadcrumbs.tpl -->
 
-<div data-widget-area="lsidebar" class="col-lg-3 col-sm-12 <!-- IF !widgets.lsidebar.length -->hidden<!-- ENDIF !widgets.lsidebar.length -->">
+<div data-widget-area="lsidebar" class="lsidebar col-lg-3 col-sm-12 <!-- IF !widgets.lsidebar.length -->hidden<!-- ENDIF !widgets.lsidebar.length -->">
 	{{{each widgets.lsidebar}}}
 	{{widgets.lsidebar.html}}
 	{{{end}}}
 </div>
-<div class="tag <!-- IF widgets.sidebar.length --><!-- IF widgets.lsidebar.length --> col-lg-6 col-sm-12 <!-- ELSE --> col-lg-9 col-sm-12 <!-- ENDIF --> <!-- ELSE -->col-lg-12<!-- ENDIF widgets.sidebar.length -->">
+<div class="maincontent tag <!-- IF widgets.sidebar.length --><!-- IF widgets.lsidebar.length --> col-lg-6 col-sm-12 <!-- ELSE --> col-lg-9 col-sm-12 <!-- ENDIF --> <!-- ELSE -->col-lg-12<!-- ENDIF widgets.sidebar.length -->">
 	<div class="btn-toolbar">
 		<div class="pull-left">
 			<!-- IF loggedIn -->
@@ -30,7 +30,7 @@
 		<!-- ENDIF config.usePagination -->
 	</div>
 </div>
-<div data-widget-area="sidebar" class="col-lg-3 col-sm-12 <!-- IF !widgets.sidebar.length -->hidden<!-- ENDIF !widgets.sidebar.length -->">
+<div data-widget-area="sidebar" class="sidebar col-lg-3 col-sm-12 <!-- IF !widgets.sidebar.length -->hidden<!-- ENDIF !widgets.sidebar.length -->">
 	{{{each widgets.sidebar}}}
 	{{widgets.sidebar.html}}
 	{{{end}}}
