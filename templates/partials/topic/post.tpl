@@ -1,3 +1,4 @@
+<!-- IMPORT partials/topic/post-menu.tpl -->
 <div class="clearfix post-header topic_post_header">
   <div class="icon pull-left">
     <a href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
@@ -78,7 +79,7 @@
     </span>
     <!-- ENDIF !reputation:disabled -->
 
-    <!-- IMPORT partials/topic/post-menu.tpl -->
+    
   </small>
 </div>
 
