@@ -7,7 +7,7 @@
 </div>
 <div class="tag <!-- IF widgets.sidebar.length --><!-- IF widgets.lsidebar.length --> col-lg-6 col-sm-12 <!-- ELSE --> col-lg-9 col-sm-12 <!-- ENDIF --> <!-- ELSE -->col-lg-12<!-- ENDIF widgets.sidebar.length -->">
 	<div class="categoryheader">
-        <a id="topic_category" href="{config.relative_path}/tags/{tag}">
+        <a id="tag_header" href="{config.relative_path}/tags/{tag}">
       </a>
     </div>
 
@@ -50,5 +50,5 @@ for (let i = 0; i < words.length; i++) {
     	words[i] = words[i][0].toUpperCase() + words[i].substr(1);
 	}
 }
-document.getElementById('topic_category').innerHTML = words.join(" ");;
+document.getElementById('tag_header').innerHTML = words.join(" ");;
 </script>
