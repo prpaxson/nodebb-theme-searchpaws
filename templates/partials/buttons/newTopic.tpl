@@ -1,5 +1,5 @@
 <noscript><div class="dropdown" component="category-selector"></noscript>
-<label component="category/post" for="category-dropdown-check" class="question-btn btn btn-primary" id="new_topic" role="button">
+<label component="category/post" for="category-dropdown-check" class="question-btn btn" id="new_topic" role="button" style="position: relative; margin-bottom: 15px">
 	Ask a Question
 </label>
 <noscript>
