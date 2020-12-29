@@ -6,6 +6,12 @@
 	{{{end}}}
 </div>
 <div class="tag <!-- IF widgets.sidebar.length --><!-- IF widgets.lsidebar.length --> col-lg-6 col-sm-12 <!-- ELSE --> col-lg-9 col-sm-12 <!-- ENDIF --> <!-- ELSE -->col-lg-12<!-- ENDIF widgets.sidebar.length -->">
+	<div class="categoryheader">
+        {tag}
+    </div>
+
+    <hr class="hidden-xs" />
+	
 	<div class="btn-toolbar">
 		<div class="pull-left">
 			<!-- IF loggedIn -->
@@ -15,8 +21,6 @@
 			<!-- ENDIF loggedIn -->
 		</div>
 	</div>
-
-	<hr class="hidden-xs"/>
 
 	<!-- IF !topics.length -->
 	<div class="alert alert-warning">[[tags:no_tag_topics]]</div>
@@ -35,3 +39,16 @@
 	{{widgets.sidebar.html}}
 	{{{end}}}
 </div>
+<script>
+var words = "{tag}".split(" ");
+console.log(words);
+for (let i = 0; i < words.length; i++) {
+	if (words[i].length == 1) {
+		words[i] = words[i][0].toUpperCase() + ".";
+	}
+	else {
+    	words[i] = words[i][0].toUpperCase() + words[i].substr(1);
+	}
+}
+document.getElementById('categoryheader').innerHTML = words.join(" ");;
+</script>
