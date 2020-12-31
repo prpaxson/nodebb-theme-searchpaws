@@ -99,7 +99,7 @@
     </div>
 
     <div class="col-md-2 stats stats-viewcount">
-      <a href="{config.relative_path}/topic/{topics.slug}<!-- IF topics.bookmark -->/{topics.bookmark}<!-- ENDIF topics.bookmark -->" itemprop="url" id=footer_reply class="footer_detail_title">Reply</a>
+      <a component="post/reply" href="{config.relative_path}/topic/{topics.slug}<!-- IF topics.bookmark -->/{topics.bookmark}<!-- ENDIF topics.bookmark -->" itemprop="url" id=footer_reply class="footer_detail_title">Reply</a>
     </div>
 
     <div class="col-md-3 col-sm-3 teaser hidden-xs" component="topic/teaser">
