@@ -84,7 +84,15 @@
 
     <div class="col-md-2 hidden-sm hidden-xs stats stats-votes">
       <!-- IF !reputation:disabled -->
-      <div class="footer_detail_count">{topics.votes}</div>
+      <a id="upvote-{topics.tid}" href="#" class="upvote_topic">
+        <i class="fa fa-chevron-up"></i>
+      </a>
+
+      <div id="votes-{topics.tid}" class="footer_detail_count">{topics.votes}</div>
+
+      <a id="downvote-{topics.tid}" href="#" class="downvote_topic">
+        <i class="fa fa-chevron-down"></i>
+      </a>
 
       <div class="footer_detail_title">Likes</div>
       <!-- END -->
@@ -153,8 +161,76 @@
         if (count == 1) {
           document.getElementById('comments-label-{topics.tid}').innerHTML = "Comment";
         }
+
+        if (data.posts[0].upvoted) {
+          document.getElementById(".upvote-{topics.tid}").className += "upvoted";
+        }
+        if (data.posts[0].downvoted) {
+          document.getElementById(".downvote-{topics.tid}").className += "upvoted";
+        }
+
+        document.getElementById(".upvote-{topics.tid}").addEventListener("click", function() {
+          if (!document.getElementById(".upvote-{topics.tid}").className.includes("upvoted")) {
+            $.ajax({
+                    url: 'https://www.searchpaws.com/api/v3/posts/' + data.mainPid + '/vote',
+                    type: 'PUT',
+                    data: {
+                        data: {"delta":1}
+                    },
+                    success: function () {
+                      document.getElementById(".votes-{topics.tid}").innerHTML = data.votes + 1;
+                      document.getElementById(".upvote-{topics.tid}").className += "upvoted";
+                    }
+            });
+          }
+          else {
+            $.ajax({
+                    url: 'https://www.searchpaws.com/api/v3/posts/' + data.mainPid + '/vote',
+                    type: 'DELETE',
+                    data: {
+                        data: {"delta":1}
+                    },
+                    success: function () {
+                      document.getElementById(".votes-{topics.tid}").innerHTML = data.votes - 1;
+                      document.getElementById(".upvote-{topics.tid}").className = "upvote_topic";
+                    }
+            });
+          }
+       });
+
+       document.getElementById(".downvote-{topics.tid}").addEventListener("click", function() {
+          if (!document.getElementById(".downvote-{topics.tid}").className.includes("downvoted")) {
+            $.ajax({
+                    url: 'https://www.searchpaws.com/api/v3/posts/' + data.mainPid + '/vote',
+                    type: 'PUT',
+                    data: {
+                        data: {"delta":-1}
+                    },
+                    success: function () {
+                      document.getElementById(".votes-{topics.tid}").innerHTML = data.votes - 1;
+                      document.getElementById(".downvote-{topics.tid}").className += "downvoted";
+                    }
+            });
+          }
+          else {
+            $.ajax({
+                    url: 'https://www.searchpaws.com/api/v3/posts/' + data.mainPid + '/vote',
+                    type: 'DELETE',
+                    data: {
+                        data: {"delta":-1}
+                    },
+                    success: function () {
+                      document.getElementById(".votes-{topics.tid}").innerHTML = data.votes + 1;
+                      document.getElementById(".downvote-{topics.tid}").className = "downvote_topic";
+                    }
+            });
+          }
+       });
+          
     }).catch((err) => {
       console.log(err)
     })
+    
+    });
 </script>
 {{{end}}}
