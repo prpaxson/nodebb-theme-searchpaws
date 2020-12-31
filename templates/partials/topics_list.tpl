@@ -161,67 +161,70 @@
         if (count == 1) {
           document.getElementById('comments-label-{topics.tid}').innerHTML = "Comment";
         }
-
+        var upvote = document.getElementById("upvote-{topics.tid}");
+        var downvote = document.getElementById("downvote-{topics.tid}");
+        var votes = document.getElementById(".votes-{topics.tid}");
+        var url = 'https://www.searchpaws.com/api/v3/posts/' + data.mainPid + '/vote'
         if (data.posts[0].upvoted) {
-          document.getElementById(".upvote-{topics.tid}").className += "upvoted";
+          upvote.className += "upvoted";
         }
         if (data.posts[0].downvoted) {
-          document.getElementById(".downvote-{topics.tid}").className += "upvoted";
+          downvote.className += "upvoted";
         }
 
-        document.getElementById(".upvote-{topics.tid}").addEventListener("click", function() {
-          if (!document.getElementById(".upvote-{topics.tid}").className.includes("upvoted")) {
+        upvote.addEventListener("click", function() {
+          if (!upvote.className.includes("upvoted")) {
             $.ajax({
-                    url: 'https://www.searchpaws.com/api/v3/posts/' + data.mainPid + '/vote',
+                    url: url,
                     type: 'PUT',
                     data: {
                         delta: 1
                     },
                     success: function () {
-                      document.getElementById(".votes-{topics.tid}").innerHTML = data.votes + 1;
-                      document.getElementById(".upvote-{topics.tid}").className += "upvoted";
+                      votes.innerHTML = data.votes + 1;
+                      upvote.className += "upvoted";
                     }
             });
           }
           else {
             $.ajax({
-                    url: 'https://www.searchpaws.com/api/v3/posts/' + data.mainPid + '/vote',
+                    url: url,
                     type: 'DELETE',
                     data: {
                         delta: 1
                     },
                     success: function () {
-                      document.getElementById(".votes-{topics.tid}").innerHTML = data.votes - 1;
-                      document.getElementById(".upvote-{topics.tid}").className = "upvote_topic";
+                      votes.innerHTML = data.votes - 1;
+                      upvote.className = "upvote_topic";
                     }
             });
           }
        });
 
-       document.getElementById(".downvote-{topics.tid}").addEventListener("click", function() {
+       downvote.addEventListener("click", function() {
           if (!document.getElementById(".downvote-{topics.tid}").className.includes("downvoted")) {
             $.ajax({
-                    url: 'https://www.searchpaws.com/api/v3/posts/' + data.mainPid + '/vote',
+                    url: url,
                     type: 'PUT',
                     data: {
                         delta: -1
                     },
                     success: function () {
-                      document.getElementById(".votes-{topics.tid}").innerHTML = data.votes - 1;
-                      document.getElementById(".downvote-{topics.tid}").className += "downvoted";
+                      votes.innerHTML = data.votes - 1;
+                      downvote.className += "downvoted";
                     }
             });
           }
           else {
             $.ajax({
-                    url: 'https://www.searchpaws.com/api/v3/posts/' + data.mainPid + '/vote',
+                    url: url,
                     type: 'DELETE',
                     data: {
                         delta: -1
                     },
                     success: function () {
-                      document.getElementById(".votes-{topics.tid}").innerHTML = data.votes + 1;
-                      document.getElementById(".downvote-{topics.tid}").className = "downvote_topic";
+                      votes.innerHTML = data.votes + 1;
+                      downvote.className = "downvote_topic";
                     }
             });
           }
