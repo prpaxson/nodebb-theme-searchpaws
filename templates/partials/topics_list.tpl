@@ -165,6 +165,7 @@
         var downvote = document.getElementById("downvote-{topics.tid}");
         var votes = document.getElementById(".votes-{topics.tid}");
         var url = 'https://www.searchpaws.com/api/v3/posts/' + data.mainPid + '/vote'
+
         if (data.posts[0].upvoted) {
           upvote.className += "upvoted";
         }
@@ -172,11 +173,17 @@
           downvote.className += "upvoted";
         }
 
+        var req = new XMLHttpRequest();
+        req.open('GET', "https://www.searchpaws.com/topic/{topics.slug}", false);
+        req.send(null);
+        var headers = req.getAllResponseHeaders();
+
         upvote.addEventListener("click", function() {
           if (!upvote.className.includes("upvoted")) {
             $.ajax({
                     url: url,
                     type: 'PUT',
+                    headers: headers,
                     data: {
                         delta: 1
                     },
@@ -190,6 +197,7 @@
             $.ajax({
                     url: url,
                     type: 'DELETE',
+                    headers: headers,
                     data: {
                         delta: 1
                     },
@@ -202,10 +210,11 @@
        });
 
        downvote.addEventListener("click", function() {
-          if (!document.getElementById(".downvote-{topics.tid}").className.includes("downvoted")) {
+          if (!downvote.className.includes("downvoted")) {
             $.ajax({
                     url: url,
                     type: 'PUT',
+                    headers: headers,
                     data: {
                         delta: -1
                     },
@@ -219,6 +228,7 @@
             $.ajax({
                     url: url,
                     type: 'DELETE',
+                    headers: headers,
                     data: {
                         delta: -1
                     },
