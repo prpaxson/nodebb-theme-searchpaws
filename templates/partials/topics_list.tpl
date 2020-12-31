@@ -88,7 +88,7 @@
         <i class="fa fa-chevron-up"></i>
       </a>
 
-      <div id="votes-{topics.tid}" class="footer_detail_count">{topics.votes}</div>
+      <div id="votes-{topics.tid}" class="footer_detail_count"> {topics.votes}</div>
 
       <a id="downvote-{topics.tid}" href="#" class="downvote_topic">
         <i class="fa fa-chevron-down"></i>
@@ -175,7 +175,7 @@
                     url: 'https://www.searchpaws.com/api/v3/posts/' + data.mainPid + '/vote',
                     type: 'PUT',
                     data: {
-                        data: {"delta":1}
+                        delta: 1
                     },
                     success: function () {
                       document.getElementById(".votes-{topics.tid}").innerHTML = data.votes + 1;
@@ -188,7 +188,7 @@
                     url: 'https://www.searchpaws.com/api/v3/posts/' + data.mainPid + '/vote',
                     type: 'DELETE',
                     data: {
-                        data: {"delta":1}
+                        delta: 1
                     },
                     success: function () {
                       document.getElementById(".votes-{topics.tid}").innerHTML = data.votes - 1;
@@ -204,7 +204,7 @@
                     url: 'https://www.searchpaws.com/api/v3/posts/' + data.mainPid + '/vote',
                     type: 'PUT',
                     data: {
-                        data: {"delta":-1}
+                        delta: -1
                     },
                     success: function () {
                       document.getElementById(".votes-{topics.tid}").innerHTML = data.votes - 1;
@@ -217,7 +217,7 @@
                     url: 'https://www.searchpaws.com/api/v3/posts/' + data.mainPid + '/vote',
                     type: 'DELETE',
                     data: {
-                        data: {"delta":-1}
+                        delta: -1
                     },
                     success: function () {
                       document.getElementById(".votes-{topics.tid}").innerHTML = data.votes + 1;
