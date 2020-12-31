@@ -229,8 +229,6 @@
           
     }).catch((err) => {
       console.log(err)
-    })
-    
     });
 </script>
 {{{end}}}
