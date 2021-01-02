@@ -84,7 +84,15 @@
 
     <div class="col-md-2 hidden-sm hidden-xs stats stats-votes">
       <!-- IF !reputation:disabled -->
+      <a id="upvote-{topics.tid}" href="#" component="post/upvote" class="upvote_topic">
+        <i class="fa fa-chevron-up"></i>
+      </a>
+
       <div id="votes-{topics.tid}" class="footer_detail_count"> {topics.votes}</div>
+
+      <a id="downvote-{topics.tid}" href="#" component="post/downvote" class="downvote_topic">
+        <i class="fa fa-chevron-down"></i>
+      </a>
 
       <div class="footer_detail_title">Likes</div>
       <!-- END -->
@@ -153,6 +161,73 @@
         if (count == 1) {
           document.getElementById('comments-label-{topics.tid}').innerHTML = "Comment";
         }  
+
+        var upvote = document.getElementById("upvote-{topics.tid}");
+        var downvote = document.getElementById("downvote-{topics.tid}");
+        var votes = document.getElementById(".votes-{topics.tid}");
+        var url = 'https://www.searchpaws.com/api/v3/posts/' + data.mainPid + '/vote'
+
+        if (data.posts[0].upvoted) {
+          upvote.className += "upvoted";
+        }
+        if (data.posts[0].downvoted) {
+          downvote.className += "downvoted";
+        }
+
+        upvote.addEventListener("click", function() {
+          if (!upvote.className.includes("upvoted")) {
+            $.ajax({
+                    url: url,
+                    type: 'PUT',
+                    data: {
+                        delta: 1
+                    },
+                    success: function () {
+                      votes.innerHTML = data.votes + 1;
+                      upvote.className += "upvoted";
+                    }
+            });
+          }
+          else {
+            $.ajax({
+                    url: url,
+                    type: 'DELETE',
+                    success: function () {
+                      votes.innerHTML = data.votes - 1;
+                      upvote.className = "upvote_topic";
+                    }
+            });
+          }
+       });
+
+       downvote.addEventListener("click", function() {
+          if (!downvote.className.includes("downvoted")) {
+            $.ajax({
+                    url: url,
+                    type: 'PUT',
+                    data: {
+                        delta: -1
+                    },
+                    success: function () {
+                      votes.innerHTML = data.votes - 1;
+                      downvote.className += "downvoted";
+                    }
+            });
+          }
+          else {
+            $.ajax({
+                    url: url,
+                    type: 'DELETE',
+                    data: {
+                        delta: -1
+                    },
+                    success: function () {
+                      votes.innerHTML = data.votes + 1;
+                      downvote.className = "downvote_topic";
+                    }
+            });
+          }
+       });
     }).catch((err) => {
       console.log(err)
     });
