@@ -179,6 +179,8 @@
             $.ajax({
                     url: url,
                     type: 'PUT',
+                    contentType: 'application/json',
+                    headers: {'x-csrf-token': '{config.csrf}'},
                     data: {
                         delta: 1
                     },
@@ -192,6 +194,8 @@
             $.ajax({
                     url: url,
                     type: 'DELETE',
+                    contentType: 'application/json',
+                    headers: {'x-csrf-token': '{config.csrf}'},
                     success: function () {
                       votes.innerHTML = data.votes - 1;
                       upvote.className = "upvote_topic";
@@ -205,6 +209,8 @@
             $.ajax({
                     url: url,
                     type: 'PUT',
+                    contentType: 'application/json',
+                    headers: {'x-csrf-token': '{config.csrf}'},
                     data: {
                         delta: -1
                     },
@@ -218,6 +224,8 @@
             $.ajax({
                     url: url,
                     type: 'DELETE',
+                    contentType: 'application/json',
+                    headers: {'x-csrf-token': '{config.csrf}'},
                     data: {
                         delta: -1
                     },
