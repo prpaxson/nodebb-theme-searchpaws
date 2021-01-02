@@ -180,7 +180,7 @@
                     url: url,
                     type: 'PUT',
                     contentType: 'application/json',
-                    headers: {'x-csrf-token': '{config.csrf}'},
+                    headers: {'x-csrf-token': '{config.csrf_token}'},
                     data: {
                         delta: 1
                     },
@@ -195,7 +195,7 @@
                     url: url,
                     type: 'DELETE',
                     contentType: 'application/json',
-                    headers: {'x-csrf-token': '{config.csrf}'},
+                    headers: {'x-csrf-token': '{config.csrf_token}'},
                     success: function () {
                       votes.innerHTML = data.votes - 1;
                       upvote.className = "upvote_topic";
@@ -210,7 +210,7 @@
                     url: url,
                     type: 'PUT',
                     contentType: 'application/json',
-                    headers: {'x-csrf-token': '{config.csrf}'},
+                    headers: {'x-csrf-token': '{config.csrf_token}'},
                     data: {
                         delta: -1
                     },
@@ -225,7 +225,7 @@
                     url: url,
                     type: 'DELETE',
                     contentType: 'application/json',
-                    headers: {'x-csrf-token': '{config.csrf}'},
+                    headers: {'x-csrf-token': '{config.csrf_token}'},
                     data: {
                         delta: -1
                     },
