@@ -164,7 +164,7 @@
 
         var reply = document.getElementById("footer_reply-{topics.tid}");
         reply.addEventListener("click", function() {
-          require('translator', function(translator) {
+          require(['translator'], function(translator) {
             translator.translate(data.text, config.defaultLang, function (translated) {
               push({
                 action: 'posts.reply',
