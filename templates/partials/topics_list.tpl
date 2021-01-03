@@ -164,9 +164,7 @@
 
         var reply = document.getElementById("footer_reply-{topics.tid}");
         reply.addEventListener("click", function() {
-          require(['composer'], function(composer) {
-            composer.newReply(data.tid, data.pid, data.topicName, data.text);
-          }); 
+          console.log("memes");
         });
 
         var upvote = document.getElementById("upvote-{topics.tid}");
