@@ -150,9 +150,6 @@
   </div>
   {{{end}}}
 </ul>
-<script>
-const composer = require.main.require('composer');
-</script>
 {{{ each topics }}}
 <script>
     fetch("https://www.searchpaws.com/api/topic/{topics.slug}").then((response) => {
@@ -167,7 +164,19 @@ const composer = require.main.require('composer');
 
         var reply = document.getElementById("footer_reply-{topics.tid}");
         reply.addEventListener("click", function() {
-          composer.editPost(data.pid);
+          require('translator', function(translator) {
+            translator.translate(data.text, config.defaultLang, function (translated) {
+              push({
+                action: 'posts.reply',
+                tid: data.tid,
+                toPid: data.pid,
+                title: data.topicName,
+                body: "@{topics.user.userslug}" + translated,
+                modified: !!((data.topicName && data.topicName.length) || (translated && translated.length)),
+                isMain: false,
+              });
+            });
+          });
         });
 
         var upvote = document.getElementById("upvote-{topics.tid}");
