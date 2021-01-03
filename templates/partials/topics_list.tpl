@@ -164,8 +164,8 @@
 
         var reply = document.getElementById("footer_reply-{topics.tid}");
         reply.addEventListener("click", function() {
-          require(['composer'], function(translator) {
-           composer.newReply(data.tid, data.pid, data.topicName, data.text);
+          require(['composer'], function(composer) {
+           composer.newReply(data.tid, data.pid, data.topicName, "@{topics.user.userslug}" + data.text);
           });
         });
 
