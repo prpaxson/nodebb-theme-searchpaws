@@ -164,7 +164,7 @@
 
         var reply = document.getElementById("footer_reply-{topics.tid}");
         reply.addEventListener("click", function() {
-          require(['./node_modules/nodebb-plugin-composer-searchpaws/composer'], function(translator) {
+          require(['/home/NodeBB/node_modules/nodebb-plugin-composer-searchpaws/composer'], function(translator) {
            composer.newReply(data.tid, data.pid, data.topicName, data.text);
           });
         });
