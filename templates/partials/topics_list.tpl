@@ -185,7 +185,6 @@
                     data: JSON.stringify({ delta: 1 }),
                     success: function () {
                       votes.innerHTML = parseFloat(votes.innerHTML) + 1;
-                      upvote.style = "color: rgb(141, 187, 223)";
                       upvote.className += "upvoted";
                     }
             });
@@ -198,7 +197,6 @@
                     headers: {'x-csrf-token': '{config.csrf_token}'},
                     success: function () {
                       votes.innerHTML = parseFloat(votes.innerHTML) - 1;
-                      upvote.style = "color: rgb(158, 150, 137)";
                       upvote.className += "upvote_topic";
                     }
             });
@@ -216,7 +214,6 @@
                     data: JSON.stringify({ delta: -1 }),
                     success: function () {
                       votes.innerHTML = parseFloat(votes.innerHTML) - 1;
-                      downvote.style = "color: rgb(141, 187, 223)";
                       downvote.className += "downvoted";
                     }
             });
@@ -229,7 +226,6 @@
                     headers: {'x-csrf-token': '{config.csrf_token}'},
                     success: function () {
                       votes.innerHTML = parseFloat(votes.innerHTML) + 1;
-                      downvote.style = "color: rgb(158, 150, 137)";
                       downvote.className = "downvote_topic";
                     }
             });
