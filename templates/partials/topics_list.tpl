@@ -185,7 +185,7 @@
                     data: JSON.stringify({ delta: 1 }),
                     success: function () {
                       votes.innerHTML = parseFloat(votes.innerHTML) + 1;
-                      upvote.className += "upvoted";
+                      upvote.className += " upvoted";
                     }
             });
           }
@@ -197,7 +197,7 @@
                     headers: {'x-csrf-token': '{config.csrf_token}'},
                     success: function () {
                       votes.innerHTML = parseFloat(votes.innerHTML) - 1;
-                      upvote.className += "upvote_topic";
+                      upvote.className = "upvote_topic";
                     }
             });
           }
@@ -214,7 +214,7 @@
                     data: JSON.stringify({ delta: -1 }),
                     success: function () {
                       votes.innerHTML = parseFloat(votes.innerHTML) - 1;
-                      downvote.className += "downvoted";
+                      downvote.className += " downvoted";
                     }
             });
           }
