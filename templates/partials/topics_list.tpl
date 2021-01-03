@@ -107,7 +107,7 @@
     </div>
 
     <div class="col-md-2 stats stats-viewcount">
-      <a href="{config.relative_path}/topic/{topics.slug}<!-- IF topics.bookmark -->/{topics.bookmark}<!-- ENDIF topics.bookmark -->" itemprop="url" id=footer_reply class="footer_detail_title">Reply</a>
+      <a href="#" component="category/post" data-ajaxify="falsetrue" role="button" id="footer_reply-{topics.tid}" itemprop="url" class="footer_detail_title">Reply</a>
     </div>
 
     <div class="col-md-3 col-sm-3 teaser hidden-xs" component="topic/teaser">
@@ -161,6 +161,13 @@
         if (count == 1) {
           document.getElementById('comments-label-{topics.tid}').innerHTML = "Comment";
         }  
+
+        var reply = document.getElementById("footer_reply-{topics.tid}");
+        reply.addEventListener("click", function() {
+          require(['composer'], function(composer) {
+            composer.newReply(data.tid, data.pid, data.topicName, data.text);
+          }); 
+        });
 
         var upvote = document.getElementById("upvote-{topics.tid}");
         var downvote = document.getElementById("downvote-{topics.tid}");
