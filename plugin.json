@@ -15,6 +15,6 @@
 	],
 	"modules": {
 		"pulling.js": "node_modules/pulling/build/pulling-drawer.js",
-		"composer.js": "node_modules/nodebb-plugin-composer-searchpaws/lib/composer.js"
+		"composer.js": "node_modules/nodebb-plugin-composer-searchpaws/static/lib/composer.js"
 	}
 }
