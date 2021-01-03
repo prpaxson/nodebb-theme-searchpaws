@@ -150,6 +150,9 @@
   </div>
   {{{end}}}
 </ul>
+<script>
+const composer = require.main.require('composer');
+</script>
 {{{ each topics }}}
 <script>
     fetch("https://www.searchpaws.com/api/topic/{topics.slug}").then((response) => {
@@ -164,12 +167,7 @@
 
         var reply = document.getElementById("footer_reply-{topics.tid}");
         reply.addEventListener("click", function() {
-          ajaxify.go(
-            '/compose?tid=' + data.tid +
-            (data.pid ? '&toPid=' + data.pid : '') +
-            (data.topicName ? '&title=' + encodeURIComponent(data.topicName) : '') +
-            (data.text ? '&body=' + "@{topics.user.userslug} " + encodeURIComponent(data.text) : '')
-          );
+          composer.editPost(data.pid);
         });
 
         var upvote = document.getElementById("upvote-{topics.tid}");
