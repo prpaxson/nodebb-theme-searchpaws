@@ -182,7 +182,7 @@
                     contentType: 'application/json',
                     headers: {'x-csrf-token': '{config.csrf_token}'},
                     data: {
-                        "delta": 1
+                        {"delta": 1}
                     },
                     success: function () {
                       votes.innerHTML = data.votes + 1;
@@ -212,7 +212,7 @@
                     contentType: 'application/json',
                     headers: {'x-csrf-token': '{config.csrf_token}'},
                     data: {
-                        "delta": -1
+                        {"delta": -1}
                     },
                     success: function () {
                       votes.innerHTML = data.votes - 1;
