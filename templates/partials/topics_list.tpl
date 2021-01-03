@@ -164,7 +164,7 @@
 
         var upvote = document.getElementById("upvote-{topics.tid}");
         var downvote = document.getElementById("downvote-{topics.tid}");
-        var votes = document.getElementById(".votes-{topics.tid}");
+        var votes = document.getElementById("votes-{topics.tid}");
         var url = 'https://www.searchpaws.com/api/v3/posts/' + data.mainPid + '/vote'
 
         if (data.posts[0].upvoted) {
@@ -182,7 +182,7 @@
                     contentType: 'application/json',
                     headers: {'x-csrf-token': '{config.csrf_token}'},
                     data: {
-                        delta: 1
+                        "delta": 1
                     },
                     success: function () {
                       votes.innerHTML = data.votes + 1;
@@ -212,7 +212,7 @@
                     contentType: 'application/json',
                     headers: {'x-csrf-token': '{config.csrf_token}'},
                     data: {
-                        delta: -1
+                        "delta": -1
                     },
                     success: function () {
                       votes.innerHTML = data.votes - 1;
@@ -226,9 +226,6 @@
                     type: 'DELETE',
                     contentType: 'application/json',
                     headers: {'x-csrf-token': '{config.csrf_token}'},
-                    data: {
-                        delta: -1
-                    },
                     success: function () {
                       votes.innerHTML = data.votes + 1;
                       downvote.className = "downvote_topic";
