@@ -107,7 +107,7 @@
     </div>
 
     <div class="col-md-2 stats stats-viewcount">
-      <a href="#" component="category/post" data-ajaxify="falsetrue" role="button" id="footer_reply-{topics.tid}" itemprop="url" class="footer_detail_title">Reply</a>
+      <a href="#" role="button" id="footer_reply-{topics.tid}" itemprop="url" class="footer_detail_title">Reply</a>
     </div>
 
     <div class="col-md-3 col-sm-3 teaser hidden-xs" component="topic/teaser">
@@ -164,7 +164,12 @@
 
         var reply = document.getElementById("footer_reply-{topics.tid}");
         reply.addEventListener("click", function() {
-          console.log("memes");
+          ajaxify.go(
+            'compose?tid=' + data.tid +
+            (data.pid ? '&toPid=' + data.pid : '') +
+            (data.topicName ? '&title=' + encodeURIComponent(data.topicName) : '') +
+            (data.text ? '&body=' + encodeURIComponent(data.text) : '')
+          );
         });
 
         var upvote = document.getElementById("upvote-{topics.tid}");
