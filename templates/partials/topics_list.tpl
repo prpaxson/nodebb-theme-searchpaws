@@ -84,13 +84,13 @@
 
     <div class="col-md-2 hidden-sm hidden-xs stats stats-votes">
       <!-- IF !reputation:disabled -->
-      <a id="upvote-{topics.tid}" href="#" component="post/upvote" class="upvote_topic">
+      <a id="upvote-{topics.tid}" href="#" component="post/upvote" class="<!-- IF !config.loggedIn -->hidden<!-- ENDIF --> upvote_topic">
         <i class="fa fa-chevron-up"></i>
       </a>
 
       <div id="votes-{topics.tid}" class="footer_detail_count"> {topics.votes}</div>
 
-      <a id="downvote-{topics.tid}" href="#" component="post/downvote" class="downvote_topic">
+      <a id="downvote-{topics.tid}" href="#" component="post/downvote" class="<!-- IF !config.loggedIn -->hidden<!-- ENDIF --> downvote_topic">
         <i class="fa fa-chevron-down"></i>
       </a>
 

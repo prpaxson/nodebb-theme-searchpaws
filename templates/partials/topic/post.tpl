@@ -63,14 +63,14 @@
 
     <!-- IF !reputation:disabled -->
     <span class="votes">
-      <a component="post/upvote" href="#" class="upvote_topic <!-- IF posts.upvoted -->upvoted<!-- ENDIF posts.upvoted -->">
+      <a component="post/upvote" href="#" class="<!-- IF !config.loggedIn -->hidden<!-- ENDIF --> upvote_topic <!-- IF posts.upvoted -->upvoted<!-- ENDIF posts.upvoted -->">
         <i class="fa fa-chevron-up"></i>
       </a>
 
       <span component="post/vote-count" data-votes="{posts.votes}" class="votes_topic">{posts.votes}</span>
 
       <!-- IF !downvote:disabled -->
-      <a component="post/downvote" href="#" class="downvote_topic<!-- IF posts.downvoted -->downvoted<!-- ENDIF posts.downvoted -->">
+      <a component="post/downvote" href="#" class="<!-- IF !config.loggedIn -->hidden<!-- ENDIF --> downvote_topic<!-- IF posts.downvoted -->downvoted<!-- ENDIF posts.downvoted -->">
         <i class="fa fa-chevron-down"></i>
       </a>
 
