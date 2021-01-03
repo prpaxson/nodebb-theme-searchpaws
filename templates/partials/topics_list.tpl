@@ -164,18 +164,8 @@
 
         var reply = document.getElementById("footer_reply-{topics.tid}");
         reply.addEventListener("click", function() {
-          require(['translator'], function(translator) {
-            translator.translate(data.text, config.defaultLang, function (translated) {
-              push({
-                action: 'posts.reply',
-                tid: data.tid,
-                toPid: data.pid,
-                title: data.topicName,
-                body: "@{topics.user.userslug}" + translated,
-                modified: !!((data.topicName && data.topicName.length) || (translated && translated.length)),
-                isMain: false,
-              });
-            });
+          require(['./node_modules/nodebb-plugin-composer-searchpaws/composer'], function(translator) {
+           composer.newReply(data.tid, data.pid, data.topicName, data.text);
           });
         });
 
