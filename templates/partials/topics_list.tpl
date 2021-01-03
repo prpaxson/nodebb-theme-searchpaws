@@ -180,10 +180,9 @@
                     url: url,
                     type: 'PUT',
                     contentType: 'application/json',
-                    headers: {'x-csrf-token': '{config.csrf_token}'},
-                    data: {
-                        {"delta": 1}
-                    },
+                    headers: { 'x-csrf-token': '{config.csrf_token}' },
+                    dataType: 'json',
+                    data: JSON.stringify({ delta: 1 }),
                     success: function () {
                       votes.innerHTML = data.votes + 1;
                       upvote.className += "upvoted";
@@ -211,9 +210,8 @@
                     type: 'PUT',
                     contentType: 'application/json',
                     headers: {'x-csrf-token': '{config.csrf_token}'},
-                    data: {
-                        {"delta": -1}
-                    },
+                    dataType: 'json',
+                    data: JSON.stringify({ delta: -1 }),
                     success: function () {
                       votes.innerHTML = data.votes - 1;
                       downvote.className += "downvoted";
