@@ -94,7 +94,7 @@
         <i class="fa fa-chevron-down"></i>
       </a>
 
-      <div class="footer_detail_title">Likes</div>
+      <div class="footer_detail_title"> Likes</div>
       <!-- END -->
     </div>
 
