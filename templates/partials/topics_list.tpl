@@ -164,9 +164,12 @@
 
         var reply = document.getElementById("footer_reply-{topics.tid}");
         reply.addEventListener("click", function() {
-          require(['composer'], function(composer) {
-           composer.newReply(data.tid, data.pid, data.topicName, data.text);
-          });
+          ajaxify.go(
+            'compose?tid=' + data.tid +
+            (data.pid ? '&toPid=' + data.pid : '') +
+            (data.topicName ? '&title=' + encodeURIComponent(data.topicName) : '') +
+            (data.text ? '&body={topics.user.userslug} ' + encodeURIComponent(data.text) : '&body={topics.user.userslug} ')
+          );
         });
 
         var upvote = document.getElementById("upvote-{topics.tid}");
