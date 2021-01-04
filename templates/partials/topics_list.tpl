@@ -164,11 +164,11 @@
 
         var reply = document.getElementById("footer_reply-{topics.tid}");
         reply.addEventListener("click", function() {
-          $.ajax({
-            url: 'compose?tid=' + data.tid +
-            (data.pid ? '&toPid=' + data.pid : '') +
-            (data.topicName ? '&title=' + encodeURIComponent(data.topicName) : '') +
-            (data.text ? '&body=@{topics.user.userslug} ' + encodeURIComponent(data.text) : '&body=&#64;{topics.user.userslug} ')
+          $(window).trigger('action:composer.post.new', {
+            tid: data.tid,
+            pid: mainPid,
+            topicName: data.titleRaw,
+            text: data.posts[0].user.username ? data.posts[0].user.username + ' ' : '',
           });
         });
 
