@@ -168,7 +168,7 @@
             tid: data.tid,
             pid: data.mainPid,
             topicName: data.titleRaw,
-            text: data.posts[0].user.username ? data.posts[0].user.username + ' ' : '',
+            text: data.posts[0].user.username ? '@' + data.posts[0].user.username + ' ' : '',
           });
         });
 
