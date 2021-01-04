@@ -166,7 +166,7 @@
         reply.addEventListener("click", function() {
           $(window).trigger('action:composer.post.new', {
             tid: data.tid,
-            pid: mainPid,
+            pid: data.mainPid,
             topicName: data.titleRaw,
             text: data.posts[0].user.username ? data.posts[0].user.username + ' ' : '',
           });
