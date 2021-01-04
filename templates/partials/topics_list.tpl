@@ -163,19 +163,25 @@
         }  
 
         var reply = document.getElementById("footer_reply-{topics.tid}");
+        var register = document.getElementsByClassName("show-register")[0];
         reply.addEventListener("click", function() {
-          $(window).trigger('action:composer.post.new', {
-            tid: data.tid,
-            pid: data.mainPid,
-            topicName: data.titleRaw,
-            text: data.posts[0].user.username ? '@' + data.posts[0].user.username + ' ' : '',
-          });
+          if ({config.loggedIn}) {
+            $(window).trigger('action:composer.post.new', {
+              tid: data.tid,
+              pid: data.mainPid,
+              topicName: data.titleRaw,
+              text: data.posts[0].user.username ? '@' + data.posts[0].user.username + ' ' : '',
+            });
+          }
+          else {
+            register.click();
+          }
         });
 
         var upvote = document.getElementById("upvote-{topics.tid}");
         var downvote = document.getElementById("downvote-{topics.tid}");
         var votes = document.getElementById("votes-{topics.tid}");
-        var url = 'https://www.searchpaws.com/api/v3/posts/' + data.mainPid + '/vote'
+        var url = 'https://www.searchpaws.com/api/v3/posts/' + data.mainPid + '/vote';
 
         if (data.posts[0].upvoted) {
           upvote.className += "upvoted";
