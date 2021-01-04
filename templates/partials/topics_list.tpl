@@ -164,12 +164,12 @@
 
         var reply = document.getElementById("footer_reply-{topics.tid}");
         reply.addEventListener("click", function() {
-          ajaxify.go(
-            'compose?tid=' + data.tid +
+          $.ajax({
+            url: 'compose?tid=' + data.tid +
             (data.pid ? '&toPid=' + data.pid : '') +
             (data.topicName ? '&title=' + encodeURIComponent(data.topicName) : '') +
-            (data.text ? '&body={topics.user.userslug} ' + encodeURIComponent(data.text) : '&body={topics.user.userslug} ')
-          );
+            (data.text ? '&body=@{topics.user.userslug} ' + encodeURIComponent(data.text) : '&body=&#64;{topics.user.userslug} ')
+          });
         });
 
         var upvote = document.getElementById("upvote-{topics.tid}");
