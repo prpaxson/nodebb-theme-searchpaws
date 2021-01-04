@@ -173,12 +173,32 @@
   height: 70vh;
   overflow-y: auto;
   margin-bottom: 10px;
+  /* width */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: none;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: red;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b30000;
+  }
 }
 
 .rightsidebar-content{
   position:fixed;
 }
 
-.navbar-default{
+.slideout-menu{
   background-color: #333 !important;
 }
