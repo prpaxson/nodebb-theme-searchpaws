@@ -3,6 +3,27 @@
 	"hooks": [
 		{
 			"hook": "filter:widgets.getAreas", "method": "defineWidgetAreas"
+		},
+		{
+			"hook": "filter:register.build", "method": "addFields"
+		},
+		{
+			"hook": "filter:register.check", "method": "checkRegister"
+		},
+		{ 
+			"hook": "action:user.create", "method": "createdUser"
+		},
+		{ 
+			"hook": "filter:admin.registrationQueue.customHeaders", "method": "customHeaders" 
+		},
+        { 
+			"hook": "filter:user.getRegistrationQueue", "method": "customFields" 
+		},
+		{ 
+			"hook": "filter:user.addToApprovalQueue", "method": "addToApprovalQueue" 
+		},
+		{
+			"hook": "static:user.delete", "method": "deleteCustomFields"
 		}
 	],
 	"scripts": [
