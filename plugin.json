@@ -24,6 +24,9 @@
 		},
 		{
 			"hook": "static:user.delete", "method": "deleteCustomFields"
+		},
+		{
+			"hook": "filter:user.updateProfile", "method": "addEditButtons"
 		}
 	],
 	"scripts": [

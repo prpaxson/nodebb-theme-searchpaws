@@ -52,25 +52,29 @@
 				<div>
 					<form class='form-horizontal'>
 
-						<div class="control-group">
-							<label class="control-label" for="inputFullname">[[user:fullname]]</label>
-							<div class="controls">
-								<input class="form-control" type="text" id="inputFullname" placeholder="[[user:fullname]]" value="{fullname}">
+						<div class="control-group name-control-group">
+							<div class="controls name-controls-left">
+								<label class="control-label" for="inputFirstName">First Name</label>
+								<input class="form-control" type="text" id="inputFirstName" placeholder="First Name">
+							</div>
+							<div class="controls name-controls-right">
+								<label class="control-label" for="inputLastName">Last Name</label>
+								<input class="form-control" type="text" id="inputLastName" placeholder="Last Name">
 							</div>
 						</div>
 						<!-- IF allowWebsite -->
 						<div class="control-group">
 							<label class="control-label" for="inputWebsite">[[user:website]]</label>
 							<div class="controls">
-								<input class="form-control" type="text" id="inputWebsite" placeholder="http://..." value="{website}">
+								<input class="form-control" type="text" id="inputWebsite" placeholder="https://..." value="{website}">
 							</div>
 						</div>
 						<!-- ENDIF allowWebsite -->
 
 						<div class="control-group">
-							<label class="control-label" for="inputLocation">[[user:location]]</label>
+							<label class="control-label" for="inputZIP">ZIP Code</label>
 							<div class="controls">
-								<input class="form-control" type="text" id="inputLocation" placeholder="[[user:location]]" value="{location}">
+								<input class="form-control" type="text" id="inputZIP" placeholder="ZIP Code">
 							</div>
 						</div>
 

@@ -230,7 +230,14 @@ library.addToApprovalQueue = function(params, callback) {
     callback(null, {data: data, userData: userData});
 };
 
-library.deleteCustomFields = async function(uid) {
-	await db.deleteAll(['user:' + uid.uid + ':searchpaws:custom_fields']);
+library.deleteCustomFields = async function(params) {
+	await db.deleteAll(['user:' + params.uid + ':searchpaws:custom_fields']);
 }
+
+library.addEditButtons = function(params, callback) {
+	fields = db.getObject("user:" + params.uid + ':searchpaws:custom_fields');
+	console.log(fields);
+	callback(null, params);
+}
+
 module.exports = library;
