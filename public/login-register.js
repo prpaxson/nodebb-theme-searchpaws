@@ -49,7 +49,7 @@ $(document).on("click", ".show-register", function(e) {
 		title: 'Join our community!',
     message: register,
     centerVertical: true,
-    closeButton: false,
+    closeButton: true,
     backdrop: true,
     buttons: {
       "ok": { label: "", className: "hidden" }
@@ -71,7 +71,7 @@ $(document).on("click", ".show-login", function(e) {
 		title: 'Log In',
         message: login,
         centerVertical: true,
-        closeButton: false,
+        closeButton: true,
         backdrop: true,
         buttons: {
             "ok": { label: "", className: "hidden" }
