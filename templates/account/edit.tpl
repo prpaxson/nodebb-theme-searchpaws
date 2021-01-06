@@ -185,26 +185,29 @@
 </div>
 
 <script>
-$("#newSubmitBtn").click(function () {
-	var userData = {
-		uid: $('#inputUID').val(),
-		fullname: $('#inputFullname').val(),
-		website: $('#inputWebsite').val(),
-		birthday: $('#inputBirthday').val(),
-		location: $('#inputLocation').val(),
-		groupTitle: $('#groupTitle').val(),
-		signature: $('#inputSignature').val(),
-		aboutme: $('#inputAboutMe').val(),
-		firstname: $('#inputFirstName').val(),
-		lastname: $('#inputLastName').val(),
-		zip: $('#inputZIP').val(),
-		dog: $('#inputDog').val(),
-		cat: $('#inputCat').val(),
-		other: $('#inputOther').val()
-	};
+require('jquery', function ($) {
+	$("#newSubmitBtn").click(function () {
+		var userData = {
+			uid: $('#inputUID').val(),
+			fullname: $('#inputFullname').val(),
+			website: $('#inputWebsite').val(),
+			birthday: $('#inputBirthday').val(),
+			location: $('#inputLocation').val(),
+			groupTitle: $('#groupTitle').val(),
+			signature: $('#inputSignature').val(),
+			aboutme: $('#inputAboutMe').val(),
+			firstname: $('#inputFirstName').val(),
+			lastname: $('#inputLastName').val(),
+			zip: $('#inputZIP').val(),
+			dog: $('#inputDog').val(),
+			cat: $('#inputCat').val(),
+			other: $('#inputOther').val()
+		};
 
-	userData.groupTitle = JSON.stringify(Array.isArray(userData.groupTitle) ? userData.groupTitle : [userData.groupTitle]);
+		userData.groupTitle = JSON.stringify(Array.isArray(userData.groupTitle) ? userData.groupTitle : [userData.groupTitle]);
 
-	$(window).trigger('action:profile.update', userData);
+		$(window).trigger('action:profile.update', userData);
+	});
 });
+	
 </script>
