@@ -261,8 +261,9 @@ library.addExistingData = function(params, callback) {
 library.addCustomFields = function(params, callback) {
 	console.log("adding fields");
 	require('jquery', function ($) {
+		var firstname = $('#inputFirstName').val();
 		var userData = {
-			firstname: $('#inputFirstName').val(),
+			firstname: firstname,
 			lastname: $('#inputLastName').val(),
 			zip: $('#inputZIP').val(),
 			dog: $('#inputDog').val(),
@@ -270,6 +271,8 @@ library.addCustomFields = function(params, callback) {
 			other: $('#inputOther').val(),
 			uid: $('#inputUID').val(),
 		};
+		var error = null;
+		console.log(firstname);
 		console.log(userData);
 		for(var key in customFields) {
 			var value = userData[key];
@@ -302,14 +305,13 @@ library.addCustomFields = function(params, callback) {
 			}
 		}
 	});	
-	
 	params.fields.push("firstname");
 	params.fields.push("lastname");
 	params.fields.push("zip");
 	params.fields.push("dog");
 	params.fields.push("cat");
 	params.fields.push("other");
-	callback(null, params);
+	callback(error, params);
 }
 
 library.updateCustomFields = function(params) {
