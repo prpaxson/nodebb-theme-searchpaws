@@ -237,14 +237,13 @@ library.deleteCustomFields = async function(params) {
 library.addExistingData = function(params, callback) {
 	if (params.req.url.includes("edit")) {
 		db.getObject("user:" + params.templateData.uid + ':searchpaws:custom_fields').then(fields => {
-			console.log(fields);
 			if (fields) {
 				params.templateData.firstname = fields.firstname;
 				params.templateData.lastname = fields.lastname;
 				params.templateData.zip = fields.zip;
-				params.templateData.dog = fields.dog;
-				params.templateData.cat = fields.cat;
-				params.templateData.other = fields.other;
+				params.templateData.dog = (fields.dog == 'true');
+				params.templateData.cat = (fields.cat == 'true');
+				params.templateData.other = (fields.other == 'true');
 			}
 			else {
 				params.templateData.firstname = "";
