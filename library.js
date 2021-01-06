@@ -10,6 +10,7 @@ var customFields = {
 	},
 	customData = [],
 	db = require.main.require('./src/database'),
+	$ = require.main.require('jquery'),
 	library = {};
 
 library.defineWidgetAreas = function(areas, callback) {
@@ -260,7 +261,6 @@ library.addExistingData = function(params, callback) {
 
 library.addCustomFields = function(params, callback) {
 	console.log("adding fields");
-	var firstname = $('#inputFirstName').val();
 	var userData = {
 		firstname: firstname,
 		lastname: $('#inputLastName').val(),
