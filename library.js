@@ -262,7 +262,7 @@ library.addExistingData = function(params, callback) {
 library.addCustomFields = function(params, callback) {
 	console.log("adding fields");
 	var userData = {
-		firstname: firstname,
+		firstname: $('#inputFirstName').val(),
 		lastname: $('#inputLastName').val(),
 		zip: $('#inputZIP').val(),
 		dog: $('#inputDog').val(),
@@ -271,7 +271,6 @@ library.addCustomFields = function(params, callback) {
 		uid: $('#inputUID').val(),
 	};
 	var error = null;
-	console.log(firstname);
 	console.log(userData);
 	for(var key in customFields) {
 		var value = userData[key];
