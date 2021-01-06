@@ -42,7 +42,7 @@ $(document).ready(function() {
                     contentType: 'application/json',
                     headers: { 'x-csrf-token': '{config.csrf_token}' },
                     dataType: 'json',
-                    data: userData,
+                    data: JSON.stringify(userData),
                     success: function () {
 						alertSuccess('[[user:profile_update_success]]');
                     }
