@@ -7,9 +7,11 @@
 <div class="<!-- IF widgets.sidebar.length -->col-lg-9 col-sm-12 <!-- ELSE -->col-lg-12<!-- ENDIF widgets.sidebar.length -->">
   <div class="row">
     <div data-widget-area="lsidebar" class="col-lg-3 col-sm-12 <!-- IF !widgets.lsidebar.length -->hidden<!-- ENDIF !widgets.lsidebar.length -->">
-      {{{each widgets.lsidebar}}}
-      {{widgets.lsidebar.html}}
-      {{{end}}}
+      <div id="leftsidebar-content">
+        {{{each widgets.lsidebar}}}
+        {{widgets.lsidebar.html}}
+        {{{end}}}
+      </div>
     </div>
     <div class="topic_container topic <!-- IF widgets.lsidebar.length --> col-lg-9 col-sm-12 <!-- ELSE --> col-lg-12 col-sm-12 <!-- ENDIF -->">
       <div class=topic_header_topics>
@@ -105,9 +107,12 @@
   </div>
 </div>
 <div data-widget-area="sidebar" class="col-lg-3 col-sm-12 <!-- IF !widgets.sidebar.length -->hidden<!-- ENDIF !widgets.sidebar.length -->">
-  {{{each widgets.sidebar}}}
-  {{widgets.sidebar.html}}
-  {{{end}}}
+  <div id="rightsidebar-content">
+    <div id="sidebarTitle"> More Posts </div>
+    {{{each widgets.sidebar}}}
+    {{widgets.sidebar.html}}
+    {{{end}}}
+  </div>
 </div>
 
 <div data-widget-area="footer">
