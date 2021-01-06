@@ -13,8 +13,9 @@
 */
 $(document).ready(function() {
 	$(window).on('action:ajaxify.end', function(data) {
-		var	url = data.url;
-		if (url.includes("edit")) {
+		console.log(data.url);
+		console.log(typeof data.url);
+		if (data.url.includes("edit")) {
 			$("#newSubmitBtn").click(function () {
 				var userData = {
 					uid: $('#inputUID').val(),
