@@ -263,15 +263,16 @@ library.addCustomFields = function(params, callback) {
 	var userData = null;
 	require(['jquery'], function ($) {
 		userData = {
-			firstname: $('inputFirstName').val(),
-			lastname: $('inputLastName').val(),
-			zip: $('inputZIP').val(),
-			dog: $('inputDog').val(),
-			cat: $('inputCat').val(),
-			other: $('inputOther').val(),
-			uid: $('inputUID').val()
+			firstname: $('#inputFirstName').val(),
+			lastname: $('#inputLastName').val(),
+			zip: $('#inputZIP').val(),
+			dog: $('#inputDog').val(),
+			cat: $('#inputCat').val(),
+			other: $('#inputOther').val(),
+			uid: $('#inputUID').val()
 		};
 	});	
+	console.log(userData);
 	for(var key in customFields) {
 		var value = userData[key];
 		if (key != "dog" && key != "cat" && key != "other") {
