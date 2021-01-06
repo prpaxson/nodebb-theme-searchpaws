@@ -235,6 +235,7 @@ library.deleteCustomFields = async function(params) {
 }
 
 library.addEditButtons = function(params, callback) {
+	console.log("MEMES");
 	fields = db.getObject("user:" + params.uid + ':searchpaws:custom_fields');
 	console.log(fields);
 	callback(null, params);

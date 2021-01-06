@@ -52,6 +52,12 @@
 				<div>
 					<form class='form-horizontal'>
 
+						<div class="hidden control-group">
+							<label class="control-label" for="inputFullname">[[user:fullname]]</label>
+							<div class="controls">
+								<input class="hidden form-control" type="text" id="inputFullname" placeholder="[[user:fullname]]" value="{fullname}">
+							</div>
+						</div>
 						<div class="control-group name-control-group">
 							<div class="controls name-controls-left">
 								<label class="control-label" for="inputFirstName">First Name</label>
@@ -81,12 +87,19 @@
 						<div class="control-group">
 							<span class="control-label">Pets</span>
 							<div class="controls">
-								<input type="checkbox" name="dog" id="dog" value=true>
-								<label for="dog"> Dog</label>
-								<input type="checkbox" name="cat" id="cat" value=true>
-								<label for="cat"> Cat</label>
-								<input type="checkbox" name="other" id="other" value=true>
-								<label for="other"> Other</label>
+								<input type="checkbox" name="dog" id="inputDog" value=true>
+								<label for="inputDog"> Dog</label>
+								<input type="checkbox" name="cat" id="inputCat" value=true>
+								<label for="inputCat"> Cat</label>
+								<input type="checkbox" name="other" id="inputOther" value=true>
+								<label for="inputOther"> Other</label>
+							</div>
+						</div>
+
+						<div class="hidden control-group">
+							<label class="control-label" for="inputLocation">[[user:location]]</label>
+							<div class="controls">
+								<input class="hidden form-control" type="text" id="inputLocation" placeholder="[[user:location]]" value="{location}">
 							</div>
 						</div>
 
