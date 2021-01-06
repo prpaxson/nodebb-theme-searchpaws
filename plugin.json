@@ -13,7 +13,7 @@
 		{ 
 			"hook": "action:user.create", "method": "createdUser"
 		},
-		{ 
+		{
 			"hook": "filter:admin.registrationQueue.customHeaders", "method": "customHeaders" 
 		},
         { 
@@ -26,10 +26,13 @@
 			"hook": "static:user.delete", "method": "deleteCustomFields"
 		},
 		{
-			"hook": "filter:user.updateProfile", "method": "populateButtons"
+			"hook": "filter:edit.build", "method": "addExistingData"
 		},
 		{
-			"hook": "action:profile.update", "method": "updateCustomFields"
+			"hook": "filter:user.updateProfile", "method": "addCustomFields"
+		},
+		{
+			"hook": "action:user.updateProfile", "method": "updateCustomFields"
 		}
 	],
 	"scripts": [

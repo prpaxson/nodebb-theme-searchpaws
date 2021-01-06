@@ -172,7 +172,7 @@ library.customHeaders = function(headers, callback) {
     callback(null, headers);
 };
 
-library.customFields = function(params, callback) {    
+library.customFields = function(params, callback) {
     var users = params.users.map(function(user) {
 
         if (!user.customRows) {
@@ -234,31 +234,61 @@ library.deleteCustomFields = async function(params) {
 	await db.deleteAll(['user:' + params.uid + ':searchpaws:custom_fields']);
 }
 
-library.populateButtons = function(params, callback) {
-	console.log("MEMES");
+library.addExistingData = function(params, callback) {
+	console.log("MEMEs");
+	console.log(params);
+	var fields = db.getObject("user:" + params.templateData.uid + ':searchpaws:custom_fields');
+	if (fields) {
+		params.templateData.firstname = fields.firstname;
+		params.templateData.lastname = fields.lastname;
+		params.templateData.zip = fields.zip;
+		params.templateData.dog = fields.dog;
+		params.templateData.cat = fields.cat;
+		params.templateData.other = fields.other;
+	}
+	else {
+		params.templateData.firstname = "";
+		params.templateData.lastname = "";
+		params.templateData.zip = "";
+		params.templateData.dog = false;
+		params.templateData.cat = false;
+		params.templateData.other = false;
+	}
+	callback(null, params);
+}
+
+library.addCustomFields = function(params, callback) {
+	console.log("adding fields");
+	params.fields.push("firstname");
+	params.fields.push("lastname");
+	params.fields.push("zip");
+	params.fields.push("dog");
+	params.fields.push("cat");
+	params.fields.push("other");
+	callback(null, params);
+}
+
+library.updateCustomFields = function(params) {
+	console.log("updating fields");
 	var userData = {
-		firstname: $('#inputFirstName').val(),
-		lastname: $('#inputLastName').val(),
-		zip: $('#inputZIP').val(),
-		dog: $('#inputDog').val(),
-		cat: $('#inputCat').val(),
-		other: $('#inputOther').val(),
-		aboutme: $('#inputAboutMe').val(),
-		uid: $('#inputUID').val()
+		firstname: params.data.firstname,
+		lastname: params.data.lastname,
+		zip: params.data.zip,
+		dog: params.data.dog,
+		cat: params.data.cat,
+		other: params.data.other,
+		aboutme: params.data.aboutme,
+		uid: params.uid
 	};
 	var error = null;
 	console.log(userData);
-	var keyID = 'user:' + params.user.uid + ':searchpaws:custom_fields';
+	var keyID = 'user:' + params.uid + ':searchpaws:custom_fields';
     db.setObject(keyID, userData, function(err) {
         if (err) {
             error = err;
         }
 	});
 	callback(error, params);
-}
-
-library.updateCustomFields = function(params) {
-	
 }
 
 module.exports = library;

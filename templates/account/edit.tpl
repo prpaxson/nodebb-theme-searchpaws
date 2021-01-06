@@ -61,11 +61,11 @@
 						<div class="control-group name-control-group">
 							<div class="controls name-controls-left">
 								<label class="control-label" for="inputFirstName">First Name</label>
-								<input class="form-control" type="text" id="inputFirstName" placeholder="First Name">
+								<input class="form-control" type="text" id="inputFirstName" placeholder="{firstname}">
 							</div>
 							<div class="controls name-controls-right">
 								<label class="control-label" for="inputLastName">Last Name</label>
-								<input class="form-control" type="text" id="inputLastName" placeholder="Last Name">
+								<input class="form-control" type="text" id="inputLastName" placeholder="{lastname}">
 							</div>
 						</div>
 						<!-- IF allowWebsite -->
@@ -80,18 +80,18 @@
 						<div class="control-group">
 							<label class="control-label" for="inputZIP">ZIP Code</label>
 							<div class="controls">
-								<input class="form-control" type="text" id="inputZIP" placeholder="ZIP Code">
+								<input class="form-control" type="text" id="inputZIP" placeholder="{zip}">
 							</div>
 						</div>
 
 						<div class="control-group">
 							<span class="control-label">Pets</span>
 							<div class="controls">
-								<input type="checkbox" name="dog" id="inputDog" value=true>
+								<input type="checkbox" name="dog" id="inputDog" value={dog}>
 								<label for="inputDog"> Dog</label>
-								<input type="checkbox" name="cat" id="inputCat" value=true>
+								<input type="checkbox" name="cat" id="inputCat" value={cat}>
 								<label for="inputCat"> Cat</label>
-								<input type="checkbox" name="other" id="inputOther" value=true>
+								<input type="checkbox" name="other" id="inputOther" value={other}>
 								<label for="inputOther"> Other</label>
 							</div>
 						</div>
