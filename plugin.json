@@ -29,7 +29,7 @@
 			"hook": "filter:middleware.render", "method": "addExistingData"
 		},
 		{
-			"hook": "filter:user.updateProfile", "method": "addCustomFields"
+			"hook": "filter:user.updateProfile", "method": "checkUpdate"
 		},
 		{
 			"hook": "action:user.updateProfile", "method": "updateCustomFields"

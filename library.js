@@ -9,7 +9,7 @@ var customFields = {
 	},
 	customData = [],
 	db = require.main.require('./src/database'),
-	$ = require('jquery')(global.document.defaultView),
+	window.$ = require('jquery')(window),
 	library = {};
 
 library.defineWidgetAreas = function(areas, callback) {
@@ -258,48 +258,14 @@ library.addExistingData = function(params, callback) {
 	callback(null, params);
 }
 
-library.addCustomFields = function(params, callback) {
-	console.log("adding fields");
-	var userData = {
-		firstname: $('#inputFirstName').val(),
-		lastname: $('#inputLastName').val(),
-		zip: $('#inputZIP').val(),
-		dog: $('#inputDog').val(),
-		cat: $('#inputCat').val(),
-		other: $('#inputOther').val(),
-		uid: $('#inputUID').val(),
-	};
+library.checkUpdate = function(params, callback) {
+	console.log("checking fields");
 	var error = null;
-	console.log(userData);
-	for(var key in customFields) {
-		var value = userData[key];
-		if (key != "dog" && key != "cat" && key != "other") {
-			if ((value == "" || value == undefined)) {
-				error = {message: 'Please complete all fields before registering.'};
-			}
-			else if (key == "zip") {
-				if (value.length != 5) {
-					error = {message: 'ZIP Code must be 5 digits'};
-				}
-				else if (!/^[0-9]+$/.test(value)) {
-					error = {message: 'ZIP Code must be a numerical value'};
-				}
-				else {
-					params.data.push({value: value});
-				}
-			}
-			else {
-				params.data.push({value: value});
-			}
-		}
-		else {
-			if (value == "" || value == undefined || value == null) {
-				params.data.push({value: "false"});
-			}
-			else {
-				params.data.push({value: value});
-			}
-		}
+	if (params.data['zip'].length != 5) {
+		error = {message: 'ZIP Code must be 5 digits'};
+	}
+	else if (!/^[0-9]+$/.test(params.data['zip'])) {
+		error = {message: 'ZIP Code must be a numerical value'};
 	}
 	params.fields.push("firstname");
 	params.fields.push("lastname");
