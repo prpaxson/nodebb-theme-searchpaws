@@ -40,7 +40,7 @@ $(document).ready(function() {
                     url: '/users/' + userData.uid,
                     type: 'PUT',
                     contentType: 'application/json',
-                    headers: { 'x-csrf-token': '{config.csrf_token}' },
+                    headers: { 'x-csrf-token': config.csrf_token },
                     dataType: 'json',
                     data: JSON.stringify(userData),
                     success: function () {
