@@ -255,7 +255,6 @@ library.addExistingData = async function(params, callback) {
 			params.templateData.other = false;
 		}
 	}
-	callback(null, params);
 }
 
 library.addCustomFields = function(params, callback) {
