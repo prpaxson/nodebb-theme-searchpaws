@@ -6,9 +6,11 @@
 </div>
 <div class="row">
   <div data-widget-area="lsidebar" class="col-lg-3 col-sm-12 <!-- IF !widgets.lsidebar.length -->hidden<!-- ENDIF !widgets.lsidebar.length -->">
-    {{{each widgets.lsidebar}}}
-    {{widgets.lsidebar.html}}
-    {{{end}}}
+    <div id="leftsidebar-content">
+      {{{each widgets.lsidebar}}}
+      {{widgets.lsidebar.html}}
+      {{{end}}}
+    </div>
   </div>
   <div class="category <!-- IF widgets.sidebar.length --><!-- IF widgets.lsidebar.length --> col-lg-6 col-sm-12 <!-- ELSE --> col-lg-9 col-sm-12 <!-- ENDIF --> <!-- ELSE -->col-lg-12<!-- ENDIF widgets.sidebar.length -->">
     <!-- IMPORT partials/category/subcategory.tpl -->
@@ -50,9 +52,12 @@
     <!-- ENDIF config.usePagination -->
   </div>
   <div data-widget-area="sidebar" class="col-lg-3 col-sm-12 <!-- IF !widgets.sidebar.length -->hidden<!-- ENDIF !widgets.sidebar.length -->">
-    {{{each widgets.sidebar}}}
-    {{widgets.sidebar.html}}
-    {{{end}}}
+    <div id="rightsidebar-content">
+      <div id="sidebarTitle"> More Posts </div>
+      {{{each widgets.sidebar}}}
+      {{widgets.sidebar.html}}
+      {{{end}}}
+    </div>
   </div>
 </div>
 <div data-widget-area="footer">
