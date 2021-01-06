@@ -26,7 +26,10 @@
 			"hook": "static:user.delete", "method": "deleteCustomFields"
 		},
 		{
-			"hook": "filter:user.updateProfile", "method": "addEditButtons"
+			"hook": "filter:user.updateProfile", "method": "populateButtons"
+		},
+		{
+			"hook": "action:profile.update", "method": "updateCustomFields"
 		}
 	],
 	"scripts": [

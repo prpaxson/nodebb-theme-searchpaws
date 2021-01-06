@@ -234,11 +234,28 @@ library.deleteCustomFields = async function(params) {
 	await db.deleteAll(['user:' + params.uid + ':searchpaws:custom_fields']);
 }
 
-library.addEditButtons = function(params, callback) {
+library.populateButtons = function(params, callback) {
 	console.log("MEMES");
-	fields = db.getObject("user:" + params.uid + ':searchpaws:custom_fields');
-	console.log(fields);
-	callback(null, params);
+}
+
+library.updateCustomFields = function(params) {
+	var userData = {
+		firstname: $('#inputFirstName').val(),
+		lastname: $('#inputLastName').val(),
+		zip: $('#inputZIP').val(),
+		dog: $('#inputDog').val(),
+		cat: $('#inputCat').val(),
+		other: $('#inputOther').val(),
+		aboutme: $('#inputAboutMe').val(),
+		uid: $('#inputUID').val()
+	};
+	console.log(userData);
+	var keyID = 'user:' + params.user.uid + ':searchpaws:custom_fields';
+    db.setObject(keyID, userData, function(err) {
+        if (err) {
+            return callback(err);
+        }
+    });
 }
 
 module.exports = library;
