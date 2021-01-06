@@ -27,9 +27,9 @@ $(document).ready(function() {
 					firstname: $('#inputFirstName').val(),
 					lastname: $('#inputLastName').val(),
 					zip: $('#inputZIP').val(),
-					dog: $('#inputDog').prop("checked"),
-					cat: $('#inputCat').prop("checked"),
-					other: $('#inputOther').prop("checked")
+					dog: $('#inputDog').prop("checked").toString(),
+					cat: $('#inputCat').prop("checked").toString(),
+					other: $('#inputOther').prop("checked").toString()
 				};
 			
 				userData.groupTitle = JSON.stringify(Array.isArray(userData.groupTitle) ? userData.groupTitle : [userData.groupTitle]);
