@@ -79,6 +79,18 @@
 						</div>
 
 						<div class="control-group">
+							<span class="control-label">Pets</span>
+							<div class="controls">
+								<input type="checkbox" name="dog" id="dog" value=true>
+								<label for="dog"> Dog</label>
+								<input type="checkbox" name="cat" id="cat" value=true>
+								<label for="cat"> Cat</label>
+								<input type="checkbox" name="other" id="other" value=true>
+								<label for="other"> Other</label>
+							</div>
+						</div>
+
+						<div class="control-group">
 							<label class="control-label" for="inputBirthday">[[user:birthday]]</label>
 							<div class="controls">
 								<input class="form-control" id="inputBirthday" value="{birthday}" placeholder="mm/dd/yyyy">
