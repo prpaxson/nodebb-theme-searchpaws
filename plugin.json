@@ -26,7 +26,7 @@
 			"hook": "static:user.delete", "method": "deleteCustomFields"
 		},
 		{
-			"hook": "filter:edit.build", "method": "addExistingData"
+			"hook": "filter:middleware.render", "method": "addExistingData"
 		},
 		{
 			"hook": "filter:user.updateProfile", "method": "addCustomFields"
