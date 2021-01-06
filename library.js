@@ -234,10 +234,10 @@ library.deleteCustomFields = async function(params) {
 	await db.deleteAll(['user:' + params.uid + ':searchpaws:custom_fields']);
 }
 
-library.addExistingData = function(params, callback) {
+library.addExistingData = async function(params, callback) {
 	if (params.req.url.includes("edit")) {
-		console.log(params);
-		var fields = db.getObject("user:" + params.templateData.uid + ':searchpaws:custom_fields');
+		var fields = await db.getObject("user:" + params.templateData.uid + ':searchpaws:custom_fields');
+		console.log(fields);
 		if (fields) {
 			params.templateData.firstname = fields.firstname;
 			params.templateData.lastname = fields.lastname;
@@ -255,7 +255,6 @@ library.addExistingData = function(params, callback) {
 			params.templateData.other = false;
 		}
 	}
-	callback(null, params);
 }
 
 library.addCustomFields = function(params, callback) {

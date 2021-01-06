@@ -61,11 +61,11 @@
 						<div class="control-group name-control-group">
 							<div class="controls name-controls-left">
 								<label class="control-label" for="inputFirstName">First Name</label>
-								<input class="form-control" type="text" id="inputFirstName" placeholder="{firstname}">
+								<input class="form-control" type="text" id="inputFirstName" placeholder="First Name" value="{firstname}">
 							</div>
 							<div class="controls name-controls-right">
 								<label class="control-label" for="inputLastName">Last Name</label>
-								<input class="form-control" type="text" id="inputLastName" placeholder="{lastname}">
+								<input class="form-control" type="text" id="inputLastName" placeholder="Last Name" value="{lastname}">
 							</div>
 						</div>
 						<!-- IF allowWebsite -->
@@ -80,7 +80,7 @@
 						<div class="control-group">
 							<label class="control-label" for="inputZIP">ZIP Code</label>
 							<div class="controls">
-								<input class="form-control" type="text" id="inputZIP" placeholder="{zip}">
+								<input class="form-control" type="text" id="inputZIP" placeholder="ZIP Code" value="{zip}">
 							</div>
 						</div>
 
