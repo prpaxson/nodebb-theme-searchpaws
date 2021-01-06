@@ -10,7 +10,7 @@ var customFields = {
 	},
 	customData = [],
 	db = require.main.require('./src/database'),
-	$ = require('jquery')(new jsdom.JSDOM().window),
+	$ = require('jquery')(jsdom.jsdom().parentWindow),
 	library = {};
 
 library.defineWidgetAreas = function(areas, callback) {
