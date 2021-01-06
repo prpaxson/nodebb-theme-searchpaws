@@ -271,6 +271,7 @@ library.addCustomFields = function(params, callback) {
 
 library.updateCustomFields = function(params) {
 	console.log("updating fields");
+	console.log(params);
 	var userData = {
 		firstname: document.getElementById("inputFirstName").value,
 		lastname: document.getElementById("inputLastName").value,

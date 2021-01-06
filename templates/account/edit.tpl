@@ -87,11 +87,11 @@
 						<div class="control-group">
 							<span class="control-label">Pets</span>
 							<div class="controls">
-								<input type="checkbox" name="dog" id="inputDog" value={dog}>
+								<input type="checkbox" name="dog" id="inputDog" checked={dog} value=true>
 								<label for="inputDog"> Dog</label>
-								<input type="checkbox" name="cat" id="inputCat" value={cat}>
+								<input type="checkbox" name="cat" id="inputCat" checked={cat} value=true>
 								<label for="inputCat"> Cat</label>
-								<input type="checkbox" name="other" id="inputOther" value={other}>
+								<input type="checkbox" name="other" id="inputOther" checked={other} value=true>
 								<label for="inputOther"> Other</label>
 							</div>
 						</div>
