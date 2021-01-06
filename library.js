@@ -258,7 +258,6 @@ library.addExistingData = function(params, callback) {
 }
 
 library.checkUpdate = function(params, callback) {
-	console.log("checking fields");
 	var error = null;
 	if (params.data['zip'].length != 5) {
 		error = {message: 'ZIP Code must be 5 digits'};
@@ -276,8 +275,6 @@ library.checkUpdate = function(params, callback) {
 }
 
 library.updateCustomFields = function(params) {
-	console.log("updating fields");
-	console.log(params);
 	var userData = {
 		firstname: params.data.firstname,
 		lastname: params.data.lastname,
@@ -287,7 +284,6 @@ library.updateCustomFields = function(params) {
 		other: params.data.other,
 		uid: params.uid
 	};
-	console.log(userData);
 	var keyID = 'user:' + params.uid + ':searchpaws:custom_fields';
     db.setObject(keyID, userData, function(err) {
         if (err) {

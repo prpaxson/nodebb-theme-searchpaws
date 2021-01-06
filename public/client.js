@@ -27,9 +27,9 @@ $(document).ready(function() {
 					firstname: $('#inputFirstName').val(),
 					lastname: $('#inputLastName').val(),
 					zip: $('#inputZIP').val(),
-					dog: $('#inputDog').attr("checked"),
-					cat: $('#inputCat').attr("checked"),
-					other: $('#inputOther').attr("checked")
+					dog: $('#inputDog').prop("checked"),
+					cat: $('#inputCat').prop("checked"),
+					other: $('#inputOther').prop("checked")
 				};
 			
 				userData.groupTitle = JSON.stringify(Array.isArray(userData.groupTitle) ? userData.groupTitle : [userData.groupTitle]);
@@ -45,7 +45,10 @@ $(document).ready(function() {
                     data: JSON.stringify(userData),
                     success: function () {
 						app.alertSuccess('[[user:profile_update_success]]');
-                    }
+					},
+					error: function(xhr,status,error) {
+						app.alertError(error);
+					}
             });
 			});
 		}
