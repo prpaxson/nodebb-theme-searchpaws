@@ -9,7 +9,6 @@ var customFields = {
 	},
 	customData = [],
 	db = require.main.require('./src/database'),
-	window.$ = require('jquery')(window),
 	library = {};
 
 library.defineWidgetAreas = function(areas, callback) {
