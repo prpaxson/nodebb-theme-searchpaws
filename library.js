@@ -260,13 +260,54 @@ library.addExistingData = function(params, callback) {
 
 library.addCustomFields = function(params, callback) {
 	console.log("adding fields");
+	var userData = null;
+	require(['jquery'], function ($) {
+		userData = {
+			firstname: $('#inputFirstName').val(),
+			lastname: $('#inputLastName').val(),
+			zip: $('#inputZIP').val(),
+			dog: $('#inputDog').val(),
+			cat: $('#inputCat').val(),
+			other: $('#inputOther').val(),
+			uid: $('#inputUID').val()
+		};
+	});	
+	for(var key in customFields) {
+		var value = userData[key];
+		if (key != "dog" && key != "cat" && key != "other") {
+			if ((value == "" || value == undefined)) {
+				error = {message: 'Please complete all fields before registering.'};
+			}
+			else if (key == "zip") {
+				if (value.length != 5) {
+					error = {message: 'ZIP Code must be 5 digits'};
+				}
+				else if (!/^[0-9]+$/.test(value)) {
+					error = {message: 'ZIP Code must be a numerical value'};
+				}
+				else {
+					params.data.push({value: value});
+				}
+			}
+			else {
+				params.data.push({value: value});
+			}
+		}
+		else {
+			if (value == "" || value == undefined || value == null) {
+				params.data.push({value: "false"});
+			}
+			else {
+				params.data.push({value: value});
+			}
+		}
+    }
 	params.fields.push("firstname");
 	params.fields.push("lastname");
 	params.fields.push("zip");
 	params.fields.push("dog");
 	params.fields.push("cat");
 	params.fields.push("other");
-	console.log(params);
 	callback(null, params);
 }
 
@@ -274,14 +315,13 @@ library.updateCustomFields = function(params) {
 	console.log("updating fields");
 	console.log(params);
 	var userData = {
-		firstname: $('#inputFirstName').val(),
-		lastname: $('#inputLastName').val(),
-		zip: $('#inputZIP').val(),
-		dog: $('#inputDog').val(),
-		cat: $('#inputCat').val(),
-		other: $('#inputOther').val(),
-		aboutme: $('#inputAboutMe').val(),
-		uid: $('#inputUID').val()
+		firstname: params.data.firstname,
+		lastname: params.data.lastname,
+		zip: params.data.zip,
+		dog: params.data.dog,
+		cat: params.data.cat,
+		other: params.data.other,
+		uid: params.uid
 	};
 	console.log(userData);
 	var keyID = 'user:' + params.uid + ':searchpaws:custom_fields';
