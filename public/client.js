@@ -15,15 +15,13 @@ $(document).ready(function() {
 	$(window).on('action:ajaxify.end', function(event, data) {
 		if (data.url.includes("edit")) {
 			$("#newSubmitBtn").click(function () {
-				console.log("CLICKED!");
-				console.log($('#inputFirstName').val());
-				$(window).trigger('action:profile.update', {
+				var userData = {
 					uid: $('#inputUID').val(),
 					fullname: $('#inputFullname').val(),
 					website: $('#inputWebsite').val(),
 					birthday: $('#inputBirthday').val(),
 					location: $('#inputLocation').val(),
-					groupTitle: JSON.stringify(Array.isArray($('#groupTitle').val()) ? $('#groupTitle').val() : [$('#groupTitle').val()]),
+					groupTitle: $('#groupTitle').val(),
 					signature: $('#inputSignature').val(),
 					aboutme: $('#inputAboutMe').val(),
 					firstname: $('#inputFirstName').val(),
@@ -32,9 +30,25 @@ $(document).ready(function() {
 					dog: $('#inputDog').val(),
 					cat: $('#inputCat').val(),
 					other: $('#inputOther').val()
-				});
+				};
+			
+				userData.groupTitle = JSON.stringify(Array.isArray(userData.groupTitle) ? userData.groupTitle : [userData.groupTitle]);
+			
+				$(window).trigger('action:profile.update', userData);
+
+				$.ajax({
+                    url: '/users/' + userData.uid,
+                    type: 'PUT',
+                    contentType: 'application/json',
+                    headers: { 'x-csrf-token': '{config.csrf_token}' },
+                    dataType: 'json',
+                    data: userData,
+                    success: function () {
+						alertSuccess('[[user:profile_update_success]]');
+                    }
+            });
 			});
 		}
-	});
+	  });
 });
 
