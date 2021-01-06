@@ -266,6 +266,7 @@ library.addCustomFields = function(params, callback) {
 	params.fields.push("dog");
 	params.fields.push("cat");
 	params.fields.push("other");
+	console.log(params);
 	callback(null, params);
 }
 
