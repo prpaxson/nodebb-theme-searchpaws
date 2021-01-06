@@ -12,7 +12,7 @@
 	  });
 */
 $(document).ready(function() {
-	$(window).on('action:ajaxify.end', function(data) {
+	$(window).on('action:ajaxify.end', function(event, data) {
 		console.log(data.url);
 		console.log(typeof data.url);
 		if (data.url.includes("edit")) {
