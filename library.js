@@ -260,51 +260,49 @@ library.addExistingData = function(params, callback) {
 
 library.addCustomFields = function(params, callback) {
 	console.log("adding fields");
-	require('jquery', function ($) {
-		var firstname = $('#inputFirstName').val();
-		var userData = {
-			firstname: firstname,
-			lastname: $('#inputLastName').val(),
-			zip: $('#inputZIP').val(),
-			dog: $('#inputDog').val(),
-			cat: $('#inputCat').val(),
-			other: $('#inputOther').val(),
-			uid: $('#inputUID').val(),
-		};
-		var error = null;
-		console.log(firstname);
-		console.log(userData);
-		for(var key in customFields) {
-			var value = userData[key];
-			if (key != "dog" && key != "cat" && key != "other") {
-				if ((value == "" || value == undefined)) {
-					error = {message: 'Please complete all fields before registering.'};
+	var firstname = $('#inputFirstName').val();
+	var userData = {
+		firstname: firstname,
+		lastname: $('#inputLastName').val(),
+		zip: $('#inputZIP').val(),
+		dog: $('#inputDog').val(),
+		cat: $('#inputCat').val(),
+		other: $('#inputOther').val(),
+		uid: $('#inputUID').val(),
+	};
+	var error = null;
+	console.log(firstname);
+	console.log(userData);
+	for(var key in customFields) {
+		var value = userData[key];
+		if (key != "dog" && key != "cat" && key != "other") {
+			if ((value == "" || value == undefined)) {
+				error = {message: 'Please complete all fields before registering.'};
+			}
+			else if (key == "zip") {
+				if (value.length != 5) {
+					error = {message: 'ZIP Code must be 5 digits'};
 				}
-				else if (key == "zip") {
-					if (value.length != 5) {
-						error = {message: 'ZIP Code must be 5 digits'};
-					}
-					else if (!/^[0-9]+$/.test(value)) {
-						error = {message: 'ZIP Code must be a numerical value'};
-					}
-					else {
-						params.data.push({value: value});
-					}
+				else if (!/^[0-9]+$/.test(value)) {
+					error = {message: 'ZIP Code must be a numerical value'};
 				}
 				else {
 					params.data.push({value: value});
 				}
 			}
 			else {
-				if (value == "" || value == undefined || value == null) {
-					params.data.push({value: "false"});
-				}
-				else {
-					params.data.push({value: value});
-				}
+				params.data.push({value: value});
 			}
 		}
-	});	
+		else {
+			if (value == "" || value == undefined || value == null) {
+				params.data.push({value: "false"});
+			}
+			else {
+				params.data.push({value: value});
+			}
+		}
+	}
 	params.fields.push("firstname");
 	params.fields.push("lastname");
 	params.fields.push("zip");
