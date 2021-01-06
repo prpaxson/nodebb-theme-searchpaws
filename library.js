@@ -1,5 +1,6 @@
 "use strict";
 var jsdom = require('jsdom');
+var $ = require('jquery')(require("jsdom").jsdom().parentWindow);
 var customFields = {
 		firstname : "", 
 		lastname : "",
@@ -10,7 +11,6 @@ var customFields = {
 	},
 	customData = [],
 	db = require.main.require('./src/database'),
-	$ = require('jquery')(jsdom.JSDOM().parentWindow),
 	library = {};
 
 library.defineWidgetAreas = function(areas, callback) {
