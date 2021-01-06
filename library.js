@@ -277,18 +277,15 @@ library.updateCustomFields = function(params) {
 		dog: params.data.dog,
 		cat: params.data.cat,
 		other: params.data.other,
-		aboutme: params.data.aboutme,
 		uid: params.uid
 	};
-	var error = null;
 	console.log(userData);
 	var keyID = 'user:' + params.uid + ':searchpaws:custom_fields';
     db.setObject(keyID, userData, function(err) {
         if (err) {
-            error = err;
+            return callback(err);
         }
 	});
-	callback(error, params);
 }
 
 module.exports = library;
