@@ -13,17 +13,17 @@
 */
 $(document).ready(function() {
 	$(window).on('action:ajaxify.end', function(event, data) {
-		console.log(data.url);
-		console.log(typeof data.url);
 		if (data.url.includes("edit")) {
 			$("#newSubmitBtn").click(function () {
-				var userData = {
+				console.log("CLICKED!");
+				console.log($('#inputFirstName').val());
+				$(window).trigger('action:profile.update', {
 					uid: $('#inputUID').val(),
 					fullname: $('#inputFullname').val(),
 					website: $('#inputWebsite').val(),
 					birthday: $('#inputBirthday').val(),
 					location: $('#inputLocation').val(),
-					groupTitle: $('#groupTitle').val(),
+					groupTitle: JSON.stringify(Array.isArray($('#groupTitle').val()) ? $('#groupTitle').val() : [$('#groupTitle').val()]),
 					signature: $('#inputSignature').val(),
 					aboutme: $('#inputAboutMe').val(),
 					firstname: $('#inputFirstName').val(),
@@ -32,13 +32,9 @@ $(document).ready(function() {
 					dog: $('#inputDog').val(),
 					cat: $('#inputCat').val(),
 					other: $('#inputOther').val()
-				};
-			
-				userData.groupTitle = JSON.stringify(Array.isArray(userData.groupTitle) ? userData.groupTitle : [userData.groupTitle]);
-			
-				$(window).trigger('action:profile.update', userData);
+				});
 			});
 		}
-	  });
+	});
 });
 
