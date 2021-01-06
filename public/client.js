@@ -37,7 +37,7 @@ $(document).ready(function() {
 				$(window).trigger('action:profile.update', userData);
 
 				$.ajax({
-                    url: '/users/' + userData.uid,
+                    url: 'https://www.searchpaws.com/api/v3/users/' + userData.uid,
                     type: 'PUT',
                     contentType: 'application/json',
                     headers: { 'x-csrf-token': config.csrf_token },
