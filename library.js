@@ -235,24 +235,25 @@ library.deleteCustomFields = async function(params) {
 }
 
 library.addExistingData = function(params, callback) {
-	console.log("MEMEs");
-	console.log(params);
-	var fields = db.getObject("user:" + params.templateData.uid + ':searchpaws:custom_fields');
-	if (fields) {
-		params.templateData.firstname = fields.firstname;
-		params.templateData.lastname = fields.lastname;
-		params.templateData.zip = fields.zip;
-		params.templateData.dog = fields.dog;
-		params.templateData.cat = fields.cat;
-		params.templateData.other = fields.other;
-	}
-	else {
-		params.templateData.firstname = "";
-		params.templateData.lastname = "";
-		params.templateData.zip = "";
-		params.templateData.dog = false;
-		params.templateData.cat = false;
-		params.templateData.other = false;
+	if (params.req.url.contains("edit")) {
+		console.log(params);
+		var fields = db.getObject("user:" + params.templateData.uid + ':searchpaws:custom_fields');
+		if (fields) {
+			params.templateData.firstname = fields.firstname;
+			params.templateData.lastname = fields.lastname;
+			params.templateData.zip = fields.zip;
+			params.templateData.dog = fields.dog;
+			params.templateData.cat = fields.cat;
+			params.templateData.other = fields.other;
+		}
+		else {
+			params.templateData.firstname = "";
+			params.templateData.lastname = "";
+			params.templateData.zip = "";
+			params.templateData.dog = false;
+			params.templateData.cat = false;
+			params.templateData.other = false;
+		}
 	}
 	callback(null, params);
 }
