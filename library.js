@@ -234,27 +234,30 @@ library.deleteCustomFields = async function(params) {
 	await db.deleteAll(['user:' + params.uid + ':searchpaws:custom_fields']);
 }
 
-library.addExistingData = async function(params, callback) {
+library.addExistingData = function(params, callback) {
 	if (params.req.url.includes("edit")) {
-		var fields = await db.getObject("user:" + params.templateData.uid + ':searchpaws:custom_fields');
-		console.log(fields);
-		if (fields) {
-			params.templateData.firstname = fields.firstname;
-			params.templateData.lastname = fields.lastname;
-			params.templateData.zip = fields.zip;
-			params.templateData.dog = fields.dog;
-			params.templateData.cat = fields.cat;
-			params.templateData.other = fields.other;
-		}
-		else {
-			params.templateData.firstname = "";
-			params.templateData.lastname = "";
-			params.templateData.zip = "";
-			params.templateData.dog = false;
-			params.templateData.cat = false;
-			params.templateData.other = false;
-		}
+		wait().then(result => alert(result));
+		db.getObject("user:" + params.templateData.uid + ':searchpaws:custom_fields').then(fields => {
+			console.log(fields);
+			if (fields) {
+				params.templateData.firstname = fields.firstname;
+				params.templateData.lastname = fields.lastname;
+				params.templateData.zip = fields.zip;
+				params.templateData.dog = fields.dog;
+				params.templateData.cat = fields.cat;
+				params.templateData.other = fields.other;
+			}
+			else {
+				params.templateData.firstname = "";
+				params.templateData.lastname = "";
+				params.templateData.zip = "";
+				params.templateData.dog = false;
+				params.templateData.cat = false;
+				params.templateData.other = false;
+			}
+		});
 	}
+	callback(null, params);
 }
 
 library.addCustomFields = function(params, callback) {
