@@ -273,12 +273,12 @@ library.addCustomFields = function(params, callback) {
 library.updateCustomFields = function(params) {
 	console.log("updating fields");
 	var userData = {
-		firstname: params.data.firstname,
-		lastname: params.data.lastname,
-		zip: params.data.zip,
-		dog: params.data.dog,
-		cat: params.data.cat,
-		other: params.data.other,
+		firstname: document.getElementById("inputFirstName").value,
+		lastname: document.getElementById("inputLastName").value,
+		zip: document.getElementById("inputZIP").value,
+		dog: document.getElementById("inputDog").value,
+		cat: document.getElementById("inputCat").value,
+		other: document.getElementById("inputOther").value,
 		uid: params.uid
 	};
 	console.log(userData);
