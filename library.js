@@ -236,7 +236,7 @@ library.deleteCustomFields = async function(params) {
 
 library.addExistingData = function(params, callback) {
 	if (params.req.url.includes("edit")) {
-		var fields = db.getObject("user:" + params.templateData.uid + ':searchpaws:custom_fields');
+		var fields = await db.getObject("user:" + params.templateData.uid + ':searchpaws:custom_fields');
 		console.log(fields);
 		if (fields) {
 			params.templateData.firstname = fields.firstname;
