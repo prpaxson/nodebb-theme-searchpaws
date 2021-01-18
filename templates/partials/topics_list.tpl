@@ -70,19 +70,21 @@
     </small>
   </h2>
 
+  <a href="{config.relative_path}/topic/{topics.slug}:">
   <div id="main-post-content-{topics.tid}" class="mainpost_content">
   </div>
+  </a>
 
   <hr class="postlinestop">
 
   <li component="category/topic" class="row clearfix category-item {function.generateTopicClass}" data-tid="{topics.tid}" data-index="{topics.index}" data-cid="{topics.cid}" itemprop="itemListElement">
     <meta itemprop="name" content="{function.stripTags, title}">
 
-    <div class="mobile-stat col-xs-4 visible-sm visible-xs text-left">
+    <div class="mobile-stat col-xs-4 hidden text-left">
       <span class="human-readable-number">{topics.postcount-1}</span> <a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}"><i class="fa fa-arrow-circle-right"></i></a>
     </div>
 
-    <div class="col-md-2 hidden-sm hidden-xs stats stats-votes">
+    <div class="col-xs-2 stats stats-votes">
       <!-- IF !reputation:disabled -->
       <a id="upvote-{topics.tid}" href="#" component="post/upvote" class="<!-- IF !config.loggedIn -->hidden<!-- ENDIF --> upvote_topic">
         <i class="fa fa-chevron-up"></i>
@@ -117,7 +119,7 @@
 
   <hr class="postlinesbottom">
 
-  <div class="topanswers"> Top Answers </div>
+  <div class="topanswers"> <a href="{config.relative_path}/topic/{topics.slug}">Top Answers</a> </div>
 
   <div class="card" style="border-color: {topics.category.bgColor}">
     <!-- IF topics.unreplied -->
@@ -160,7 +162,7 @@
         document.getElementById('comments-{topics.tid}').innerHTML = count;
         if (count == 1) {
           document.getElementById('comments-label-{topics.tid}').innerHTML = "Comment";
-        }  
+        }
 
         var reply = document.getElementById("footer_reply-{topics.tid}");
         var register = document.getElementsByClassName("show-register")[0];
