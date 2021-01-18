@@ -33,6 +33,7 @@
         <!-- IMPORT partials/category/watch.tpl -->
         <!-- IMPORT partials/category/sort.tpl -->
         <!-- IMPORT partials/category/tools.tpl -->
+        <a href="/compose?cid=1" component="category/post" data-ajaxify="false" role="button" id="new_topic" class="btn question-btn">Ask a ?</a>
       </span>
     </div>
 
